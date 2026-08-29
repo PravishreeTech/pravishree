@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" fill="none">
+  <defs>
+    <linearGradient id="bgGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="60%" stop-color="#EDF6FD"/>
+      <stop offset="100%" stop-color="#DCEEFA"/>
+    </linearGradient>
+    <linearGradient id="cloudGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0096C7"/>
+      <stop offset="100%" stop-color="#023E8A"/>
+    </linearGradient>
+    <filter id="shadow4" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#004369" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="600" fill="url(#bgGrad4)" rx="24"/>
+  <circle cx="1100" cy="480" r="280" fill="#0096C7" opacity="0.06"/>
+  <circle cx="200" cy="80" r="200" fill="#0077B6" opacity="0.05"/>
+
+  <!-- Brand Header -->
+  <g transform="translate(60, 45)">
+    <text font-family="'Plus Jakarta Sans', sans-serif" font-size="22" font-weight="700" fill="#0B3B60">Pravishree Design Co.</text>
+    <text x="0" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#0096C7" letter-spacing="1.5">A TECH SOLUTION FIRM</text>
+    <line x1="0" y1="10" x2="210" y2="10" stroke="#0096C7" stroke-width="1.5" opacity="0.4"/>
+  </g>
+
+  <!-- Left Content -->
+  <g transform="translate(60, 160)">
+    <rect width="165" height="28" rx="14" fill="#E0F2FE"/>
+    <text x="14" y="19" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0284C7" letter-spacing="1">CLOUD • DEVOPS • SCALE</text>
+    
+    <text y="75" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="800" fill="#0B3B60">
+      <tspan x="0" dy="0">Scalable Cloud &amp;</tspan>
+      <tspan x="0" dy="54" fill="#0077B6">Enterprise Architecture</tspan>
+    </text>
+
+    <text y="190" font-family="'Plus Jakarta Sans', sans-serif" font-size="17" font-weight="400" fill="#475569">
+      <tspan x="0" dy="0">High-availability microservices, automated CI/CD pipelines,</tspan>
+      <tspan x="0" dy="26">and secure hybrid cloud infrastructures built for scale.</tspan>
+    </text>
+
+    <g transform="translate(0, 270)">
+      <rect width="160" height="50" rx="12" fill="#FFFFFF" filter="url(#shadow4)"/>
+      <text x="18" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#64748B">UPTIME SLA</text>
+      <text x="18" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="800" fill="#10B981">99.99%</text>
+
+      <rect x="180" width="160" height="50" rx="12" fill="#FFFFFF" filter="url(#shadow4)"/>
+      <text x="198" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#64748B">LATENCY OPTIMIZED</text>
+      <text x="198" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="800" fill="#0077B6">&lt; 45ms</text>
+
+      <rect x="360" width="160" height="50" rx="12" fill="#FFFFFF" filter="url(#shadow4)"/>
+      <text x="378" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#64748B">DEPLOYMENTS</text>
+      <text x="378" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="800" fill="#0284C7">Zero Downtime</text>
+    </g>
+  </g>
+
+  <!-- Right Visual Graphics: Server Nodes & Cloud Infrastructure Diagram -->
+  <g transform="translate(680, 95)" filter="url(#shadow4)">
+    <rect width="450" height="430" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+    
+    <!-- Header -->
+    <g transform="translate(30, 25)">
+      <rect width="36" height="36" rx="10" fill="#E0F2FE"/>
+      <path d="M 12,22 C 9,22 6,19 6,15 C 6,12 8,9 11,8.5 C 13,4 18,3 22,6 C 24,4 28,5 29,8 C 32,9 34,12 34,15 C 34,19 31,22 28,22 Z" fill="#0284C7"/>
+      <text x="48" y="16" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" fill="#0B3B60">Global Cloud Cluster</text>
+      <text x="48" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="500" fill="#10B981">● Systems Operational • Active Mesh</text>
+    </g>
+
+    <!-- Node Architecture Visual -->
+    <g transform="translate(30, 80)">
+      <!-- Master Node -->
+      <rect x="135" y="15" width="120" height="65" rx="12" fill="url(#cloudGrad4)"/>
+      <text x="150" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">API Gateway</text>
+      <text x="150" y="58" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" fill="#CAF0F8">Load Balanced</text>
+
+      <!-- Connecting Lines -->
+      <line x1="195" y1="80" x2="65" y2="135" stroke="#0096C7" stroke-width="2" stroke-dasharray="3 3"/>
+      <line x1="195" y1="80" x2="195" y2="135" stroke="#0096C7" stroke-width="2" stroke-dasharray="3 3"/>
+      <line x1="195" y1="80" x2="325" y2="135" stroke="#0096C7" stroke-width="2" stroke-dasharray="3 3"/>
+
+      <!-- Microservice Nodes -->
+      <rect x="10" y="135" width="110" height="60" rx="10" fill="#F8FAFC" stroke="#0096C7" stroke-width="1.5"/>
+      <text x="25" y="160" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#0B3B60">Auth &amp; Core</text>
+      <text x="25" y="176" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="500" fill="#64748B">Node.js / Go</text>
+
+      <rect x="140" y="135" width="110" height="60" rx="10" fill="#F8FAFC" stroke="#0096C7" stroke-width="1.5"/>
+      <text x="155" y="160" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#0B3B60">Data Engine</text>
+      <text x="155" y="176" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="500" fill="#64748B">Postgres / Redis</text>
+
+      <rect x="270" y="135" width="110" height="60" rx="10" fill="#F8FAFC" stroke="#0096C7" stroke-width="1.5"/>
+      <text x="285" y="160" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#0B3B60">ML Pipelines</text>
+      <text x="285" y="176" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="500" fill="#64748B">AI Analytics</text>
+
+      <!-- Infrastructure Metrics Box -->
+      <g transform="translate(10, 220)">
+        <rect width="370" height="95" rx="12" fill="#F0F9FF" stroke="#BAE6FD"/>
+        <text x="18" y="28" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0369A1">Auto-Scaling Infrastructure</text>
+        <text x="18" y="48" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="400" fill="#475569">Multi-region container orchestration with Kubernetes &amp; Docker</text>
+        <rect x="18" y="60" width="100" height="22" rx="6" fill="#0284C7"/>
+        <text x="28" y="75" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">K8s Clusters</text>
+        <rect x="126" y="60" width="80" height="22" rx="6" fill="#0F766E"/>
+        <text x="136" y="75" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">AWS / GCP</text>
+        <rect x="214" y="60" width="85" height="22" rx="6" fill="#475569"/>
+        <text x="224" y="75" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">Terraform</text>
+      </g>
+    </g>
+  </g>
+</svg>

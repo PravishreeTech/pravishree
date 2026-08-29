@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 450" width="400" height="450">
+    <defs>
+      <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#0F766E15"/>
+        <stop offset="100%" stop-color="#0F766E35"/>
+      </linearGradient>
+      <linearGradient id="headGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#0F766E"/>
+        <stop offset="100%" stop-color="#0B3B60"/>
+      </linearGradient>
+    </defs>
+    <rect width="400" height="450" fill="url(#g3)" rx="20"/>
+    <circle cx="200" cy="160" r="80" fill="url(#headGrad3)"/>
+    <path d="M 90,380 C 90,280 140,260 200,260 C 260,260 310,280 310,380 Z" fill="url(#headGrad3)" opacity="0.9"/>
+    <!-- Suit Lapels / Tech Accent -->
+    <path d="M 170,260 L 200,340 L 230,260 Z" fill="#FFFFFF" opacity="0.95"/>
+    <path d="M 195,290 L 200,370 L 205,290 Z" fill="#0F766E"/>
+    <text x="200" y="175" font-family="'Plus Jakarta Sans', sans-serif" font-size="46" font-weight="700" fill="#FFFFFF" text-anchor="middle">MN</text>
+    <!-- Badge -->
+    <rect x="50" y="380" width="300" height="46" rx="23" fill="#FFFFFF" filter="drop-shadow(0px 4px 10px rgba(0,0,0,0.06))"/>
+    <text x="200" y="408" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" fill="#0B3B60" text-anchor="middle">Meera Nambiar</text>
+  </svg>
