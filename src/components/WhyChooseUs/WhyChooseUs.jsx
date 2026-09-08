@@ -1,101 +1,129 @@
 import React from 'react';
 import { 
-  ShieldCheck, 
-  Zap, 
-  Clock, 
-  Users, 
-  Lock, 
+  HeartHandshake, 
+  Layers, 
   Sparkles, 
-  CheckCircle,
-  ArrowRight
+  TrendingUp, 
+  ShieldCheck, 
+  Award, 
+  CheckCircle2 
 } from 'lucide-react';
 import './WhyChooseUs.css';
 
+const whyItems = [
+  {
+    num: '01',
+    title: 'Client First',
+    desc: 'We begin by understanding your goals, challenges and vision before designing the right solution.',
+    icon: HeartHandshake,
+    color: '#0077B6',
+    align: 'left'
+  },
+  {
+    num: '02',
+    title: 'End-to-End Solutions',
+    desc: 'From concept and design to development, marketing and support, we bring multiple capabilities under one roof.',
+    icon: Layers,
+    color: '#0B3B60',
+    align: 'right'
+  },
+  {
+    num: '03',
+    title: 'Innovation Driven',
+    desc: 'We combine technology and creativity to build solutions that help businesses stay ahead.',
+    icon: Sparkles,
+    color: '#0096C7',
+    align: 'left'
+  },
+  {
+    num: '04',
+    title: 'Scalable Solutions',
+    desc: 'Our solutions are designed to grow alongside your business and evolving requirements.',
+    icon: TrendingUp,
+    color: '#0F766E',
+    align: 'right'
+  },
+  {
+    num: '05',
+    title: 'Quality Focused',
+    desc: 'We focus on reliability, usability, performance and delivering meaningful business value.',
+    icon: ShieldCheck,
+    color: '#0284C7',
+    align: 'left'
+  },
+  {
+    num: '06',
+    title: 'Long-Term Partnership',
+    desc: "We don't just deliver a project—we aim to become a technology partner for your continued growth.",
+    icon: Award,
+    color: '#07263F',
+    align: 'right'
+  }
+];
+
 export default function WhyChooseUs() {
-  const advantages = [
-    {
-      icon: ShieldCheck,
-      title: 'Enterprise Grade Reliability',
-      desc: 'ISO 27001, SOC2, and HIPAA certified workflows with strict data confidentiality and zero-leakage policies.',
-      color: '#0077B6'
-    },
-    {
-      icon: Zap,
-      title: 'High Velocity Execution',
-      desc: 'Rapid sprint cycles, agile workflows, and cutting-edge WebGL & React tech stacks that accelerate time-to-market.',
-      color: '#0096C7'
-    },
-    {
-      icon: Clock,
-      title: '24/7 Global Multi-Shift Delivery',
-      desc: 'Round-the-clock synchronous support for North America, Europe, and Asia-Pacific timezones without interruption.',
-      color: '#0F766E'
-    },
-    {
-      icon: Users,
-      title: 'Dedicated Domain Specialists',
-      desc: 'Elite cross-functional teams with deep expertise across engineering, UI/UX, video post-production, and BPO operations.',
-      color: '#0284C7'
-    }
-  ];
-
-  const techStack = [
-    'React', 'Next.js 15', 'TypeScript', 'Node.js', 'Python', 'Three.js / WebGL', 
-    'Flutter', 'AWS', 'Docker', 'PostgreSQL', 'Figma', 'DaVinci Resolve', 
-    'Adobe Premiere', 'After Effects', 'HIPAA RCM', 'AI Data Annotation'
-  ];
-
   return (
-    <section className="why-choose-section">
-      <div className="container">
+    <section className="why-choose-section" id="why-us">
+      
+      {/* Ambient Background Typography */}
+      <div className="ambient-watermark-wrap" aria-hidden="true">
+        <span className="ambient-watermark-text" style={{ top: '2.5%', right: '3%' }}>
+          Innovation
+        </span>
+      </div>
+
+      <div className="container relative-z">
         
-        {/*  Section Header  */}
-        <div className="section-header">
+        {/* Section Header with Line Reveal */}
+        <div className="section-header reveal-line">
           <div className="section-badge">
-            <Sparkles size={14} /> Competitive Advantage
+            <Sparkles size={14} /> The Pravishree Difference
           </div>
           <h2 className="section-title">
-            Why Forward-Thinking Leaders <br />
-            <span className="text-gradient">Choose Pravishree Design Co.</span>
+            <span className="reveal-line reveal-line-delay-1">Why</span>
+            <span className="reveal-line reveal-line-delay-2 text-gradient">Pravishree?</span>
           </h2>
-          <p className="section-subtitle">
-            We deliver the agility of a specialized studio combined with the scalability and security of an enterprise tech firm.
+          <p className="section-subtitle reveal-line reveal-line-delay-3">
+            Engineered with deep technical discipline, client-aligned collaboration, and an unwavering commitment to quality.
           </p>
         </div>
 
-        {/*  4 Key Advantages Grid  */}
-        <div className="advantages-grid">
-          {advantages.map((item, index) => {
-            const IconComponent = item.icon;
+        {/* 6 Alternating Editorial Cards Grid */}
+        <div className="why-editorial-grid">
+          {whyItems.map((item, index) => {
+            const IconComp = item.icon;
+            const revealClass = item.align === 'left' ? 'reveal-slide-left' : 'reveal-slide-right';
+            const delay = `${(index % 2) * 100}ms`;
+
             return (
-              <div key={index} className="advantage-card glass-card">
-                <div className="advantage-icon-box" style={{ background: `${item.color}15`, color: item.color }}>
-                  <IconComponent size={26} />
+              <div 
+                key={item.num} 
+                className={`why-item-card glass-card ${revealClass}`}
+                style={{ transitionDelay: delay }}
+              >
+                <div className="why-card-top-row">
+                  <span className="why-item-num" style={{ color: item.color }}>
+                    {item.num}
+                  </span>
+                  <div className="why-icon-bubble" style={{ background: `${item.color}15`, color: item.color }}>
+                    <IconComp size={22} />
+                  </div>
                 </div>
-                <h3 className="advantage-title">{item.title}</h3>
-                <p className="advantage-desc">{item.desc}</p>
-                <div className="advantage-check">
-                  <CheckCircle size={15} style={{ color: item.color }} />
-                  <span>Guaranteed SLA Standard</span>
+
+                <h3 className="why-item-title">{item.title}</h3>
+                <p className="why-item-desc">{item.desc}</p>
+
+                <div className="why-item-footer">
+                  <CheckCircle2 size={15} style={{ color: item.color }} />
+                  <span>Engineered for Reliability</span>
                 </div>
               </div>
             );
           })}
         </div>
 
-        {/*  Technology Stack Ticker Banner  */}
-        <div className="tech-stack-banner">
-          <div className="tech-stack-header">
-            <span className="tech-stack-title">Powering Your Business With Modern Technology:</span>
-          </div>
-          <div className="tech-stack-chips">
-            {techStack.map((tech, i) => (
-              <span key={i} className="tech-chip">{tech}</span>
-            ))}
-          </div>
-        </div>
-
       </div>
     </section>
   );
 }
+

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" width="600" height="420">
+  <defs>
+    <linearGradient id="pGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F766E18"/>
+      <stop offset="100%" stop-color="#0077B635"/>
+    </linearGradient>
+    <linearGradient id="iconGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F766E"/>
+      <stop offset="100%" stop-color="#0B3B60"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="420" fill="url(#pGrad4)" rx="16"/>
+  <!-- Mock UI Window -->
+  <rect x="40" y="40" width="520" height="240" rx="12" fill="#FFFFFF" opacity="0.96" filter="drop-shadow(0 8px 24px rgba(0,0,0,0.06))"/>
+  <circle cx="70" cy="65" r="6" fill="#EF4444"/>
+  <circle cx="90" cy="65" r="6" fill="#F59E0B"/>
+  <circle cx="110" cy="65" r="6" fill="#10B981"/>
+  <rect x="140" y="57" width="220" height="16" rx="8" fill="#F1F5F9"/>
+  
+  <!-- Analytics Graph Graphic -->
+  <path d="M70 200 L 150 160 L 230 190 L 310 120 L 390 145 L 480 90" fill="none" stroke="#0077B6" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="310" cy="120" r="7" fill="#00B4D8"/>
+  <circle cx="480" cy="90" r="7" fill="#0F766E"/>
+
+  <!-- Footer Details -->
+  <rect x="40" y="305" width="130" height="24" rx="12" fill="#0F766E20"/>
+  <text x="52" y="321" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#0F766E">Enterprise Cloud ERP</text>
+  <text x="40" y="360" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="700" fill="#0B3B60">FinPulse Automated Financial Analytics Suite</text>
+  <text x="40" y="385" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="500" fill="#64748B">Multi-tenant ledger sync, predictive forecasting, automated tax compliance</text>
+</svg>

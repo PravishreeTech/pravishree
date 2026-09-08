@@ -1,216 +1,214 @@
 import React, { useState } from 'react';
 import { 
-  Target, 
-  Compass, 
-  Building2, 
-  CheckCircle2, 
+  Sparkles, 
   Award, 
   ShieldCheck, 
-  Users, 
   Zap, 
   Globe2, 
-  TrendingUp 
+  ArrowRight,
+  Eye,
+  Target,
+  Building2,
+  Globe
 } from 'lucide-react';
 import './AboutSection.css';
 
 export default function AboutSection() {
-  const [activeTab, setActiveTab] = useState('about');
+  const [activeTab, setActiveTab] = useState(null);
 
-  const tabContents = {
-    about: {
-      title: 'About Pravishree Design Co.',
-      subtitle: 'A Tech Solution Firm Engineered for Impact',
-      icon: Building2,
-      color: '#0077B6',
-      content: (
-        <>
-          <p>
-            <strong>Pravishree Design Co.</strong> is a high-growth technology solutions and digital innovation firm. 
-            We bridge the gap between creative visual artistry, resilient full-stack software engineering, and 
-            operational BPO execution.
-          </p>
-          <p>
-            Founded by industry veterans, our multidisciplinary team collaborates with startups, mid-market leaders, 
-            and global enterprises across North America, Europe, and Asia to engineer digital products that scale smoothly.
-          </p>
-          <div className="about-metrics-grid">
-            <div className="about-metric-card">
-              <span className="metric-val">100%</span>
-              <span className="metric-lbl">On-Time Delivery</span>
-            </div>
-            <div className="about-metric-card">
-              <span className="metric-val">500+</span>
-              <span className="metric-lbl">Global Projects</span>
-            </div>
-            <div className="about-metric-card">
-              <span className="metric-val">24/7</span>
-              <span className="metric-lbl">Dedicated Support</span>
-            </div>
-          </div>
-        </>
-      )
-    },
-    mission: {
-      title: 'Our Purpose & Mission',
-      subtitle: 'Empowering Businesses with Scalable Digital Transformation',
-      icon: Target,
-      color: '#0096C7',
-      content: (
-        <>
-          <p>
-            Our mission is to deliver comprehensive, high-velocity technology and creative solutions that empower businesses 
-            to solve complex problems, accelerate revenue growth, and create memorable customer experiences.
-          </p>
-          <ul className="about-bullet-list">
-            <li>
-              <CheckCircle2 size={18} className="text-cyan" />
-              <span>Deliver reliable, bulletproof web and mobile platforms with state-of-the-art architectures.</span>
-            </li>
-            <li>
-              <CheckCircle2 size={18} className="text-cyan" />
-              <span>Set the gold standard for visual identity, video post-production, and interactive digital branding.</span>
-            </li>
-            <li>
-              <CheckCircle2 size={18} className="text-cyan" />
-              <span>Provide cost-effective, high-accuracy 24/7 BPO operations that scale dynamically with client needs.</span>
-            </li>
-          </ul>
-        </>
-      )
-    },
-    vision: {
-      title: 'Our Global Vision',
-      subtitle: 'To Be The World’s Most Trusted Integrated Tech Partner',
-      icon: Compass,
-      color: '#0F766E',
-      content: (
-        <>
-          <p>
-            We envision a connected digital future where modern businesses can seamlessly harness creative design, cloud software, 
-            artificial intelligence, and round-the-clock operational bandwidth under a single trusted partner.
-          </p>
-          <p>
-            By combining continuous engineering innovation with rigorous security and SLA standards, we aim to be the premier 
-            catalyst for enterprise agility and digital transformation worldwide.
-          </p>
-          <div className="vision-pillars">
-            <div className="pillar-item">
-              <ShieldCheck size={20} className="text-teal" />
-              <div>
-                <strong>Zero-Compromise Security</strong>
-                <span>HIPAA, SOC2, and ISO 27001 operational standards.</span>
-              </div>
-            </div>
-            <div className="pillar-item">
-              <Zap size={20} className="text-teal" />
-              <div>
-                <strong>Continuous Innovation</strong>
-                <span>Embracing modern WebGL, AI pipelines, and cloud native stacks.</span>
-              </div>
-            </div>
-          </div>
-        </>
-      )
-    }
+  const toggleTab = (tab) => {
+    setActiveTab(prev => prev === tab ? null : tab);
   };
 
-  const current = tabContents[activeTab];
+  const cardStats = [
+    { value: '100%', label: 'ON-TIME DELIVERY' },
+    { value: '500+', label: 'GLOBAL PROJECTS' },
+    { value: '24/7', label: 'DEDICATED SUPPORT' },
+  ];
 
   return (
     <section className="about-section" id="about">
-      <div className="container">
+      
+      {/* Ambient Background Typography */}
+      <div className="ambient-watermark-wrap" aria-hidden="true">
+        <span className="ambient-watermark-text">
+          Possibilities
+        </span>
+      </div>
+
+      <div className="container relative-z">
         
-        {/*  Section Header  */}
-        <div className="section-header">
-          <div className="section-badge">
-            <Building2 size={14} /> Who We Are
+        {/* ===================================================================
+           1. CENTERED HERO COMPOSITION
+           =================================================================== */}
+        <div className="about-hero-centered reveal-line">
+          
+          {/* Top Label Pill */}
+          <div className="section-badge hero-pill">
+            <Sparkles size={14} className="text-cyan" />
+            <span>WHO WE ARE</span>
           </div>
-          <h2 className="section-title">
-            About <span className="text-gradient">Pravishree Design Co.</span>
+
+          {/* Main Two-Line Centered Heading */}
+          <h2 className="about-hero-title">
+            <span className="reveal-line-delay-1">More Than Technology.</span>
+            <span className="reveal-line-delay-2 text-gradient">We Build Possibilities.</span>
           </h2>
-          <p className="section-subtitle">
-            A premier tech solution firm fusing creative brilliance with enterprise software and 24/7 operational delivery.
+
+          {/* Short Description */}
+          <p className="about-hero-desc reveal-line-delay-3">
+            Pravishree is a technology solution firm focused on helping businesses turn ideas into innovative, scalable and meaningful digital solutions.
           </p>
-        </div>
 
-        {/*  Interactive Tab Navigation  */}
-        <div className="about-tabs-nav" id="mission">
-          <button 
-            className={`about-tab-btn ${activeTab === 'about' ? 'active' : ''}`}
-            onClick={() => setActiveTab('about')}
-          >
-            <Building2 size={18} />
-            <span>About Company</span>
-          </button>
+          {/* Vision + Mission Buttons */}
+          <div className="about-hero-buttons">
+            <button
+              type="button"
+              className={`hero-vm-btn btn-vision ${activeTab === 'vision' ? 'is-active' : ''}`}
+              onClick={() => toggleTab('vision')}
+              aria-expanded={activeTab === 'vision'}
+            >
+              <Eye size={16} className="vm-icon" />
+              <span>OUR VISION</span>
+              <ArrowRight size={15} className="vm-arrow" />
+            </button>
 
-          <button 
-            className={`about-tab-btn ${activeTab === 'mission' ? 'active' : ''}`}
-            onClick={() => setActiveTab('mission')}
-          >
-            <Target size={18} />
-            <span>Our Mission</span>
-          </button>
+            <button
+              type="button"
+              className={`hero-vm-btn btn-mission ${activeTab === 'mission' ? 'is-active' : ''}`}
+              onClick={() => toggleTab('mission')}
+              aria-expanded={activeTab === 'mission'}
+            >
+              <Target size={16} className="vm-icon" />
+              <span>OUR MISSION</span>
+              <ArrowRight size={15} className="vm-arrow" />
+            </button>
+          </div>
 
-          <button 
-            className={`about-tab-btn ${activeTab === 'vision' ? 'active' : ''}`}
-            onClick={() => setActiveTab('vision')}
-            id="vision"
-          >
-            <Compass size={18} />
-            <span>Our Vision</span>
-          </button>
-        </div>
-
-        {/*  Main Tab Content Box  */}
-        <div className="about-content-card glass-card">
-          <div className="about-card-left">
-            <div className="about-card-header">
-              <div className="about-icon-box" style={{ background: `${current.color}18`, color: current.color }}>
-                <current.icon size={26} />
-              </div>
-              <div>
-                <h3 className="about-title">{current.title}</h3>
-                <span className="about-subtitle">{current.subtitle}</span>
+          {/* Inline Vision / Mission Content Drawer */}
+          {activeTab && (
+            <div className="hero-vm-panel">
+              <div className="hero-vm-panel-inner">
+                <div className="hero-vm-badge">
+                  {activeTab === 'vision' ? <Eye size={15} /> : <Target size={15} />}
+                  <span>{activeTab === 'vision' ? 'OUR VISION' : 'OUR MISSION'}</span>
+                </div>
+                <p className="hero-vm-text">
+                  {activeTab === 'vision' 
+                    ? "Our vision is to create meaningful digital solutions that combine technology, creativity and business understanding to help organizations grow with confidence."
+                    : "Our mission is to deliver practical, scalable and reliable technology solutions that solve real business challenges and create lasting value for our clients."
+                  }
+                </p>
               </div>
             </div>
+          )}
 
-            <div className="about-body-text">
-              {current.content}
+        </div>
+
+        {/* ===================================================================
+           2. MAIN ABOUT PRAVISHREE DESIGN CO. WHITE CARD SECTION BELOW HERO
+           =================================================================== */}
+        <div className="about-detailed-layout">
+          
+          {/* Left Column: Simplified Narrative Card */}
+          <div className="about-narrative-col reveal-slide-left">
+            <div className="about-paragraph-card glass-card">
+              
+              {/* Card Header & Subtitle */}
+              <div className="about-card-header">
+                <div className="about-card-title-row">
+                  <Building2 size={20} className="title-building-icon" />
+                  <h3 className="about-card-title">About Pravishree Design Co.</h3>
+                </div>
+                <p className="about-card-subtitle">
+                  A Tech Solution Firm Engineered for Impact
+                </p>
+                <div className="about-card-divider"></div>
+              </div>
+
+              {/* Two Concise Paragraphs Only */}
+              <p className="about-concise-text">
+                Pravishree Design Co. is a high-growth technology solutions and digital innovation firm. We bridge the gap between creative visual artistry, resilient full-stack software engineering, and operational BPO execution.
+              </p>
+              <p className="about-concise-text">
+                Founded by industry veterans, our multidisciplinary team collaborates with startups, mid-market leaders, and global enterprises across North America, Europe, and Asia to engineer digital products that scale smoothly.
+              </p>
+
+              {/* Three Statistics Grid inside Left Card */}
+              <div className="about-card-stats-row">
+                {cardStats.map((stat, idx) => (
+                  <div key={idx} className="card-stat-pill">
+                    <span className="card-stat-val">{stat.value}</span>
+                    <span className="card-stat-lbl">{stat.label}</span>
+                  </div>
+                ))}
+              </div>
+
             </div>
           </div>
 
-          {/*  Right Visual Graphic Box  */}
-          <div className="about-card-right">
-            <div className="about-visual-badge">
-              <Award size={18} className="text-cyan" />
-              <span>Certified Tech Solution Firm</span>
-            </div>
+          {/* Right Column: Certified Tech Solution Firm Panel */}
+          <div className="about-visual-col reveal-slide-right">
             
-            <div className="about-feature-cards-stack">
-              <div className="feature-stack-card">
-                <div className="stack-icon blue"><Zap size={18} /></div>
-                <div>
-                  <h4>Full-Lifecycle Delivery</h4>
-                  <p>Ideation, UX prototyping, agile code sprints to deployment &amp; scaling.</p>
+            {/* 3D Focal Glass Sphere Stage (copied from Contact page) */}
+            <div className="home-glass-orb-stage-wrapper">
+              <div className="contact-glass-orb-stage">
+                <div className="orb-glass-sphere">
+                  <div className="sphere-inner-ring ring-1"></div>
+                  <div className="sphere-inner-ring ring-2"></div>
+                  <div className="sphere-inner-ring ring-3"></div>
+                  <div className="sphere-ambient-glow"></div>
                 </div>
-              </div>
 
-              <div className="feature-stack-card">
-                <div className="stack-icon cyan"><Globe2 size={18} /></div>
-                <div>
-                  <h4>Global Multi-Timezone Support</h4>
-                  <p>Synchronized domestic and international coverage around the clock.</p>
+                <div className="orb-meta-chip top-left">
+                  <Globe size={14} className="icon-cyan" />
+                  <span>Global Technology Hub</span>
                 </div>
-              </div>
-
-              <div className="feature-stack-card">
-                <div className="stack-icon teal"><ShieldCheck size={18} /></div>
-                <div>
-                  <h4>Enterprise Data Security</h4>
-                  <p>Strict confidentiality, non-disclosure compliance, and encrypted systems.</p>
+                <div className="orb-meta-chip bottom-right">
+                  <ShieldCheck size={14} className="icon-teal" />
+                  <span>24/7 Operational SLA</span>
                 </div>
               </div>
             </div>
+
+            {/* Supporting Visual Card */}
+            <div className="about-visual-preview-card glass-card reveal-clip">
+              <div className="about-visual-header">
+                <div className="about-visual-badge-pill">
+                  <Award size={15} className="text-cyan" />
+                  <span>CERTIFIED TECH SOLUTION FIRM</span>
+                </div>
+                <span className="about-visual-tag">Visakhapatnam, India</span>
+              </div>
+
+              {/* Capability Stack */}
+              <div className="about-feature-stack">
+                <div className="feature-stack-item">
+                  <div className="feature-item-icon"><Zap size={18} /></div>
+                  <div className="feature-item-info">
+                    <h4>Full-Lifecycle Delivery</h4>
+                    <p>Ideation, UX prototyping, agile code sprints to deployment &amp; scaling.</p>
+                  </div>
+                </div>
+
+                <div className="feature-stack-item">
+                  <div className="feature-item-icon"><Globe2 size={18} /></div>
+                  <div className="feature-item-info">
+                    <h4>Global Multi-Timezone Support</h4>
+                    <p>Synchronized domestic and international coverage around the clock.</p>
+                  </div>
+                </div>
+
+                <div className="feature-stack-item">
+                  <div className="feature-item-icon"><ShieldCheck size={18} /></div>
+                  <div className="feature-item-info">
+                    <h4>Enterprise Data Security</h4>
+                    <p>Strict confidentiality, non-disclosure compliance, and encrypted systems.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
 
         </div>
@@ -219,3 +217,4 @@ export default function AboutSection() {
     </section>
   );
 }
+

@@ -1,0 +1,257 @@
+/* ==========================================================================
+   How We Work (Process Timeline) Styles
+   ========================================================================== */
+
+.process-section {
+  padding: 7rem 0 6rem;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Desktop Horizontal Timeline */
+.process-timeline-wrapper {
+  position: relative;
+  margin: 2.5rem 0 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline-progress-track {
+  position: absolute;
+  top: 28px;
+  left: 5%;
+  right: 5%;
+  height: 3px;
+  background: #E2E8F0;
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.timeline-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0077B6 0%, #00B4D8 100%);
+  border-radius: 2px;
+  transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 10px rgba(0, 180, 216, 0.5);
+}
+
+.timeline-steps-nav {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.timeline-step-node {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0;
+  transition: transform 0.25s ease;
+}
+
+.timeline-step-node:hover {
+  transform: translateY(-3px);
+}
+
+.step-node-bubble {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 2.5px solid #CBD5E1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(11, 59, 96, 0.08);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.step-node-number {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  line-height: 1;
+}
+
+.step-node-icon {
+  color: var(--text-subtle);
+  margin-top: 2px;
+  transition: color 0.25s ease;
+}
+
+.timeline-step-node.is-active .step-node-bubble {
+  background: var(--color-primary);
+  border-color: var(--color-accent-sky) !important;
+  transform: scale(1.18);
+  box-shadow: 0 8px 24px rgba(0, 150, 199, 0.35);
+}
+
+.timeline-step-node.is-active .step-node-number {
+  color: #FFFFFF;
+}
+
+.timeline-step-node.is-active .step-node-icon {
+  color: var(--color-accent-sky);
+}
+
+.timeline-step-node.is-passed .step-node-bubble {
+  border-color: var(--color-accent-blue);
+}
+
+.step-node-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+.timeline-step-node.is-active .step-node-title {
+  color: var(--color-accent-blue);
+}
+
+/* Active Highlight Preview Card (Desktop) */
+.process-active-card {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 3rem;
+  padding: 2.25rem 2.5rem;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border: 1px solid rgba(0, 180, 230, 0.22);
+  border-radius: var(--border-radius-xl);
+  box-shadow: 0 10px 36px rgba(11, 59, 96, 0.07), inset 0 0 20px rgba(255, 255, 255, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.process-active-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.active-num-badge {
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--border-radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.active-step-title {
+  font-family: var(--font-heading);
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--text-heading);
+}
+
+.active-step-lead {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+.active-step-detail {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* 6-Step Grid (Visible across desktop & stacked on mobile) */
+.process-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-top: 2rem;
+}
+
+.process-step-card {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border: 1px solid rgba(0, 180, 230, 0.22);
+  border-radius: var(--border-radius-lg);
+  padding: 1.85rem 1.65rem;
+  box-shadow: 0 10px 32px rgba(11, 59, 96, 0.07), inset 0 0 20px rgba(255, 255, 255, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.process-step-card:hover,
+.process-step-card.highlighted {
+  transform: translateY(-6px);
+  border-color: var(--color-accent-cyan);
+  box-shadow: 0 14px 32px rgba(0, 150, 199, 0.12);
+  background: #FFFFFF;
+}
+
+.process-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.process-step-num {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.process-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.process-step-title {
+  font-family: var(--font-heading);
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: var(--text-heading);
+}
+
+.process-step-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .process-timeline-wrapper {
+    display: none;
+  }
+
+  .process-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .process-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}

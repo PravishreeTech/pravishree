@@ -1,119 +1,83 @@
 export const servicesData = [
   {
-    id: 'designing',
-    title: 'Graphic Designing & Visual Identity',
-    shortDesc: 'Creative & impactful designs that bring your brand ideas to life with distinct visual authority.',
-    iconName: 'PenTool',
-    badge: 'Creative Suite',
-    featuredImage: '/assets/slide-2.jpg',
-    accentColor: '#0096C7',
-    features: [
-      'Brand Identity Systems & Style Guidelines',
-      'High-Impact Marketing Collateral & Posters',
-      'UI/UX Prototyping & Design Systems (Figma)',
-      'Vector Illustrations, Iconography & Packaging Design'
-    ],
-    fullDesc: 'We craft iconic brand identities, bespoke graphic artwork, marketing collateral, and intuitive UI/UX systems that captivate your audience and position your business at the forefront of your industry.',
-    stats: { projects: '450+', satisfaction: '99.4%' }
-  },
-  {
-    id: 'video-editing',
-    title: 'Professional Video Editing & Motion VFX',
-    shortDesc: 'Stunning visual storytelling, cinematic motion graphics, 4K reel cuts, and corporate anthems.',
-    iconName: 'Video',
-    badge: 'Studio Production',
-    featuredImage: '/assets/slide-2.jpg',
-    accentColor: '#0284C7',
-    features: [
-      'Commercials, Promos & Corporate Brand Videos',
-      'Social Media Reels, Shorts & Viral Content Production',
-      'Color Grading (DaVinci Resolve) & Sound Design',
-      '3D Motion Graphics & Visual Effects (After Effects)'
-    ],
-    fullDesc: 'From short-form viral reels to full-scale corporate brand films, our video production specialists transform raw footage into captivating visual narratives that elevate audience engagement and drive conversions.',
-    stats: { minutesEdited: '120k+', viewsGenerated: '85M+' }
-  },
-  {
     id: 'web-development',
-    title: 'Web & Full-Stack Development',
-    shortDesc: 'Responsive, secure, and ultra-fast web platforms built with modern scalable tech stacks.',
-    iconName: 'Code2',
-    badge: 'Enterprise Engineering',
-    featuredImage: '/assets/slide-5.jpg',
+    num: '01',
+    title: 'Web Development',
+    shortDesc: 'Modern, responsive and high-performance websites designed to create powerful digital experiences and help businesses grow online.',
+    iconName: 'Globe',
+    badge: 'High Performance',
     accentColor: '#0077B6',
-    features: [
-      'Custom React, Next.js & Modern Web Applications',
-      'High-Converting Corporate Portals & Landing Pages',
-      'E-Commerce Ecosystems (Shopify, WooCommerce, Custom)',
-      'API Architecture, CMS Integrations & Microservices'
-    ],
-    fullDesc: 'We build high-performance web applications tailored to your business goals. Engineered for speed, responsive on all devices, secure, and optimized for search engine domination.',
-    stats: { speedScore: '98/100', uptime: '99.99%' }
+    features: ['Modern Frontend Frameworks', 'Responsive & Mobile-First', 'Fast Loading & SEO Optimized', 'Custom CMS & API Integrations']
   },
   {
-    id: 'mobile-apps',
-    title: 'Mobile App Development (iOS & Android)',
-    shortDesc: 'Native and cross-platform mobile apps engineered for fluid performance and delight.',
-    iconName: 'Smartphone',
-    badge: 'Mobile First',
-    featuredImage: '/assets/slide-5.jpg',
+    id: 'custom-software',
+    num: '02',
+    title: 'Custom Software Development',
+    shortDesc: 'Scalable software solutions built around your unique business requirements, workflows and objectives.',
+    iconName: 'Code2',
+    badge: 'Enterprise Architecture',
     accentColor: '#0B3B60',
-    features: [
-      'Cross-Platform Apps (Flutter & React Native)',
-      'Native iOS (Swift) & Android (Kotlin) Development',
-      'Real-Time Cloud Sync, Push Notifications & Offline Mode',
-      'App Store Optimization (ASO) & Play Store Publishing'
-    ],
-    fullDesc: 'Turn your product vision into an intuitive mobile experience. We build reliable, feature-rich iOS and Android apps with frictionless onboarding, biometric authentication, and lightning-fast responsiveness.',
-    stats: { downloads: '2.5M+', appStoreRating: '4.8★' }
+    features: ['Custom Enterprise Portals', 'Cloud Native & Microservices', 'Secure Database Systems', 'API & Integration Engines']
+  },
+  {
+    id: 'mobile-app',
+    num: '03',
+    title: 'Mobile App Development',
+    shortDesc: 'Feature-rich Android and iOS applications designed to deliver seamless experiences across mobile devices.',
+    iconName: 'Smartphone',
+    badge: 'iOS & Android',
+    accentColor: '#0096C7',
+    features: ['Cross-Platform & Native Apps', 'Frictionless UI/UX Flow', 'Real-Time Data Sync', 'App Store Optimization']
+  },
+  {
+    id: 'creative-design',
+    num: '04',
+    title: 'Graphic & Creative Design',
+    shortDesc: 'Creative visual solutions including branding, graphics, multimedia and digital experiences that make your business stand out.',
+    iconName: 'PenTool',
+    badge: 'Brand Identity',
+    accentColor: '#0F766E',
+    features: ['Brand Identity Systems', 'Marketing Visuals & Posters', 'Interactive UI/UX Prototypes', 'Motion Graphics & 3D Assets']
   },
   {
     id: 'digital-marketing',
-    title: 'Digital Marketing & SEO Growth',
-    shortDesc: 'Result-driven performance marketing strategies to boost your brand reach, leads, and revenue.',
+    num: '05',
+    title: 'Digital Marketing',
+    shortDesc: 'Data-driven digital marketing strategies designed to increase visibility, engagement, leads and business growth.',
     iconName: 'TrendingUp',
-    badge: 'ROI Acceleration',
-    featuredImage: '/assets/slide-3.svg',
+    badge: 'Growth Engine',
     accentColor: '#0284C7',
-    features: [
-      'Technical, On-Page & Off-Page SEO Optimization',
-      'Targeted Performance Advertising (Google Ads, Meta Ads)',
-      'Social Media Growth & Influencer Campaign Management',
-      'Conversion Rate Optimization (CRO) & Funnel Analytics'
-    ],
-    fullDesc: 'Scale your customer acquisition with our data-backed digital marketing strategies. We optimize your entire customer journey from organic search discoverability to hyper-targeted paid acquisition.',
-    stats: { roasAverage: '4.8x', trafficGrowth: '+320%' }
+    features: ['Technical & Organic SEO', 'Targeted Performance Ads', 'Social Media Strategy', 'Conversion Rate Optimization']
+  },
+  {
+    id: 'e-learning',
+    num: '06',
+    title: 'E-Learning Solutions',
+    shortDesc: 'Interactive digital learning solutions that make education, training and knowledge sharing more accessible and engaging.',
+    iconName: 'GraduationCap',
+    badge: 'Interactive Learning',
+    accentColor: '#0077B6',
+    features: ['LMS Platform Development', 'Gamified Courseware', 'Interactive Assessments', 'Video Learning Modules']
+  },
+  {
+    id: 'it-consultancy',
+    num: '07',
+    title: 'IT Consultancy',
+    shortDesc: 'Technology guidance and strategic solutions that help businesses choose the right tools, systems and digital approaches.',
+    iconName: 'Compass',
+    badge: 'Strategic Advisory',
+    accentColor: '#0B3B60',
+    features: ['Digital Strategy & Audits', 'Cloud Migration Advisory', 'Architecture & Tech Stacks', 'Security & SLA Compliance']
   },
   {
     id: 'bpo-services',
-    title: 'BPO & Operational Solutions',
-    shortDesc: 'Reliable 24/7 domestic & international process support to streamline operations and reduce overhead.',
+    num: '08',
+    title: 'Business Process Outsourcing',
+    shortDesc: 'Reliable BPO solutions covering customer support, data entry, virtual assistance and technical support.',
     iconName: 'Headphones',
     badge: '24/7 Global Delivery',
-    featuredImage: '/assets/slide-6.svg',
     accentColor: '#0F766E',
-    isBpo: true,
-    subServices: [
-      {
-        id: 'domestic-bpo',
-        name: 'Domestic BPO Services',
-        desc: 'Dedicated multi-lingual voice & non-voice inbound/outbound support across regional territories with high resolution rates.',
-        tags: ['Inbound Support', 'Tele-Sales', 'Customer Care', 'Chat Support']
-      },
-      {
-        id: 'international-bpo',
-        name: 'International BPO Services',
-        desc: 'Round-the-clock US/UK/EU shift operational desks, HIPAA-compliant medical billing, and high-accuracy AI data annotation.',
-        tags: ['24/7 Global Voice', 'Medical Billing', 'Data Annotation', 'Back-Office Processing']
-      }
-    ],
-    features: [
-      'Inbound & Outbound Customer Support Desks',
-      'HIPAA-Compliant Medical Billing & Revenue Cycle',
-      'AI/ML Data Labeling & Image/Video Annotation',
-      'Omnichannel Live Chat, Email & Ticket Resolution'
-    ],
-    fullDesc: 'Scale your operations seamlessly with our enterprise-grade BPO division. We operate ISO 27001-certified infrastructure with dedicated teams for voice, medical billing, and machine learning data labeling.',
-    stats: { slaAccuracy: '99.8%', costSavings: '40%+' }
+    features: ['Inbound & Outbound Customer Care', 'Back-Office & Data Entry Desks', 'Virtual Executive Assistance', 'Tier 1/2 Technical Support']
   }
 ];
+

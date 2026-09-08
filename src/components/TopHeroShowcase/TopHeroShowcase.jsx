@@ -3,25 +3,61 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import './TopHeroShowcase.css';
 
 const bannerImages = [
-  { id: '01', image: '/assets/slide-1.jpg', alt: 'Pravishree Fullscreen Banner 1 - Digital Transformation' },
-  { id: '02', image: '/assets/slide-2.jpg', alt: 'Pravishree Fullscreen Banner 2 - Creative & Media' },
-  { id: '03', image: '/assets/slide-3.svg', alt: 'Pravishree Fullscreen Banner 3 - Digital Marketing' },
-  { id: '04', image: '/assets/slide-4.svg', alt: 'Pravishree Fullscreen Banner 4 - Cloud & DevOps' },
-  { id: '05', image: '/assets/slide-5.jpg', alt: 'Pravishree Fullscreen Banner 5 - Web & App Development' },
-  { id: '06', image: '/assets/slide-6.svg', alt: 'Pravishree Fullscreen Banner 6 - Global BPO Operations' },
+  { 
+    id: '01', 
+    image: '/assets/slide-1.png', 
+    tag: 'End-to-End Solutions',
+    title: 'Your Trusted Partner For All Your Digital & Business Solutions',
+    alt: 'Pravishree - End-to-End Solutions to Empower Your Business' 
+  },
+  { 
+    id: '02', 
+    image: '/assets/slide-2.jpg', 
+    tag: 'Creative Design & Visuals',
+    title: 'Creative Designs. Stunning Visuals. Powerful Impact.',
+    alt: 'Pravishree - Creative Designs, Video Editing & Visual Identity' 
+  },
+  { 
+    id: '03', 
+    image: '/assets/slide-3.svg', 
+    tag: 'Web & Application Development',
+    title: 'Modern, responsive and high-performance digital experiences.',
+    alt: 'Pravishree Fullscreen Banner 3 - Web & App Development' 
+  },
+  { 
+    id: '04', 
+    image: '/assets/slide-4.svg', 
+    tag: 'Creative Design',
+    title: 'Turning brands and ideas into memorable visual experiences.',
+    alt: 'Pravishree Fullscreen Banner 4 - Creative Design' 
+  },
+  { 
+    id: '05', 
+    image: '/assets/slide-5.jpg', 
+    tag: 'Web & App Development',
+    title: 'Web & App Development and Custom Software Design',
+    alt: 'Pravishree - Web & App Development and Custom Software Design' 
+  },
+  { 
+    id: '06', 
+    image: '/assets/slide-6.svg', 
+    tag: 'Business Solutions',
+    title: 'Technology and support solutions built for real-world business needs.',
+    alt: 'Pravishree Fullscreen Banner 6 - Business Solutions' 
+  },
 ];
 
 export default function TopHeroShowcase() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const timerRef = useRef(null);
 
-  // Restart 10-second autoplay timer
+  // Restart 8-second autoplay timer
   const resetTimer = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
     
     timerRef.current = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % bannerImages.length);
-    }, 10000); // 10 seconds (10,000 ms)
+    }, 8000);
   }, []);
 
   useEffect(() => {
@@ -57,14 +93,12 @@ export default function TopHeroShowcase() {
         >
           {bannerImages.map((banner, idx) => (
             <div key={banner.id} className="fullscreen-slide-item">
-              <div className="fullscreen-image-container">
-                <img 
-                  src={banner.image} 
-                  alt={banner.alt} 
-                  className="fullscreen-banner-img"
-                  loading={idx === 0 ? "eager" : "lazy"}
-                />
-              </div>
+              <img 
+                src={banner.image} 
+                alt={banner.alt} 
+                className="fullscreen-banner-img"
+                loading={idx === 0 ? "eager" : "lazy"}
+              />
             </div>
           ))}
         </div>
@@ -111,3 +145,4 @@ export default function TopHeroShowcase() {
     </section>
   );
 }
+

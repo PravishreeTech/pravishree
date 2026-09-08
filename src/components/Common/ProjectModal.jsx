@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, ExternalLink, Calendar, User, Tag, Sparkles, ArrowRight } from 'lucide-react';
+import { X, Calendar, User, ArrowRight } from 'lucide-react';
 import './Modal.css';
 
 export default function ProjectModal({ project, onClose }) {

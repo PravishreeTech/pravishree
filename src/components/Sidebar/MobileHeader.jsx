@@ -1,14 +1,21 @@
 import React from 'react';
-import { Menu, Globe, PhoneCall } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import './MobileHeader.css';
 
-export default function MobileHeader({ onToggleSidebar }) {
+export default function MobileHeader({ onToggleSidebar, onNavigate }) {
   return (
     <header className="site-mobile-header" aria-label="Mobile Navigation Bar">
       <div className="mobile-header-inner">
         
         {/* Brand Logo */}
-        <a href="#" className="mobile-header-logo-link">
+        <a 
+          href="#home" 
+          className="mobile-header-logo-link"
+          onClick={(e) => {
+            e.preventDefault();
+            if (onNavigate) onNavigate('home');
+          }}
+        >
           <img 
             src="/assets/logo.svg" 
             alt="Pravishree Design Co." 

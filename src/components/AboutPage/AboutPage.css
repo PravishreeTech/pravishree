@@ -1,0 +1,778 @@
+/* ==========================================================================
+   PRAVISHREE DESIGN CO. — PREMIUM CINEMATIC ABOUT PAGE STYLES
+   ========================================================================== */
+
+.about-page-root {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  color: #0F172A;
+  font-family: var(--font-sans, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   SECTION 1: ABOUT HERO
+   ========================================================================== */
+.about-hero-section {
+  position: relative;
+  min-height: 90vh;
+  padding: 100px 32px 60px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 70% 30%, rgba(0, 217, 255, 0.08) 0%, rgba(255, 255, 255, 0) 70%),
+              radial-gradient(circle at 10% 80%, rgba(2, 132, 199, 0.06) 0%, rgba(255, 255, 255, 0) 60%);
+}
+
+.about-hero-glass-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1;
+}
+
+.about-hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.about-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #475569;
+}
+
+.breadcrumb-link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #0284C7;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+  color: #0077B6;
+  text-decoration: underline;
+}
+
+.breadcrumb-separator { color: #94A3B8; }
+.breadcrumb-current { color: #0F172A; font-weight: 600; }
+
+/* Hero Grid */
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.about-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  background: rgba(0, 217, 255, 0.1);
+  border: 1px solid rgba(0, 217, 255, 0.35);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #0077B6;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.badge-sparkle-icon { color: #00D9FF; }
+
+/* Main Section Heading: Target 56px–72px Desktop */
+.about-hero-title {
+  font-size: clamp(52px, 3.8vw, 68px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: #061329;
+  margin-bottom: 20px;
+}
+
+.gradient-cyan-text {
+  background: linear-gradient(135deg, #0077B6 0%, #00D9FF 50%, #19E6D0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Body Text: Target 16px–19px */
+.about-hero-subtitle {
+  font-size: 18px;
+  line-height: 1.65;
+  color: #334155;
+  max-width: 640px;
+  margin-bottom: 24px;
+}
+
+/* Mission & Vision Interactive Hero Buttons */
+.about-hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.btn-hero-mv {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1.5px solid rgba(0, 217, 255, 0.35);
+  color: #061329;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 119, 182, 0.08);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-hero-mv:hover {
+  transform: translateY(-2px);
+  background: #FFFFFF;
+  border-color: #00D9FF;
+  box-shadow: 0 12px 28px rgba(0, 217, 255, 0.25);
+}
+
+.btn-hero-mv.btn-vision {
+  border-color: rgba(25, 230, 208, 0.4);
+}
+
+.btn-hero-mv.btn-vision:hover {
+  border-color: #19E6D0;
+  box-shadow: 0 12px 28px rgba(25, 230, 208, 0.25);
+}
+
+.mv-btn-icon.cyan { color: #00D9FF; }
+.mv-btn-icon.turquoise { color: #19E6D0; }
+
+.mv-btn-arrow {
+  color: #0077B6;
+  transition: transform 0.2s ease;
+}
+
+.btn-hero-mv:hover .mv-btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Metadata Chips */
+.about-hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 14px 20px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 217, 255, 0.2);
+  backdrop-filter: blur(12px);
+  width: fit-content;
+}
+
+.meta-chip {
+  display: flex;
+  flex-direction: column;
+}
+
+.meta-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #64748B;
+}
+
+.meta-val {
+  font-size: 14px;
+  font-weight: 800;
+  color: #061329;
+}
+
+.meta-divider {
+  width: 1px;
+  height: 24px;
+  background: rgba(148, 163, 184, 0.3);
+}
+
+/* 3D Stage */
+.about-hero-stage-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-glass-orb-stage {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-orb-core {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #00D9FF 0%, #0077B6 60%, #061329 100%);
+  box-shadow: 0 0 60px rgba(0, 217, 255, 0.5), inset 0 0 30px rgba(255, 255, 255, 0.4);
+  animation: orbPulse 6s ease-in-out infinite alternate;
+}
+
+@keyframes orbPulse {
+  0% { transform: scale(0.96) rotate(0deg); }
+  100% { transform: scale(1.04) rotate(15deg); }
+}
+
+.orb-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(0, 217, 255, 0.4);
+  animation: ringSpin 18s linear infinite;
+}
+
+.ring-a { inset: -20px; }
+.ring-b { inset: -40px; border-style: solid; border-color: rgba(2, 132, 199, 0.3); animation-direction: reverse; animation-duration: 25s; }
+.ring-c { inset: -60px; border-color: rgba(25, 230, 208, 0.3); animation-duration: 35s; }
+
+@keyframes ringSpin { 100% { transform: rotate(360deg); } }
+
+.floating-meta-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  font-size: 13px;
+  font-weight: 600;
+  color: #061329;
+  white-space: nowrap;
+}
+
+.floating-meta-card.top-right { top: 20px; right: -10px; }
+.floating-meta-card.bottom-left { bottom: 20px; left: -20px; }
+
+.icon-cyan { color: #00D9FF; }
+.icon-turquoise { color: #19E6D0; }
+
+
+/* ==========================================================================
+   SECTION 2: ABOUT INTRODUCTION
+   ========================================================================== */
+.about-intro-section {
+  padding: 100px 32px;
+  background: rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.about-intro-container {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 3rem 2.5rem;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border: 1px solid rgba(0, 180, 230, 0.22);
+  border-radius: 24px;
+  box-shadow: 0 10px 36px rgba(11, 59, 96, 0.07), inset 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+.about-section-label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #0077B6;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+/* Large Editorial Heading: Target 52px–68px */
+.about-intro-headline {
+  font-size: clamp(44px, 3.5vw, 60px);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #061329;
+  margin-bottom: 24px;
+}
+
+.about-intro-text {
+  font-size: 18px;
+  line-height: 1.68;
+  color: #475569;
+  margin-bottom: 16px;
+}
+
+
+/* ==========================================================================
+   SECTION 3: WHAT WE DO (END-TO-END DIGITAL SOLUTIONS)
+   ========================================================================== */
+.about-what-we-do-section {
+  padding: 100px 32px;
+  background: linear-gradient(180deg, rgba(248, 250, 252, 0.9) 0%, rgba(240, 249, 255, 0.5) 100%);
+}
+
+.about-container {
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+.about-section-header {
+  margin-bottom: 50px;
+}
+
+.about-section-title {
+  font-size: clamp(36px, 3vw, 52px);
+  font-weight: 800;
+  color: #061329;
+}
+
+.capabilities-editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.capability-item-card {
+  position: relative;
+  padding: 24px 28px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(0, 180, 230, 0.22);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  box-shadow: 0 8px 24px rgba(11, 59, 96, 0.05), inset 0 0 15px rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.capability-item-card:hover,
+.capability-item-card.is-active {
+  background: #FFFFFF;
+  border-color: rgba(0, 217, 255, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 119, 182, 0.1);
+}
+
+.cap-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.cap-num {
+  font-size: 14px;
+  font-family: monospace;
+  font-weight: 800;
+  color: #0077B6;
+}
+
+.cap-category {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748B;
+}
+
+/* Service title: Target 20px–26px */
+.cap-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #061329;
+}
+
+.cap-active-line {
+  position: absolute;
+  bottom: 0;
+  left: 28px;
+  right: 28px;
+  height: 2px;
+  background: linear-gradient(90deg, #00D9FF 0%, #19E6D0 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.capability-item-card:hover .cap-active-line,
+.capability-item-card.is-active .cap-active-line {
+  opacity: 1;
+}
+
+
+/* ==========================================================================
+   SECTION 4: MISSION & VISION
+   ========================================================================== */
+.about-mission-vision-section {
+  padding: 100px 32px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+}
+
+.mv-card {
+  position: relative;
+  padding: 44px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(0, 180, 230, 0.22);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  box-shadow: 0 10px 36px rgba(11, 59, 96, 0.07), inset 0 0 20px rgba(255, 255, 255, 0.6);
+  overflow: hidden;
+}
+
+.mv-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: rgba(0, 119, 182, 0.1);
+  color: #0077B6;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
+}
+
+.mv-badge.turquoise {
+  background: rgba(25, 230, 208, 0.1);
+  color: #00A389;
+}
+
+/* Supporting Heading: Target 24px–32px */
+.mv-title {
+  font-size: clamp(24px, 2.2vw, 32px);
+  font-weight: 800;
+  color: #061329;
+  margin-bottom: 16px;
+}
+
+.mv-text {
+  font-size: 17px;
+  line-height: 1.65;
+  color: #475569;
+}
+
+.mv-art-glow {
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.cyan-glow { background: #00D9FF; }
+.turquoise-glow { background: #19E6D0; }
+
+
+/* ==========================================================================
+   SECTION 5: VALUES (WHAT DRIVES US)
+   ========================================================================== */
+.about-values-section {
+  padding: 100px 32px;
+  background: linear-gradient(180deg, rgba(240, 249, 255, 0.5) 0%, rgba(248, 250, 252, 0.9) 100%);
+}
+
+.values-interactive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.value-card {
+  position: relative;
+  padding: 32px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(0, 180, 230, 0.22);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  box-shadow: 0 10px 36px rgba(11, 59, 96, 0.07), inset 0 0 20px rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.value-card:hover,
+.value-card.is-active {
+  background: #FFFFFF;
+  border-color: rgba(0, 217, 255, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 119, 182, 0.1);
+}
+
+.val-num {
+  font-size: 14px;
+  font-family: monospace;
+  font-weight: 800;
+  color: #0077B6;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.val-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #061329;
+  margin-bottom: 8px;
+}
+
+.val-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #475569;
+}
+
+.val-accent-strip {
+  position: absolute;
+  left: 0;
+  top: 24px;
+  bottom: 24px;
+  width: 3px;
+  background: linear-gradient(180deg, #00D9FF 0%, #19E6D0 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.value-card:hover .val-accent-strip,
+.value-card.is-active .val-accent-strip {
+  opacity: 1;
+}
+
+
+/* ==========================================================================
+   SECTION 6: WHY PRAVISHREE
+   ========================================================================== */
+.about-why-section {
+  padding: 100px 32px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.why-us-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 28px;
+}
+
+.why-us-card {
+  display: flex;
+  gap: 16px;
+  padding: 28px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(0, 180, 230, 0.22);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  box-shadow: 0 8px 24px rgba(11, 59, 96, 0.05), inset 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.why-check-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(0, 119, 182, 0.1);
+  color: #0077B6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.why-card-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: #061329;
+  margin-bottom: 6px;
+}
+
+.why-card-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #475569;
+}
+
+
+/* ==========================================================================
+   SECTION 7: COMPANY JOURNEY
+   ========================================================================== */
+.about-timeline-section {
+  padding: 100px 32px;
+  background: linear-gradient(180deg, rgba(248, 250, 252, 0.9) 0%, rgba(240, 249, 255, 0.5) 100%);
+}
+
+.timeline-horizontal-track {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.timeline-step-card {
+  position: relative;
+  padding: 32px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(0, 180, 230, 0.22);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  box-shadow: 0 10px 32px rgba(11, 59, 96, 0.07), inset 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+.timeline-badge-pill {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background: rgba(0, 119, 182, 0.1);
+  color: #0077B6;
+  font-size: 13px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.timeline-step-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #061329;
+  margin-bottom: 10px;
+}
+
+.timeline-step-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #475569;
+}
+
+
+/* ==========================================================================
+   SECTION 8: FINAL CTA
+   ========================================================================== */
+.about-final-cta-section {
+  padding: 100px 32px;
+  background: radial-gradient(circle at 50% 50%, rgba(2, 132, 199, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+.about-final-cta-card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 48px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(0, 180, 230, 0.22);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  box-shadow: 0 10px 36px rgba(11, 59, 96, 0.07), inset 0 0 20px rgba(255, 255, 255, 0.6);
+  text-align: center;
+}
+
+.cta-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  background: rgba(0, 119, 182, 0.1);
+  color: #0077B6;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
+}
+
+.about-final-cta-title {
+  font-size: clamp(36px, 3.5vw, 52px);
+  font-weight: 800;
+  color: #061329;
+  margin-bottom: 16px;
+}
+
+.about-final-cta-subtitle {
+  font-size: 18px;
+  line-height: 1.65;
+  color: #475569;
+  max-width: 640px;
+  margin: 0 auto 36px auto;
+}
+
+.btn-about-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #061329 0%, #0077B6 100%);
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(0, 119, 182, 0.4);
+  transition: all 0.25s ease;
+}
+
+.btn-about-cta-primary:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #0077B6 0%, #00D9FF 100%);
+}
+
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+  .about-hero-grid,
+  .mission-vision-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-hero-stage-wrap {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-hero-section,
+  .about-intro-section,
+  .about-what-we-do-section,
+  .about-mission-vision-section,
+  .about-values-section,
+  .about-why-section,
+  .about-timeline-section,
+  .about-final-cta-section {
+    padding: 60px 20px;
+  }
+
+  .about-final-cta-card {
+    padding: 40px 24px;
+  }
+}

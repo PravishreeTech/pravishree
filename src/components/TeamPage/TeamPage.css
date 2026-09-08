@@ -1,0 +1,986 @@
+/* ==========================================================================
+   PRAVISHREE DESIGN CO. — DEDICATED TEAM / LEADERSHIP PAGE STYLES
+   ========================================================================== */
+
+.team-page-root {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  color: #061329;
+  font-family: var(--font-sans, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  overflow-x: hidden;
+}
+
+/* Ensure content stays above global 3D background */
+.team-hero-section,
+.team-main-presentation-section,
+.team-marquee-scroller,
+.our-team-intro-section,
+.team-cards-grid-section,
+.team-interactive-showcase-section,
+.team-quote-section,
+.team-final-cta-section {
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   SECTION 1: HERO SECTION
+   ========================================================================== */
+.team-hero-section {
+  position: relative;
+  padding: 100px 32px 60px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: radial-gradient(circle at 50% 30%, rgba(0, 217, 255, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+.team-hero-glass-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1;
+}
+
+.team-hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2.5rem;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border: 1px solid rgba(0, 180, 230, 0.22);
+  border-radius: 32px;
+  box-shadow: 0 10px 36px rgba(11, 59, 96, 0.07), inset 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+.team-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #475569;
+}
+
+.breadcrumb-link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #0284C7;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+  color: #0077B6;
+  text-decoration: underline;
+}
+
+.breadcrumb-separator { color: #94A3B8; }
+.breadcrumb-current { color: #0F172A; font-weight: 600; }
+
+.team-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  background: rgba(0, 217, 255, 0.1);
+  border: 1px solid rgba(0, 217, 255, 0.35);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #0077B6;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.badge-sparkle-icon { color: #00D9FF; }
+
+.team-hero-title {
+  font-size: clamp(48px, 4vw, 64px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: #061329;
+  margin-bottom: 16px;
+}
+
+.gradient-cyan-text {
+  background: linear-gradient(135deg, #0077B6 0%, #00D9FF 50%, #19E6D0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.team-hero-subtitle {
+  font-size: 19px;
+  line-height: 1.6;
+  color: #475569;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+
+/* ==========================================================================
+   SECTION 2: MAIN CEO EXECUTIVE PORTRAIT PRESENTATION
+   ========================================================================== */
+.team-main-presentation-section {
+  position: relative;
+  padding: 70px 32px 100px 32px;
+  background: linear-gradient(180deg, rgba(248, 250, 252, 0.9) 0%, rgba(240, 249, 255, 0.5) 100%);
+}
+
+.team-presentation-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.ceo-asymmetric-grid {
+  display: grid;
+  grid-template-columns: 42% 54%;
+  gap: 4%;
+  align-items: center;
+}
+
+/* LEFT COLUMN: Minimal CEO Info */
+.ceo-info-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ceo-position-tag {
+  font-size: 13px;
+  font-family: monospace;
+  font-weight: 800;
+  color: #0077B6;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.ceo-name-heading {
+  font-size: clamp(42px, 3.8vw, 58px);
+  font-weight: 850;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #061329;
+  margin-bottom: 14px;
+}
+
+.ceo-title-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #0077B6;
+  margin-bottom: 16px;
+}
+
+.meta-bullet { color: #94A3B8; }
+.meta-company { color: #334155; }
+
+.ceo-location-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 217, 255, 0.25);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  font-size: 14px;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 24px;
+}
+
+.location-pin-icon { color: #00D9FF; }
+
+.ceo-lead-statement {
+  font-size: 18px;
+  line-height: 1.65;
+  color: #334155;
+  font-weight: 500;
+  max-width: 500px;
+  margin-bottom: 32px;
+}
+
+/* Social Buttons */
+.ceo-socials-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.socials-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #64748B;
+  text-transform: uppercase;
+}
+
+.social-buttons-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1.5px solid rgba(0, 217, 255, 0.3);
+  color: #061329;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.social-btn:hover {
+  background: #FFFFFF;
+  border-color: #00D9FF;
+  color: #0077B6;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 217, 255, 0.35);
+}
+
+
+/* RIGHT COLUMN: 4:5 CEO Portrait Frame */
+.ceo-portrait-right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Signature 3D Glass Sculpture Element */
+.signature-3d-sculpture {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 220px;
+  height: 220px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.sculpture-orb-core {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.sculpture-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(0, 217, 255, 0.45);
+  animation: orbSpin 20s linear infinite;
+}
+
+.ring-1 { inset: 0; border-color: rgba(0, 217, 255, 0.5); }
+.ring-2 { inset: 30px; border-style: solid; border-color: rgba(2, 132, 199, 0.35); animation-direction: reverse; animation-duration: 14s; }
+.ring-3 { inset: 60px; border-color: rgba(25, 230, 208, 0.4); animation-duration: 28s; }
+
+@keyframes orbSpin { 100% { transform: rotate(360deg); } }
+
+/* CEO Portrait Container */
+.ceo-portrait-card-wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 620px;
+  height: clamp(540px, 68vh, 660px);
+  aspect-ratio: 4 / 5;
+  border-radius: 32px;
+  background: #061329;
+  border: 1.5px solid rgba(0, 217, 255, 0.3);
+  box-shadow: 0 30px 60px -15px rgba(6, 19, 41, 0.4), 0 0 45px rgba(0, 217, 255, 0.2);
+  overflow: hidden;
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.ceo-portrait-card-wrap:hover {
+  border-color: #00D9FF;
+  box-shadow: 0 35px 75px -15px rgba(6, 19, 41, 0.5), 0 0 60px rgba(0, 217, 255, 0.35);
+}
+
+.ceo-portrait-inner-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}
+
+.portrait-glass-backdrop {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 40% 30%, rgba(0, 217, 255, 0.15) 0%, rgba(6, 19, 41, 0.95) 80%);
+}
+
+.portrait-cyan-glow-edge {
+  position: absolute;
+  inset: 0;
+  border-radius: 32px;
+  border: 1px solid rgba(0, 217, 255, 0.25);
+  pointer-events: none;
+}
+
+.ceo-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ceo-portrait-card-wrap:hover .ceo-portrait-img {
+  transform: scale(1.04);
+}
+
+/* Editorial Placeholder Frame */
+.ceo-portrait-placeholder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+  background: radial-gradient(circle at 50% 35%, rgba(0, 217, 255, 0.18) 0%, rgba(11, 31, 58, 0.95) 75%);
+}
+
+.placeholder-pattern-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(0, 217, 255, 0.2) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.4;
+}
+
+.placeholder-center-emblem {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.emblem-orb {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: rgba(0, 217, 255, 0.12);
+  border: 1.5px solid rgba(0, 217, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 35px rgba(0, 217, 255, 0.35);
+  animation: emblemPulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes emblemPulse {
+  0% { transform: scale(0.96); box-shadow: 0 0 25px rgba(0, 217, 255, 0.25); }
+  100% { transform: scale(1.04); box-shadow: 0 0 45px rgba(0, 217, 255, 0.5); }
+}
+
+.emblem-icon { color: #00D9FF; }
+
+.placeholder-name-tag {
+  font-size: 22px;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+}
+
+.placeholder-title-tag {
+  font-size: 12px;
+  font-family: monospace;
+  font-weight: 700;
+  color: #00D9FF;
+  letter-spacing: 0.1em;
+}
+
+.placeholder-status-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: 8px;
+}
+
+/* Portrait Card Overlay */
+.portrait-card-overlay {
+  position: absolute;
+  bottom: 0;
+  inset-x: 0;
+  padding: 32px;
+  background: linear-gradient(to top, rgba(6, 19, 41, 0.95) 0%, rgba(6, 19, 41, 0) 100%);
+  display: flex;
+  align-items: flex-end;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.ceo-portrait-card-wrap:hover .portrait-card-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.overlay-content { display: flex; flex-direction: column; gap: 4px; }
+.overlay-location { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; color: #00D9FF; font-weight: 600; }
+.overlay-name { font-size: 20px; font-weight: 800; color: #FFFFFF; }
+.overlay-title { font-size: 14px; color: #CBD5E1; }
+
+
+/* ==========================================================================
+   SECTION 3: OVERSIZED SCROLLING BACKGROUND MARQUEE
+   ========================================================================== */
+.team-marquee-scroller {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: transparent;
+  border-top: 1px solid rgba(226, 232, 240, 0.5);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+}
+
+.marquee-scroller-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 32px;
+  white-space: nowrap;
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: rgba(6, 19, 41, 0.12);
+  text-transform: uppercase;
+  animation: teamMarqueeLoop 36s linear infinite;
+}
+
+@keyframes teamMarqueeLoop {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-star { color: #00D9FF; }
+
+
+/* ==========================================================================
+   SECTION 4: "02 / OUR TEAM" INTRO SECTION
+   ========================================================================== */
+.our-team-intro-section {
+  padding: 100px 32px 60px 32px;
+  background: transparent;
+}
+
+.our-team-intro-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2.5rem;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border: 1px solid rgba(0, 180, 230, 0.22);
+  border-radius: 32px;
+  box-shadow: 0 10px 36px rgba(11, 59, 96, 0.07), inset 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+.team-section-num-tag {
+  display: inline-block;
+  font-size: 13px;
+  font-family: monospace;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #0077B6;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.our-team-editorial-heading {
+  font-size: clamp(40px, 3.8vw, 58px);
+  font-weight: 850;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: #061329;
+  margin-bottom: 20px;
+}
+
+.desktop-only-br { display: block; }
+
+.our-team-editorial-desc {
+  font-size: 18px;
+  line-height: 1.65;
+  color: #475569;
+  max-width: 680px;
+}
+
+
+/* ==========================================================================
+   SECTION 5: REFERENCE-STYLE TEAM PHOTO CARDS GRID
+   ========================================================================== */
+.team-cards-grid-section {
+  padding: 40px 32px 100px 32px;
+  background: transparent;
+}
+
+.team-cards-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.team-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.team-member-card {
+  position: relative;
+  border-radius: 28px;
+  background: #061329;
+  border: 1.5px solid rgba(0, 217, 255, 0.25);
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(6, 19, 41, 0.12);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.team-member-card:hover {
+  transform: translateY(-6px);
+  border-color: #00D9FF;
+  box-shadow: 0 24px 50px rgba(0, 217, 255, 0.25);
+}
+
+.card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.member-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.team-member-card:hover .member-card-img {
+  transform: scale(1.04);
+}
+
+/* Card Placeholder when no image provided */
+.member-card-placeholder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 30%, rgba(0, 217, 255, 0.15) 0%, rgba(6, 19, 41, 0.95) 75%);
+  padding: 32px;
+}
+
+.placeholder-orb-mini {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(0, 217, 255, 0.1);
+  border: 1.5px solid rgba(0, 217, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  box-shadow: 0 0 25px rgba(0, 217, 255, 0.3);
+}
+
+.card-placeholder-num {
+  font-size: 13px;
+  font-family: monospace;
+  font-weight: 800;
+  color: #00D9FF;
+  letter-spacing: 0.1em;
+}
+
+.card-placeholder-role {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.card-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(6, 19, 41, 0.96) 0%, rgba(6, 19, 41, 0.4) 45%, transparent 100%);
+  pointer-events: none;
+}
+
+.card-bottom-info {
+  position: absolute;
+  bottom: 0;
+  inset-x: 0;
+  padding: 32px;
+  z-index: 5;
+}
+
+.card-accent-line {
+  width: 40px;
+  height: 3px;
+  border-radius: 3px;
+  margin-bottom: 12px;
+  transition: width 0.3s ease;
+}
+
+.team-member-card:hover .card-accent-line {
+  width: 64px;
+}
+
+.member-card-number {
+  font-size: 13px;
+  font-family: monospace;
+  font-weight: 800;
+  color: #00D9FF;
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.member-card-name {
+  font-size: 22px;
+  font-weight: 850;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.member-card-position {
+  font-size: 14px;
+  color: #CBD5E1;
+  font-weight: 500;
+}
+
+/* Card Hover Social Icons Container (Hidden by default, revealed on card hover) */
+.card-hover-socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.team-member-card:hover .card-hover-socials {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.card-social-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.5px solid rgba(0, 217, 255, 0.35);
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-social-icon-btn:hover {
+  background: #FFFFFF;
+  border-color: #00D9FF;
+  color: #0077B6;
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 6px 18px rgba(0, 217, 255, 0.35);
+}
+
+
+/* ==========================================================================
+   SECTION 7: A MESSAGE FROM OUR CEO
+   ========================================================================== */
+.team-quote-section {
+  padding: 90px 32px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.quote-container {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.quote-glass-card {
+  position: relative;
+  padding: 56px 48px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border: 1px solid rgba(0, 180, 230, 0.22);
+  box-shadow: 0 10px 36px rgba(11, 59, 96, 0.07), inset 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+.quote-header-strip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.quote-mark-icon { color: #00D9FF; }
+
+.quote-label {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #0077B6;
+  text-transform: uppercase;
+}
+
+.quote-headline {
+  font-size: clamp(22px, 2.2vw, 30px);
+  font-weight: 700;
+  line-height: 1.45;
+  color: #061329;
+  margin-bottom: 32px;
+}
+
+.quote-author-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.author-avatar-dot {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #061329 0%, #0077B6 100%);
+  color: #00D9FF;
+  font-size: 15px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 217, 255, 0.3);
+}
+
+.author-details { display: flex; flex-direction: column; }
+.author-name { font-size: 17px; font-weight: 800; color: #061329; }
+.author-role { font-size: 14px; color: #64748B; font-weight: 500; }
+
+
+/* ==========================================================================
+   SECTION 8: FINAL CTA
+   ========================================================================== */
+.team-final-cta-section {
+  padding: 100px 32px;
+  background: radial-gradient(circle at 50% 50%, rgba(2, 132, 199, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+.team-cta-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.team-cta-card {
+  position: relative;
+  padding: 60px 48px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1.5px solid rgba(0, 217, 255, 0.3);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 50px rgba(0, 119, 182, 0.08);
+  text-align: center;
+}
+
+.cta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  background: rgba(0, 119, 182, 0.1);
+  color: #0077B6;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
+}
+
+.cta-title {
+  font-size: clamp(32px, 3.2vw, 48px);
+  font-weight: 800;
+  color: #061329;
+  margin-bottom: 16px;
+}
+
+.cta-desc {
+  font-size: 18px;
+  line-height: 1.65;
+  color: #475569;
+  max-width: 640px;
+  margin: 0 auto 36px auto;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.btn-team-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #061329 0%, #0077B6 100%);
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(0, 119, 182, 0.4);
+  transition: all 0.25s ease;
+}
+
+.btn-team-primary:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #0077B6 0%, #00D9FF 100%);
+}
+
+.btn-team-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 28px;
+  border-radius: 12px;
+  background: transparent;
+  border: 1px solid rgba(6, 19, 41, 0.2);
+  color: #061329;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-team-secondary:hover {
+  background: rgba(6, 19, 41, 0.05);
+}
+
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1280px) {
+  .team-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .ceo-asymmetric-grid,
+  .showcase-interactive-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+
+  .ceo-info-left {
+    align-items: center;
+  }
+
+  .ceo-lead-statement {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .signature-3d-sculpture {
+    display: none;
+  }
+
+  .team-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .showcase-portrait-canvas {
+    max-width: 100%;
+    height: 480px;
+  }
+}
+
+@media (max-width: 640px) {
+  .desktop-only-br { display: none; }
+
+  .team-hero-section,
+  .team-main-presentation-section,
+  .our-team-intro-section,
+  .team-cards-grid-section,
+  .team-interactive-showcase-section,
+  .team-quote-section,
+  .team-final-cta-section {
+    padding: 60px 20px;
+  }
+
+  .quote-glass-card,
+  .team-cta-card {
+    padding: 36px 24px;
+  }
+
+  .ceo-portrait-card-wrap {
+    height: 440px;
+  }
+
+  .team-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-image-wrapper {
+    height: 420px;
+  }
+
+  .showcase-portrait-canvas {
+    height: 400px;
+  }
+}

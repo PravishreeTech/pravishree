@@ -70,6 +70,16 @@ export const portfolioItems = [
   },
   {
     id: 'p7',
+    category: 'Websites',
+    title: 'AuraPay Global Checkout & Storefront',
+    client: 'AuraPay Commerce',
+    image: '/assets/portfolio/websites-3.svg',
+    summary: 'Ultra-low latency omnichannel checkout architecture with headless Next.js, multi-currency ledger, and real-time inventory.',
+    tags: ['E-Commerce', 'Next.js', 'Stripe API', 'GraphQL'],
+    year: '2026'
+  },
+  {
+    id: 'p8',
     category: 'VE Works',
     title: '3D Product Reveal & Motion Reel (4K 60FPS)',
     client: 'Quantum Dynamics',
@@ -79,7 +89,7 @@ export const portfolioItems = [
     year: '2026'
   },
   {
-    id: 'p8',
+    id: 'p9',
     category: 'VE Works',
     title: 'Corporate Brand Anthem & VFX Film',
     client: 'Horizon Energy Group',
@@ -89,7 +99,7 @@ export const portfolioItems = [
     year: '2025'
   },
   {
-    id: 'p9',
+    id: 'p10',
     category: 'Softwares (Custom)',
     title: 'HealthSync HIPAA Telemedicine & EHR Suite',
     client: 'HealthSync Network',
@@ -99,7 +109,7 @@ export const portfolioItems = [
     year: '2026'
   },
   {
-    id: 'p10',
+    id: 'p11',
     category: 'Softwares (Custom)',
     title: 'LogiTrack AI Fleet Logistics ERP System',
     client: 'LogiTrack Freight Global',
@@ -107,5 +117,16 @@ export const portfolioItems = [
     summary: 'Real-time telemetry tracking, automated route dispatching, and predictive vehicle maintenance algorithms.',
     tags: ['Custom Software', 'AI Logistics', 'IoT Dashboard', 'API Engine'],
     year: '2025'
+  },
+  {
+    id: 'p12',
+    category: 'Softwares (Custom)',
+    title: 'FinPulse Automated Financial Analytics Suite',
+    client: 'FinPulse Treasury Group',
+    image: '/assets/portfolio/software-3.svg',
+    summary: 'Multi-tenant cloud financial analytics software with predictive forecasting, tax calculation engines, and ERP sync.',
+    tags: ['Custom Software', 'FinTech ERP', 'Python/Node', 'PostgreSQL'],
+    year: '2026'
   }
 ];
+

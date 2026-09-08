@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Send, Briefcase, MapPin, Clock, CheckCircle2, UploadCloud } from 'lucide-react';
+import { X, Briefcase, MapPin, Clock, CheckCircle2, UploadCloud } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import './Modal.css';
 

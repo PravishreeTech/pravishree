@@ -29,7 +29,7 @@ import {
 } from 'lucide-react';
 import './Sidebar.css';
 
-export default function Sidebar({ isOpen, onClose }) {
+export default function Sidebar({ isOpen, onClose, currentPage = 'home', onNavigate }) {
   const [activeSection, setActiveSection] = useState('hero');
   const [openDropdown, setOpenDropdown] = useState(null); // 'about' | 'services' | 'portfolio'
   const [openNestedBpo, setOpenNestedBpo] = useState(false);
@@ -61,11 +61,13 @@ export default function Sidebar({ isOpen, onClose }) {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Scroll detection for active icon
+  // Scroll detection for active icon (only when on home page)
   useEffect(() => {
+    if (currentPage !== 'home') return;
+
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 220;
-      const sectionIds = ['contact', 'careers', 'team', 'portfolio', 'services', 'about', 'hero'];
+      const sectionIds = ['contact', 'careers', 'team', 'testimonials', 'how-we-work', 'why-us', 'portfolio', 'technologies', 'services', 'about', 'hero'];
 
       for (let id of sectionIds) {
         if (id === 'hero') {
@@ -89,21 +91,64 @@ export default function Sidebar({ isOpen, onClose }) {
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [currentPage]);
 
-  // Single Click -> Direct Navigation
+  const currentActive = currentPage !== 'home' ? currentPage : activeSection;
+
+  // Single Click -> Direct Navigation / Page Switch
   const handleSingleClick = (item) => {
     setOpenDropdown(null);
     setOpenNestedBpo(false);
     setActiveSection(item.id);
     if (onClose) onClose();
 
-    if (item.targetId === 'hero') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (item.id === 'about') {
+      if (onNavigate) {
+        onNavigate('about');
+      } else {
+        const el = document.getElementById('about');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else if (item.id === 'services') {
+      if (onNavigate) {
+        onNavigate('services');
+      } else {
+        const el = document.getElementById('services');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else if (item.id === 'team') {
+      if (onNavigate) {
+        onNavigate('team');
+      } else {
+        const el = document.getElementById('team');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else if (item.id === 'careers') {
+      if (onNavigate) {
+        onNavigate('careers');
+      } else {
+        const el = document.getElementById('careers');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else if (item.id === 'contact') {
+      if (onNavigate) {
+        onNavigate('contact');
+      } else {
+        const el = document.getElementById('contact');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else if (item.id === 'hero') {
+      if (onNavigate) {
+        onNavigate('home', 'hero');
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     } else {
-      const el = document.getElementById(item.targetId);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
+      if (onNavigate) {
+        onNavigate('home', item.targetId);
+      } else {
+        const el = document.getElementById(item.targetId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
       }
     }
   };
@@ -143,9 +188,27 @@ export default function Sidebar({ isOpen, onClose }) {
     setOpenNestedBpo(false);
     if (onClose) onClose();
 
-    const el = document.getElementById(targetId);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+    if (targetId === 'mission' || targetId === 'vision' || targetId === 'about-story' || targetId === 'about') {
+      if (onNavigate) {
+        onNavigate('about', targetId);
+      } else {
+        const el = document.getElementById(targetId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else if (targetId.startsWith('services') || targetId.startsWith('service-')) {
+      if (onNavigate) {
+        onNavigate('services', targetId);
+      } else {
+        const el = document.getElementById(targetId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      if (onNavigate) {
+        onNavigate('home', targetId);
+      } else {
+        const el = document.getElementById(targetId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -186,7 +249,7 @@ export default function Sidebar({ isOpen, onClose }) {
           <ul className="sidebar-menu-list">
             {navItems.map((item) => {
               const IconComp = item.icon;
-              const isActive = activeSection === item.id;
+              const isActive = currentActive === item.id;
               const isDropdownOpen = openDropdown === item.id;
               const isHovered = hoveredItem === item.id;
 

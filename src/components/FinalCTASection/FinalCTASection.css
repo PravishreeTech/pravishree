@@ -1,0 +1,141 @@
+/* ==========================================================================
+   Final CTA Section Styles
+   ========================================================================== */
+
+.final-cta-section {
+  padding: 8rem 0 7rem;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-radial-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  opacity: 0.35;
+  z-index: 1;
+}
+
+.cta-radial-glow.glow-1 {
+  top: 10%;
+  left: 20%;
+  background: radial-gradient(circle, rgba(0, 180, 216, 0.4) 0%, transparent 70%);
+}
+
+.cta-radial-glow.glow-2 {
+  bottom: 10%;
+  right: 20%;
+  background: radial-gradient(circle, rgba(11, 59, 96, 0.3) 0%, transparent 70%);
+}
+
+.final-cta-card {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 4.5rem 3.5rem;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border: 1px solid rgba(0, 180, 230, 0.22);
+  border-radius: var(--border-radius-xl);
+  box-shadow: 0 10px 36px rgba(11, 59, 96, 0.07), inset 0 0 20px rgba(255, 255, 255, 0.6);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.cta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.42rem 1.1rem;
+  background: var(--color-accent-light);
+  border: 1px solid rgba(0, 150, 199, 0.25);
+  border-radius: var(--border-radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.cta-headline {
+  font-family: var(--font-heading);
+  font-size: clamp(2.3rem, 4.5vw, 3.65rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text-heading);
+  letter-spacing: -0.025em;
+}
+
+.cta-lead-desc {
+  font-size: clamp(1.05rem, 1.4vw, 1.22rem);
+  color: var(--text-muted);
+  line-height: 1.65;
+  max-width: 640px;
+}
+
+.cta-button-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+
+.cta-btn-glow {
+  padding: 0.95rem 2.25rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: var(--border-radius-pill);
+  box-shadow: 0 8px 28px rgba(0, 150, 199, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.cta-btn-glow:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(0, 150, 199, 0.5);
+}
+
+.cta-btn-outline {
+  padding: 0.95rem 2.1rem;
+  font-size: 1.02rem;
+  font-weight: 700;
+  border-radius: var(--border-radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.cta-btn-outline:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .final-cta-card {
+    padding: 3rem 1.75rem;
+  }
+
+  .cta-button-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-btn-glow, .cta-btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -174,11 +174,18 @@ img, svg {
   }
 }
 
-/* Section Header Shared Utility */
+/* Section Header Shared Utility with Glass Backdrop */
 .section-header {
   text-align: center;
-  max-width: 760px;
+  max-width: 780px;
   margin: 0 auto 3.5rem auto;
+  padding: 1.75rem 2.25rem;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border: 1px solid rgba(0, 180, 230, 0.22);
+  border-radius: var(--border-radius-lg, 22px);
+  box-shadow: 0 10px 32px rgba(11, 59, 96, 0.06), inset 0 0 15px rgba(255, 255, 255, 0.6);
 }
 
 .section-badge {
@@ -306,20 +313,23 @@ img, svg {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* Glassmorphism Card Base */
-.glass-card {
-  background: var(--bg-glass);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  box-shadow: var(--shadow-md);
+/* Glassmorphism Card Base & Readability Backdrops */
+.glass-card,
+.glass-readability-card,
+.glass-text-backdrop {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border: 1px solid rgba(0, 180, 230, 0.22);
+  box-shadow: var(--shadow-md), inset 0 0 20px rgba(255, 255, 255, 0.5);
   border-radius: var(--border-radius-lg);
   transition: all var(--transition-smooth);
 }
 
-.glass-card:hover {
-  box-shadow: var(--shadow-xl);
-  border-color: rgba(0, 150, 199, 0.3);
+.glass-card:hover,
+.glass-readability-card:hover {
+  box-shadow: var(--shadow-xl), 0 0 30px rgba(0, 180, 230, 0.15);
+  border-color: rgba(0, 180, 230, 0.4);
 }
 
 /* ==========================================================================
@@ -463,6 +473,151 @@ img, svg {
   animation: floatAnim 4s ease-in-out infinite;
 }
 
+/* ==========================================================================
+   Antigravity Premium Motion & Scroll Reveal System
+   ========================================================================== */
+
+/* Ambient Oversized Background Typography */
+.ambient-watermark-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ambient-watermark-text {
+  position: absolute;
+  font-family: var(--font-heading);
+  font-size: clamp(5.5rem, 13vw, 15rem);
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+  user-select: none;
+  white-space: nowrap;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg, 
+    rgba(0, 119, 182, 0.12) 0%, 
+    rgba(0, 180, 216, 0.08) 50%, 
+    rgba(11, 59, 96, 0.03) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.5px rgba(0, 119, 182, 0.15);
+  filter: drop-shadow(0 4px 20px rgba(0, 150, 199, 0.06));
+  will-change: transform;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* 1. Line-by-Line Typography Reveal */
+.reveal-line {
+  display: block;
+  opacity: 0;
+  transform: translateY(45px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.is-revealed .reveal-line,
+.reveal-line.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-line-delay-1 { transition-delay: 0.1s; }
+.reveal-line-delay-2 { transition-delay: 0.2s; }
+.reveal-line-delay-3 { transition-delay: 0.3s; }
+.reveal-line-delay-4 { transition-delay: 0.4s; }
+
+/* 2. Alternating Horizontal Reveals for Editorial Layouts */
+.reveal-slide-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.is-revealed .reveal-slide-left,
+.reveal-slide-left.is-revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-slide-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.is-revealed .reveal-slide-right,
+.reveal-slide-right.is-revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 3. Cinematic Clip-Path Visual Reveal */
+.reveal-clip {
+  clip-path: inset(8% 8% 8% 8%);
+  transform: scale(1.06);
+  opacity: 0.7;
+  transition: clip-path 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+  will-change: clip-path, transform, opacity;
+}
+
+.is-revealed .reveal-clip,
+.reveal-clip.is-revealed {
+  clip-path: inset(0 0 0 0);
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* 4. Staggered Service & Feature Cards */
+.reveal-stagger-card {
+  opacity: 0;
+  transform: translateY(60px) scale(0.96);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.is-revealed .reveal-stagger-card,
+.reveal-stagger-card.is-revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* 5. Scale Reveal */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.is-revealed .reveal-scale,
+.reveal-scale.is-revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Section Header Scroll Reveal Defaults */
+.section-header {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section-header.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -471,4 +626,5 @@ img, svg {
     scroll-behavior: auto !important;
   }
 }
+
 
