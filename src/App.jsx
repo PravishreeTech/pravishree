@@ -7,11 +7,11 @@ import TopHeroShowcase from './components/TopHeroShowcase/TopHeroShowcase';
 import AboutSection from './components/AboutSection/AboutSection';
 import AboutPage from './components/AboutPage/AboutPage';
 import ServicesPage from './components/ServicesPage/ServicesPage';
+import PortfolioPage from './components/PortfolioPage/PortfolioPage';
 import TeamPage from './components/TeamPage/TeamPage';
 import CareersPage from './components/CareersPage/CareersPage';
 import ContactPage from './components/ContactPage/ContactPage';
 import ServicesSection from './components/ServicesSection/ServicesSection';
-import TechnologiesSection from './components/TechnologiesSection/TechnologiesSection';
 import PortfolioSection from './components/PortfolioSection/PortfolioSection';
 import WhyChooseUs from './components/WhyChooseUs/WhyChooseUs';
 import ProcessSection from './components/ProcessSection/ProcessSection';
@@ -47,6 +47,8 @@ export default function App() {
         setCurrentPage('about');
       } else if (hash === '#services' || hash === '#services-page' || hash.startsWith('#services-') || hash.startsWith('#service-')) {
         setCurrentPage('services');
+      } else if (hash === '#portfolio' || hash === '#portfolio-page' || hash.startsWith('#portfolio-')) {
+        setCurrentPage('portfolio');
       } else if (hash === '#team' || hash === '#team-page' || hash === '#leadership' || hash.startsWith('#team-')) {
         setCurrentPage('team');
       } else if (hash === '#careers' || hash === '#career' || hash === '#careers-page' || hash.startsWith('#career-') || hash.startsWith('#job-')) {
@@ -110,6 +112,17 @@ export default function App() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
       if (targetElementId && targetElementId !== 'services') {
+        setTimeout(() => {
+          const el = document.getElementById(targetElementId);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
+      }
+    } else if (page === 'portfolio') {
+      setCurrentPage('portfolio');
+      window.history.pushState(null, '', targetElementId ? `#${targetElementId}` : '#portfolio');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      if (targetElementId && targetElementId !== 'portfolio') {
         setTimeout(() => {
           const el = document.getElementById(targetElementId);
           if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -219,6 +232,13 @@ export default function App() {
               onNavigateHome={() => handleNavigate('home', 'hero')}
               onOpenContact={handleOpenContactWithService}
             />
+          ) : currentPage === 'portfolio' ? (
+            /* Dedicated Portfolio Page View */
+            <PortfolioPage 
+              onNavigateHome={() => handleNavigate('home', 'hero')}
+              onOpenProjectModal={(proj) => setSelectedProject(proj)}
+              onOpenContact={handleOpenContactWithService}
+            />
           ) : currentPage === 'team' ? (
             /* Dedicated Team / Leadership Page View */
             <TeamPage 
@@ -247,15 +267,12 @@ export default function App() {
               {/* 2. ABOUT: More Than Technology. We Build Possibilities. */}
               <AboutSection />
 
-              {/* 3. SERVICES: 8 Premium Service Cards Grid */}
+              {/* 3. SERVICES: 6 Core Official Service Cards Grid */}
               <ServicesSection 
                 onSelectService={handleOpenContactWithService} 
               />
 
-              {/* 4. TECHNOLOGIES: Technologies That Power Our Solutions */}
-              <TechnologiesSection />
-
-              {/* 5. PORTFOLIO: Ideas Into Impact (Large Visual Presentation) */}
+              {/* 4. PORTFOLIO: Ideas Into Impact (Large Visual Presentation) */}
               <PortfolioSection 
                 onOpenProjectModal={(proj) => setSelectedProject(proj)} 
               />

@@ -8,8 +8,7 @@ import {
   ArrowRight,
   Eye,
   Target,
-  Building2,
-  Globe
+  Building2
 } from 'lucide-react';
 import './AboutSection.css';
 
@@ -150,27 +149,6 @@ export default function AboutSection() {
           {/* Right Column: Certified Tech Solution Firm Panel */}
           <div className="about-visual-col reveal-slide-right">
             
-            {/* 3D Focal Glass Sphere Stage (copied from Contact page) */}
-            <div className="home-glass-orb-stage-wrapper">
-              <div className="contact-glass-orb-stage">
-                <div className="orb-glass-sphere">
-                  <div className="sphere-inner-ring ring-1"></div>
-                  <div className="sphere-inner-ring ring-2"></div>
-                  <div className="sphere-inner-ring ring-3"></div>
-                  <div className="sphere-ambient-glow"></div>
-                </div>
-
-                <div className="orb-meta-chip top-left">
-                  <Globe size={14} className="icon-cyan" />
-                  <span>Global Technology Hub</span>
-                </div>
-                <div className="orb-meta-chip bottom-right">
-                  <ShieldCheck size={14} className="icon-teal" />
-                  <span>24/7 Operational SLA</span>
-                </div>
-              </div>
-            </div>
-
             {/* Supporting Visual Card */}
             <div className="about-visual-preview-card glass-card reveal-clip">
               <div className="about-visual-header">

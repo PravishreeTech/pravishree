@@ -54,22 +54,22 @@ export default function AboutPage({ onNavigateHome, onOpenContact }) {
     {
       badge: '2019',
       title: 'Founded',
-      desc: 'Pravishree was established in Visakhapatnam with a focus on digital and technology solutions.'
+      desc: 'Pravishree was established in Visakhapatnam with a focus on Software Development and digital solutions.'
     },
     {
       badge: 'Growth',
-      title: 'Creative Expansion',
-      desc: 'Capabilities expanded across graphics, multimedia, animation, advertising, web design, applications and digital marketing.'
+      title: 'Creative & Digital Expansion',
+      desc: 'Capabilities expanded across Video Editing, Website Development, App Development, and Digital Marketing.'
     },
     {
       badge: 'Technology',
-      title: 'Technology Expansion',
-      desc: 'The company expanded its positioning across software, web, mobile applications, design, digital marketing and IT solutions.'
+      title: 'Full Capabilities Expansion',
+      desc: 'The company integrated its core capabilities across Software Development, Website Development, App Development, Digital Marketing, BPO Services, and Video Editing.'
     },
     {
       badge: 'Today',
       title: 'Digital Solutions Partner',
-      desc: 'Pravishree provides technology, creative, digital and BPO capabilities for domestic and international clients.'
+      desc: 'Pravishree delivers Software Development, Website Development, App Development, Digital Marketing, BPO Services, and Video Editing for global clients.'
     }
   ];
 

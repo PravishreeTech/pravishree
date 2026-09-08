@@ -1,16 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { 
   Code2, 
-  PenTool, 
+  Globe, 
   Smartphone, 
+  TrendingUp, 
   Headphones, 
-  Cloud, 
+  Film,
   ArrowRight, 
   ChevronRight, 
   Sparkles, 
   CheckCircle2, 
-  Globe, 
-  TrendingUp,
   ExternalLink 
 } from 'lucide-react';
 import gsap from 'gsap';
@@ -34,101 +33,87 @@ export default function ServicesPage({ onNavigateHome, onOpenContact }) {
       shortTitle: 'Software Development',
       icon: Code2,
       subtitle: 'Build technology around your business.',
-      description: 'We develop customized software solutions designed around specific business requirements, workflows and long-term growth.',
-      tags: ['Custom Software', 'Business Applications', 'Application Development', 'API Integration', 'Database Solutions', 'Software Support'],
+      description: 'We develop customized software solutions designed around specific business requirements, workflows, enterprise applications, and long-term cloud growth.',
+      tags: ['Custom Software', 'Enterprise Applications', 'API Integration', 'Cloud Architecture', 'Database Systems', 'Software Support'],
       accentColor: '#00D9FF',
       gradient: 'linear-gradient(135deg, #00D9FF 0%, #0077B6 100%)',
       visualStyle: 'art-software'
     },
     {
-      id: 'web',
+      id: 'website',
       number: '02',
-      title: 'WEB DEVELOPMENT',
-      shortTitle: 'Web Development',
+      title: 'WEBSITE DEVELOPMENT',
+      shortTitle: 'Website Development',
       icon: Globe,
       subtitle: 'Digital experiences built for your business.',
-      description: 'We create modern websites and web applications combining functionality, performance, usability and visual design.',
-      tags: ['Corporate Websites', 'Business Websites', 'Web Applications', 'Responsive Development', 'UI Implementation', 'Website Maintenance'],
+      description: 'We create modern, responsive websites and web portals combining high performance, mobile usability, SEO optimization, and premium UI design.',
+      tags: ['Corporate Websites', 'Business Websites', 'Web Portals', 'Responsive Layouts', 'UI/UX Implementation', 'Website Maintenance'],
       accentColor: '#19E6D0',
       gradient: 'linear-gradient(135deg, #19E6D0 0%, #0077B6 100%)',
       visualStyle: 'art-web'
     },
     {
-      id: 'mobile',
+      id: 'app',
       number: '03',
-      title: 'MOBILE APP DEVELOPMENT',
-      shortTitle: 'Mobile Apps',
+      title: 'APP DEVELOPMENT',
+      shortTitle: 'App Development',
       icon: Smartphone,
-      subtitle: 'Turn ideas into mobile experiences.',
-      description: 'We develop Android and iOS applications that help businesses connect with customers and improve digital experiences.',
-      tags: ['Android Applications', 'iOS Applications', 'Cross-Platform Apps', 'Mobile UI/UX', 'Application Integration', 'Maintenance & Support'],
+      subtitle: 'Turn ideas into seamless mobile experiences.',
+      description: 'We develop feature-rich Android and iOS applications that help businesses engage customers, streamline workflows, and power digital products.',
+      tags: ['Android Applications', 'iOS Applications', 'Cross-Platform Apps', 'Mobile UI/UX', 'Real-Time Sync', 'App Store Maintenance'],
       accentColor: '#1677FF',
       gradient: 'linear-gradient(135deg, #1677FF 0%, #00D9FF 100%)',
       visualStyle: 'art-mobile'
     },
     {
-      id: 'design',
-      number: '04',
-      title: 'DESIGN & CREATIVE SOLUTIONS',
-      shortTitle: 'Design & Creative',
-      icon: PenTool,
-      subtitle: 'Make your brand impossible to overlook.',
-      description: 'Our creative capabilities combine visual design, multimedia, animation and digital communication to help businesses build stronger visual identities.',
-      tags: ['Graphic Design', 'Brand Identity', 'Digital Creatives', 'Multimedia', '2D Animation', '3D Animation', 'Advertising Design'],
-      accentColor: '#00D9FF',
-      gradient: 'linear-gradient(135deg, #00D9FF 0%, #1677FF 100%)',
-      visualStyle: 'art-design'
-    },
-    {
       id: 'marketing',
-      number: '05',
+      number: '04',
       title: 'DIGITAL MARKETING',
       shortTitle: 'Digital Marketing',
       icon: TrendingUp,
-      subtitle: 'Turn digital presence into business opportunity.',
-      description: 'We help businesses strengthen their online presence through creative and data-driven digital marketing solutions.',
-      tags: ['Digital Marketing', 'Social Media', 'Online Campaigns', 'Content Strategy', 'Brand Promotion', 'Growth Strategies'],
+      subtitle: 'Turn digital presence into measurable ROI.',
+      description: 'We help organizations accelerate growth through organic SEO, paid media performance campaigns, social media strategy, and conversion optimization.',
+      tags: ['Organic & Technical SEO', 'Performance Ad Campaigns', 'Social Media Marketing', 'Content Strategy', 'Brand Promotion', 'Conversion Optimization'],
       accentColor: '#19E6D0',
       gradient: 'linear-gradient(135deg, #19E6D0 0%, #061329 100%)',
       visualStyle: 'art-marketing'
     },
     {
-      id: 'it',
-      number: '06',
-      title: 'IT CONSULTING & SOLUTIONS',
-      shortTitle: 'IT Consulting',
-      icon: Cloud,
-      subtitle: 'Technology decisions that move your business forward.',
-      description: 'We help organizations identify technology opportunities, develop practical solutions and use digital tools to improve operations.',
-      tags: ['IT Consulting', 'Technology Strategy', 'Digital Solutions', 'Business Applications', 'System Solutions', 'Technical Support'],
-      accentColor: '#00D9FF',
-      gradient: 'linear-gradient(135deg, #00D9FF 0%, #0B1F3A 100%)',
-      visualStyle: 'art-cloud'
-    },
-    {
       id: 'bpo',
-      number: '07',
-      title: 'BPO & BUSINESS OPERATIONS',
-      shortTitle: 'BPO Operations',
+      number: '05',
+      title: 'BPO SERVICES',
+      shortTitle: 'BPO Services',
       icon: Headphones,
-      subtitle: 'Reliable support behind your business.',
-      description: 'Our BPO services help organizations streamline operations and improve customer experiences through domestic and international support capabilities.',
-      tags: ['Domestic Support', 'International Support', 'Customer Support', 'Data Entry', 'Virtual Assistance', 'Technical Support'],
+      subtitle: '24/7 reliable support behind your business.',
+      description: 'Our business process outsourcing desks streamline operations, data management, and customer experiences through domestic and international voice capabilities.',
+      tags: ['Domestic Voice Support', 'International Voice Desks', '24/7 Customer Care', 'Data Entry & Management', 'Virtual Assistance', 'Tier 1/2 Technical Support'],
       tools: ['Zendesk', 'Salesforce', 'Slack', 'Zoom'],
       accentColor: '#1677FF',
       gradient: 'linear-gradient(135deg, #1677FF 0%, #19E6D0 100%)',
       visualStyle: 'art-bpo'
+    },
+    {
+      id: 'video',
+      number: '06',
+      title: 'VIDEO EDITING',
+      shortTitle: 'Video Editing',
+      icon: Film,
+      subtitle: 'Captivating media post-production & motion graphics.',
+      description: 'Our creative post-production studio delivers high-fidelity video editing, 2D/3D motion graphics, color grading, visual effects, and promo films.',
+      tags: ['High-Fidelity Editing', '2D & 3D Motion Graphics', 'Visual Effects (VFX)', 'Color Grading', 'Social Reels & Shorts', 'Corporate Promos'],
+      accentColor: '#10B981',
+      gradient: 'linear-gradient(135deg, #10B981 0%, #00D9FF 100%)',
+      visualStyle: 'art-video'
     }
   ];
 
   const partnerPillars = [
     { label: 'SOFTWARE', title: 'Software Development' },
-    { label: 'WEB', title: 'Web Development' },
-    { label: 'MOBILE', title: 'Mobile App Development' },
-    { label: 'CREATIVE', title: 'Design & Creative Solutions' },
+    { label: 'WEBSITE', title: 'Website Development' },
+    { label: 'APP', title: 'App Development' },
     { label: 'MARKETING', title: 'Digital Marketing' },
-    { label: 'IT', title: 'IT Consulting & Solutions' },
-    { label: 'BPO', title: 'BPO & Business Operations' }
+    { label: 'BPO', title: 'BPO Services' },
+    { label: 'VIDEO', title: 'Video Editing' }
   ];
 
   // Mouse move handler for 3D art parallax
@@ -458,8 +443,8 @@ export default function ServicesPage({ onNavigateHome, onOpenContact }) {
                             </div>
                           )}
 
-                          {/* 02: Web Development */}
-                          {service.id === 'web' && (
+                          {/* 02: Website Development */}
+                          {service.id === 'website' && (
                             <div className="art-web-structure">
                               <div className="web-grid-frame"></div>
                               <div className="web-glass-layer layer-a"></div>
@@ -470,8 +455,8 @@ export default function ServicesPage({ onNavigateHome, onOpenContact }) {
                             </div>
                           )}
 
-                          {/* 03: Mobile App Development */}
-                          {service.id === 'mobile' && (
+                          {/* 03: App Development */}
+                          {service.id === 'app' && (
                             <div className="art-mobile-chassis">
                               <div className="device-frame"></div>
                               <div className="device-layer layer-1"></div>
@@ -482,19 +467,7 @@ export default function ServicesPage({ onNavigateHome, onOpenContact }) {
                             </div>
                           )}
 
-                          {/* 04: Design & Creative Solutions */}
-                          {service.id === 'design' && (
-                            <div className="art-design-sculpture">
-                              <div className="sculpture-ring ring-a"></div>
-                              <div className="sculpture-ring ring-b"></div>
-                              <div className="sculpture-prism"></div>
-                              <div className="matrix-icon-center">
-                                <PenTool size={80} style={{ color: service.accentColor }} />
-                              </div>
-                            </div>
-                          )}
-
-                          {/* 05: Digital Marketing */}
+                          {/* 04: Digital Marketing */}
                           {service.id === 'marketing' && (
                             <div className="art-marketing-growth">
                               <div className="growth-chart-ring r1"></div>
@@ -505,19 +478,7 @@ export default function ServicesPage({ onNavigateHome, onOpenContact }) {
                             </div>
                           )}
 
-                          {/* 06: IT Consulting & Solutions */}
-                          {service.id === 'it' && (
-                            <div className="art-cloud-structure">
-                              <div className="cloud-orbit orbit-1"></div>
-                              <div className="cloud-orbit orbit-2"></div>
-                              <div className="cloud-core-sphere"></div>
-                              <div className="matrix-icon-center">
-                                <Cloud size={80} style={{ color: service.accentColor }} />
-                              </div>
-                            </div>
-                          )}
-
-                          {/* 07: BPO & Business Operations */}
+                          {/* 05: BPO Services */}
                           {service.id === 'bpo' && (
                             <div className="art-bpo-network">
                               <div className="network-node n1"></div>
@@ -527,6 +488,17 @@ export default function ServicesPage({ onNavigateHome, onOpenContact }) {
                               <div className="network-line l2"></div>
                               <div className="matrix-icon-center">
                                 <Headphones size={80} style={{ color: service.accentColor }} />
+                              </div>
+                            </div>
+                          )}
+
+                          {/* 06: Video Editing */}
+                          {service.id === 'video' && (
+                            <div className="art-bpo-network">
+                              <div className="network-node n1"></div>
+                              <div className="network-node n2"></div>
+                              <div className="matrix-icon-center">
+                                <Film size={80} style={{ color: service.accentColor }} />
                               </div>
                             </div>
                           )}

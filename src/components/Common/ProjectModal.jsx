@@ -1,9 +1,24 @@
-import React from 'react';
-import { X, Calendar, User, ArrowRight } from 'lucide-react';
+import React, { useEffect } from 'react';
+import { X, Calendar, User, ArrowRight, CheckCircle, Code, Layers, Sparkles } from 'lucide-react';
 import './Modal.css';
 
 export default function ProjectModal({ project, onClose }) {
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onClose]);
+
   if (!project) return null;
+
+  const descriptionText = project.description || project.summary || project.shortDescription;
+  const servicesList = project.services || project.tags || [];
+  const techList = project.technologies || [];
+  const featuresList = project.features || [];
 
   return (
     <div className="modal-backdrop" onClick={onClose} role="dialog" aria-modal="true">
@@ -11,8 +26,11 @@ export default function ProjectModal({ project, onClose }) {
         
         <div className="modal-header">
           <div>
-            <span className="modal-tag">{project.category} Project</span>
-            <h3 className="modal-title">{project.title}</h3>
+            <span className="modal-tag">
+              <Sparkles size={13} style={{ marginRight: '6px' }} />
+              {project.category} Project
+            </span>
+            <h3 className="modal-title">{project.title || project.name}</h3>
           </div>
           <button className="modal-close-btn" onClick={onClose} aria-label="Close dialog">
             <X size={20} />
@@ -21,26 +39,61 @@ export default function ProjectModal({ project, onClose }) {
 
         <div className="modal-body">
           <div className="modal-project-img-box">
-            <img src={project.image} alt={project.title} className="modal-project-img" />
+            <img 
+              src={project.image} 
+              alt={project.title || project.name} 
+              className="modal-project-img" 
+            />
           </div>
 
           <div className="modal-project-content">
             <div className="modal-meta-chips">
-              <span><User size={14} /> Client: <strong>{project.client}</strong></span>
-              <span><Calendar size={14} /> Year: <strong>{project.year}</strong></span>
+              {project.client && (
+                <span><User size={14} /> Client: <strong>{project.client}</strong></span>
+              )}
+              {project.year && (
+                <span><Calendar size={14} /> Year: <strong>{project.year}</strong></span>
+              )}
             </div>
 
-            <h4>Project Overview &amp; Impact:</h4>
-            <p className="modal-project-desc">{project.summary}</p>
-            <p className="modal-project-extra">
-              Engineered by Pravishree Design Co. with high visual standard, performance responsiveness, and enterprise compliance.
-            </p>
+            <h4>About Project</h4>
+            <p className="modal-project-desc">{descriptionText}</p>
 
-            <div className="modal-tags-list">
-              {project.tags.map((tag, i) => (
-                <span key={i} className="modal-tech-tag">{tag}</span>
-              ))}
-            </div>
+            {/* Services Delivered */}
+            {servicesList.length > 0 && (
+              <div className="modal-section-group">
+                <h5 className="modal-subheading"><Layers size={14} /> Services Delivered</h5>
+                <div className="modal-tags-list">
+                  {servicesList.map((srv, i) => (
+                    <span key={i} className="modal-tech-tag srv-tag">{srv}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Key Technologies */}
+            {techList.length > 0 && (
+              <div className="modal-section-group">
+                <h5 className="modal-subheading"><Code size={14} /> Technologies Used</h5>
+                <div className="modal-tags-list">
+                  {techList.map((tech, i) => (
+                    <span key={i} className="modal-tech-tag">{tech}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Key Features */}
+            {featuresList.length > 0 && (
+              <div className="modal-section-group">
+                <h5 className="modal-subheading"><CheckCircle size={14} /> Key Features</h5>
+                <ul className="modal-features-list">
+                  {featuresList.map((feat, i) => (
+                    <li key={i}><CheckCircle size={13} className="feat-check" /> {feat}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             <div className="modal-project-action-row">
               <a href="#contact" className="btn-primary" onClick={onClose}>

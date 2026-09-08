@@ -7,11 +7,10 @@ import {
   MapPin, 
   Mail, 
   Phone, 
-  Layers, 
   ArrowRight,
   ShieldCheck,
-  Globe,
-  ExternalLink
+  ExternalLink,
+  Clock
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import gsap from 'gsap';
@@ -25,6 +24,7 @@ export default function ContactPage({ onNavigateHome, onFormSuccess }) {
     fullName: '',
     email: '',
     phone: '',
+    subject: '',
     message: ''
   });
 
@@ -33,7 +33,6 @@ export default function ContactPage({ onNavigateHome, onFormSuccess }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const heroRef = useRef(null);
-  const introRef = useRef(null);
   const formRef = useRef(null);
   const marqueeRef = useRef(null);
   const marqueeTextRef = useRef(null);
@@ -46,31 +45,12 @@ export default function ContactPage({ onNavigateHome, onFormSuccess }) {
       if (heroRef.current) {
         gsap.fromTo(
           heroRef.current.querySelectorAll('.gsap-hero-anim'),
-          { y: 40, opacity: 0 },
-          { y: 0, opacity: 1, duration: 1, stagger: 0.15, ease: 'power3.out' }
-        );
-      }
-
-      // 2. Editorial Intro Line-by-Line Reveal
-      if (introRef.current) {
-        gsap.fromTo(
-          introRef.current.querySelectorAll('.gsap-intro-anim'),
           { y: 35, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.9,
-            stagger: 0.15,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: introRef.current,
-              start: 'top 75%'
-            }
-          }
+          { y: 0, opacity: 1, duration: 0.9, stagger: 0.12, ease: 'power3.out' }
         );
       }
 
-      // 3. Oversized Typography Horizontal Scrub Motion
+      // 2. Oversized Typography Horizontal Scrub Motion
       if (marqueeRef.current && marqueeTextRef.current) {
         gsap.to(marqueeTextRef.current, {
           xPercent: -30,
@@ -143,7 +123,7 @@ export default function ContactPage({ onNavigateHome, onFormSuccess }) {
     <div className="contact-page-root">
       
       {/* =========================================================
-          SECTION 1: 100VH CINEMATIC HERO
+          SECTION 1: HERO HEADER & SOCIAL MEDIA ICONS AT TOP
          ========================================================= */}
       <section className="contact-hero-section" ref={heroRef}>
         <div className="contact-hero-container">
@@ -155,51 +135,47 @@ export default function ContactPage({ onNavigateHome, onFormSuccess }) {
             <span className="breadcrumb-current">Contact Us</span>
           </nav>
 
-          <div className="contact-hero-grid">
-            
-            {/* Left Hero Title & Composition */}
-            <div className="contact-hero-content">
-              <div className="contact-badge-pill gsap-hero-anim">
-                <Sparkles size={14} className="badge-icon" />
-                <span>01 / GET IN TOUCH</span>
-              </div>
-
-              <h1 className="contact-hero-title gsap-hero-anim">
-                CONTACT <br />
-                <span className="gradient-cyan-text">US.</span>
-              </h1>
-
-              <p className="contact-hero-subtitle gsap-hero-anim">
-                Connect with Pravishree Design Co. to engineer practical digital solutions and scale your technology operations.
-              </p>
-
-              <div className="contact-hero-actions gsap-hero-anim">
-                <button className="btn-hero-contact" onClick={scrollToForm}>
-                  <span>Start a Conversation</span>
-                  <ArrowRight size={16} />
-                </button>
-              </div>
+          {/* Main Page Title Header Block */}
+          <div className="contact-page-header">
+            <div className="contact-badge-pill gsap-hero-anim">
+              <Sparkles size={14} className="badge-icon" />
+              <span>01 / GET IN TOUCH</span>
             </div>
 
-            {/* Right 3D Focal Glass Sphere Stage */}
-            <div className="contact-hero-stage gsap-hero-anim">
-              <div className="contact-glass-orb-stage">
-                <div className="orb-glass-sphere">
-                  <div className="sphere-inner-ring ring-1"></div>
-                  <div className="sphere-inner-ring ring-2"></div>
-                  <div className="sphere-inner-ring ring-3"></div>
-                  <div className="sphere-ambient-glow"></div>
-                </div>
+            <h1 className="contact-page-title gsap-hero-anim">
+              CONTACT <span className="gradient-cyan-text">US.</span>
+            </h1>
 
-                <div className="orb-meta-chip top-left">
-                  <Globe size={14} className="icon-cyan" />
-                  <span>Global Technology Hub</span>
-                </div>
-                <div className="orb-meta-chip bottom-right">
-                  <ShieldCheck size={14} className="icon-teal" />
-                  <span>24/7 Operational SLA</span>
-                </div>
-              </div>
+            <p className="contact-page-subtitle gsap-hero-anim">
+              Connect with Pravishree Design Co. to engineer practical digital solutions and scale your technology operations.
+            </p>
+
+            {/* Top Social Media Icons Row */}
+            <div className="contact-social-row gsap-hero-anim">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="contact-social-btn" title="LinkedIn" aria-label="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                <span className="social-lbl">LinkedIn</span>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="contact-social-btn" title="Twitter / X" aria-label="Twitter / X">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+                <span className="social-lbl">Twitter / X</span>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="contact-social-btn" title="Instagram" aria-label="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                <span className="social-lbl">Instagram</span>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="contact-social-btn" title="Facebook" aria-label="Facebook">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                <span className="social-lbl">Facebook</span>
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="contact-social-btn" title="GitHub" aria-label="GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                <span className="social-lbl">GitHub</span>
+              </a>
+              <a href="mailto:info@pravishree.com" className="contact-social-btn" title="Email Us Direct" aria-label="Email Us Direct">
+                <Mail size={18} />
+                <span className="social-lbl">Direct Email</span>
+              </a>
             </div>
 
           </div>
@@ -209,58 +185,97 @@ export default function ContactPage({ onNavigateHome, onFormSuccess }) {
 
 
       {/* =========================================================
-          SECTION 2: EDITORIAL INTRODUCTION (LIGHT BACKGROUND)
+          SECTION 2: REPOSITIONED ANIMATED TYPOGRAPHY MARQUEE
          ========================================================= */}
-      <section className="contact-intro-section" ref={introRef}>
-        <div className="contact-intro-container">
-          <span className="intro-eyebrow gsap-intro-anim">01 / LET'S CONNECT</span>
-          <h2 className="intro-headline gsap-intro-anim">
-            Let's build something <span className="text-gradient-dark">meaningful together.</span>
-          </h2>
-          <p className="intro-para gsap-intro-anim">
-            Have an idea, project, or business challenge in mind? Let's connect and explore how technology, creativity, and practical digital solutions can move your business forward.
-          </p>
+      <section className="contact-marquee-section" ref={marqueeRef}>
+        <div className="marquee-track-wrap">
+          <div className="marquee-text-content" ref={marqueeTextRef}>
+            <span>TECHNOLOGY.</span>
+            <span className="outline">CREATIVITY.</span>
+            <span>POSSIBILITY.</span>
+            <span className="outline">PRAVISHREE.</span>
+          </div>
         </div>
       </section>
 
 
       {/* =========================================================
-          SECTION 3: CINEMATIC CONTACT FORM (DARK NAVY ENVIRONMENT)
+          SECTION 3: MAIN 2-COLUMN CONTACT GRID (LEFT: INFO + MAP, RIGHT: FORM)
          ========================================================= */}
-      <section className="contact-form-section" id="contact-form-section" ref={formRef}>
-        <div className="contact-form-container">
+      <section className="contact-main-grid-section" id="contact-form-section" ref={formRef}>
+        <div className="contact-main-container">
           
-          <div className="contact-form-grid">
+          <div className="contact-two-col-grid">
             
-            {/* LEFT SIDE: Heading & 3D Visual */}
-            <div className="form-left-col">
-              <span className="form-eyebrow">02 / START A CONVERSATION</span>
-              <h2 className="form-headline">Tell us what you're building.</h2>
-              <p className="form-para">
-                Whether you're launching a new digital product, modernizing an existing system, or looking for a technology partner, we'd love to hear from you.
-              </p>
+            {/* LEFT COLUMN: Contact Details & Google Map */}
+            <div className="contact-left-col">
+              
+              {/* Info Card */}
+              <div className="contact-info-card glass-card">
+                <div className="c-card-badge">
+                  <Sparkles size={14} className="icon-cyan" />
+                  <span>Direct Solutions Desk</span>
+                </div>
+                <h3 className="c-card-title">Speak Directly With Our Engineering &amp; Business Leads</h3>
+                <p className="c-card-para">
+                  Whether you're launching a new digital product, modernizing an existing system, or looking for a technology partner, we're here to help.
+                </p>
 
-              <div className="form-left-visual-box">
-                <div className="visual-network-card glass-card">
-                  <div className="v-card-badge">
-                    <Sparkles size={14} className="icon-cyan" />
-                    <span>Direct Solutions Desk</span>
+                <div className="c-card-highlights">
+                  <div className="c-highlight-item">
+                    <Clock size={16} className="icon-cyan" />
+                    <span>Response Time: Within 24 hours</span>
                   </div>
-                  <p className="v-card-text">
-                    Every inquiry is reviewed by our engineering and business leads. We respond within 24 hours.
-                  </p>
-                  <div className="v-card-nda">
+                  <div className="c-highlight-item">
                     <ShieldCheck size={16} className="icon-teal" />
                     <span>Mutual Non-Disclosure Agreement (NDA) Protected</span>
                   </div>
                 </div>
               </div>
+
+              {/* Map Card */}
+              <div className="contact-map-card glass-card">
+                <div className="map-card-header">
+                  <MapPin size={16} className="icon-cyan" />
+                  <span>Corporate Headquarters · Visakhapatnam</span>
+                </div>
+
+                <div className="map-iframe-wrapper">
+                  <iframe
+                    title="Pravishree Design Co. Office Location"
+                    src="https://maps.google.com/maps?q=Visakhapatnam%2C%20Andhra%20Pradesh%2C%20India&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+
+                  <a 
+                    href="https://www.google.com/maps/search/?api=1&query=Visakhapatnam%2C+Andhra+Pradesh%2C+India" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="btn-open-google-maps"
+                    aria-label="Open location in Google Maps"
+                  >
+                    <span>Open in Google Maps</span>
+                    <ExternalLink size={14} />
+                  </a>
+                </div>
+              </div>
+
             </div>
 
-            {/* RIGHT SIDE: Translucent Glass Contact Form */}
-            <div className="form-right-col">
-              <div className="contact-glass-form-card glass-card">
+            {/* RIGHT COLUMN: PRIMARY LARGE CONTACT FORM */}
+            <div className="contact-right-col">
+              <div className="contact-form-glass-card glass-card">
                 
+                <div className="form-card-header">
+                  <h2 className="form-card-title">Tell us what you're building.</h2>
+                  <p className="form-card-subtitle">Fill in your requirements below and our team will get right back to you.</p>
+                </div>
+
                 {isSubmitted ? (
                   <div className="form-success-state">
                     <CheckCircle2 size={54} className="text-cyan" />
@@ -272,15 +287,16 @@ export default function ContactPage({ onNavigateHome, onFormSuccess }) {
                       className="btn-form-reset"
                       onClick={() => {
                         setIsSubmitted(false);
-                        setFormData({ fullName: '', email: '', phone: '', message: '' });
+                        setFormData({ fullName: '', email: '', phone: '', subject: '', message: '' });
                       }}
                     >
                       Send Another Message
                     </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} noValidate>
+                  <form onSubmit={handleSubmit} noValidate className="contact-form-element">
                     
+                    {/* Full Name */}
                     <div className="form-field">
                       <label htmlFor="fullName">Your Name <span className="req">*</span></label>
                       <input
@@ -295,9 +311,10 @@ export default function ContactPage({ onNavigateHome, onFormSuccess }) {
                       {errors.fullName && <span className="field-error">{errors.fullName}</span>}
                     </div>
 
+                    {/* Email & Phone Two-Grid */}
                     <div className="form-two-grid">
                       <div className="form-field">
-                        <label htmlFor="email">Email Address <span className="req">*</span></label>
+                        <label htmlFor="email">Work Email <span className="req">*</span></label>
                         <input
                           type="email"
                           id="email"
@@ -316,19 +333,33 @@ export default function ContactPage({ onNavigateHome, onFormSuccess }) {
                           type="tel"
                           id="phone"
                           name="phone"
-                          placeholder="+91 / +1 (555) 000-0000"
+                          placeholder="+91 83319 62896"
                           value={formData.phone}
                           onChange={handleChange}
                         />
                       </div>
                     </div>
 
+                    {/* Subject / Service Interest */}
+                    <div className="form-field">
+                      <label htmlFor="subject">Subject / Service of Interest</label>
+                      <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        placeholder="e.g. Software Development / Website Development / BPO Services"
+                        value={formData.subject}
+                        onChange={handleChange}
+                      />
+                    </div>
+
+                    {/* Message */}
                     <div className="form-field">
                       <label htmlFor="message">Your Message <span className="req">*</span></label>
                       <textarea
                         id="message"
                         name="message"
-                        rows="4"
+                        rows="5"
                         placeholder="Tell us about your project scope, goals, or operational needs..."
                         value={formData.message}
                         onChange={handleChange}
@@ -337,6 +368,7 @@ export default function ContactPage({ onNavigateHome, onFormSuccess }) {
                       {errors.message && <span className="field-error">{errors.message}</span>}
                     </div>
 
+                    {/* Submit Button */}
                     <button type="submit" className="btn-send-message" disabled={isSubmitting}>
                       {isSubmitting ? (
                         <span>Sending Message...</span>
@@ -361,150 +393,53 @@ export default function ContactPage({ onNavigateHome, onFormSuccess }) {
 
 
       {/* =========================================================
-          SECTION 4: CONTACT INFORMATION GRID (LIGHT BACKGROUND)
+          SECTION 4: BOTTOM ROW CARDS (PHONE / EMAIL / ADDRESS)
          ========================================================= */}
-      <section className="contact-info-grid-section">
-        <div className="contact-info-container">
+      <section className="contact-bottom-cards-section">
+        <div className="contact-bottom-container">
           
-          <div className="info-grid-header">
-            <span className="section-eyebrow">03 / DIRECT REACH</span>
-            <h2 className="section-title">Corporate Information</h2>
-          </div>
-
-          <div className="contact-editorial-grid">
+          <div className="contact-three-cards-grid">
             
-            {/* 01: LOCATION */}
-            <div className="info-editorial-card">
-              <span className="info-num">01</span>
-              <span className="info-label">LOCATION</span>
-              <h3 className="info-val">Visakhapatnam, India</h3>
-              <p className="info-sub-val">Andhra Pradesh · Technology Corridor</p>
-            </div>
-
-            {/* 02: EMAIL */}
-            <div className="info-editorial-card">
-              <span className="info-num">02</span>
-              <span className="info-label">EMAIL</span>
-              <a href="mailto:info@pravishreedesign.com" className="info-val link">
-                info@pravishreedesign.com
-              </a>
-              <p className="info-sub-val">business@pravishreedesign.com</p>
-            </div>
-
-            {/* 03: PHONE */}
-            <div className="info-editorial-card">
-              <span className="info-num">03</span>
-              <span className="info-label">PHONE</span>
-              <a href="tel:+919876543210" className="info-val link">
-                +91 (0) 98765 43210
-              </a>
-              <p className="info-sub-val">Mon – Fri (9:00 AM – 7:00 PM IST)</p>
-            </div>
-
-            {/* 04: SERVICES */}
-            <div className="info-editorial-card">
-              <span className="info-num">04</span>
-              <span className="info-label">SERVICES</span>
-              <h3 className="info-val">Technology · Design</h3>
-              <p className="info-sub-val">Digital Solutions · Global BPO Desks</p>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-
-      {/* =========================================================
-          SECTION 5: OVERSIZED TYPOGRAPHY SECTION
-         ========================================================= */}
-      <section className="contact-marquee-section" ref={marqueeRef}>
-        <div className="marquee-track-wrap">
-          <div className="marquee-text-content" ref={marqueeTextRef}>
-            <span>TECHNOLOGY.</span>
-            <span className="outline">CREATIVITY.</span>
-            <span>POSSIBILITY.</span>
-            <span className="outline">PRAVISHREE.</span>
-          </div>
-        </div>
-      </section>
-
-
-      {/* =========================================================
-          SECTION 6: REAL GOOGLE MAPS LOCATION SECTION
-         ========================================================= */}
-      <section className="contact-map-section">
-        <div className="map-section-container">
-          
-          <div className="map-header">
-            <span className="section-eyebrow">04 / HEADQUARTERS</span>
-            <h2 className="section-title">Find us in Visakhapatnam.</h2>
-            <p className="map-subtitle">
-              <MapPin size={17} className="inline-location-icon" />
-              <span>Visakhapatnam, Andhra Pradesh, India</span>
-            </p>
-          </div>
-
-          <div className="map-graphic-box">
-            <div className="map-iframe-container">
-              <iframe
-                title="Pravishree Design Co. Office Location"
-                src="https://maps.google.com/maps?q=Visakhapatnam%2C%20Andhra%20Pradesh%2C%20India&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-
-              <div className="map-overlay-chip">
-                <MapPin size={15} className="icon-cyan" />
-                <span>Pravishree Design Co. · Visakhapatnam</span>
+            {/* CARD 1: PHONE */}
+            <div className="bottom-info-card glass-card">
+              <div className="info-card-icon-wrap blue">
+                <Phone size={22} />
               </div>
-
-              <a 
-                href="https://www.google.com/maps/search/?api=1&query=Visakhapatnam%2C+Andhra+Pradesh%2C+India" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn-open-google-maps"
-                aria-label="Open location in Google Maps"
-              >
-                <span>Open in Google Maps</span>
-                <ExternalLink size={14} />
+              <span className="info-card-label">PHONE</span>
+              <a href="tel:+918331962896" className="info-card-value link">
+                +91 83319 62896
               </a>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-
-      {/* =========================================================
-          SECTION 7: FINAL CTA (DARK NAVY ENVIRONMENT)
-         ========================================================= */}
-      <section className="contact-final-cta-section">
-        <div className="cta-section-container">
-          <div className="cta-content-card glass-card">
-            <div className="cta-badge">
-              <Sparkles size={14} className="icon-cyan" />
-              <span>LET'S TALK</span>
+              <span className="info-card-subval">Mon – Fri (9:00 AM – 7:00 PM IST)</span>
             </div>
 
-            <h2 className="cta-title">Let's build what's next.</h2>
+            {/* CARD 2: EMAIL */}
+            <div className="bottom-info-card glass-card">
+              <div className="info-card-icon-wrap cyan">
+                <Mail size={22} />
+              </div>
+              <span className="info-card-label">EMAIL</span>
+              <a href="mailto:info@pravishree.com" className="info-card-value link">
+                info@pravishree.com
+              </a>
+              <span className="info-card-subval">business@pravishreedesign.com</span>
+            </div>
 
-            <p className="cta-para">
-              Have a project in mind? Let's turn your idea into a practical digital solution.
-            </p>
+            {/* CARD 3: ADDRESS */}
+            <div className="bottom-info-card glass-card">
+              <div className="info-card-icon-wrap teal">
+                <MapPin size={22} />
+              </div>
+              <span className="info-card-label">ADDRESS</span>
+              <h3 className="info-card-value">Visakhapatnam, India</h3>
+              <span className="info-card-subval">Andhra Pradesh · Technology Corridor</span>
+            </div>
 
-            <button className="btn-cta-action" onClick={scrollToForm}>
-              <span>Start a Conversation</span>
-              <ArrowRight size={16} />
-            </button>
           </div>
+
         </div>
       </section>
 
     </div>
   );
 }
+

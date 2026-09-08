@@ -6,7 +6,7 @@ import {
   MapPin, 
   Clock, 
   CheckCircle2, 
-  Send,
+  Mail,
   Zap,
   Coffee,
   HeartHandshake,
@@ -15,8 +15,37 @@ import {
 import { careersData } from '../../data/careersData';
 import './CareersPage.css';
 
-export default function CareersPage({ onNavigateHome, onOpenApplyModal }) {
+// 4 explicit job option cards with descriptions for Join Us panel
+const joinUsOptions = [
+  { 
+    id: 'dev', 
+    label: 'Development', 
+    desc: 'Build and maintain modern websites, web applications, and software solutions using current technologies and development practices.',
+    jobId: 'data-annotators' 
+  },
+  { 
+    id: 'design-ve', 
+    label: 'Design & VE', 
+    desc: 'Create engaging visual designs, user experiences, and creative content that bring ideas and digital products to life.',
+    jobId: 'video-editors' 
+  },
+  { 
+    id: 'dm', 
+    label: 'DM', 
+    desc: 'Plan and execute digital marketing campaigns, social media strategies, and online promotions to strengthen brand visibility.',
+    jobId: 'digital-marketers' 
+  },
+  { 
+    id: 'voice-process', 
+    label: 'D&T Voice Process', 
+    desc: 'Communicate with customers professionally, handle voice-based processes, and provide reliable support while maintaining service quality.',
+    jobId: 'domestic-voice' 
+  }
+];
+
+export default function CareersPage({ onNavigateHome }) {
   const [selectedJobId, setSelectedJobId] = useState(careersData[0]?.id || 'data-annotators');
+  const [selectedOptionId, setSelectedOptionId] = useState('dev');
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
@@ -30,67 +59,121 @@ export default function CareersPage({ onNavigateHome, onOpenApplyModal }) {
     setIsTransitioning(true);
     setTimeout(() => {
       setSelectedJobId(id);
+      // Map back to matching joinUsOption if applicable
+      const matchedOpt = joinUsOptions.find(o => o.jobId === id);
+      if (matchedOpt) {
+        setSelectedOptionId(matchedOpt.id);
+      }
       setIsTransitioning(false);
     }, 150);
+  };
+
+  const handleOptionClick = (opt) => {
+    setSelectedOptionId(opt.id);
+    handleSelectJob(opt.jobId);
+    
+    // Smooth scroll down to open position interface
+    const el = document.getElementById('careers-interface-section');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
     <div className="careers-page-root">
       
       {/* =========================================================
-          SECTION 1: CAREER HERO
+          SECTION 1: TWO-PANEL CAREERS HERO (WHY PRAVISHREE | JOIN US)
          ========================================================= */}
       <section className="careers-hero-section">
         <div className="careers-hero-container">
           
-          {/* Breadcrumb */}
-          <nav className="careers-breadcrumb" aria-label="Breadcrumb">
-            <button className="breadcrumb-link" onClick={onNavigateHome}>Home</button>
-            <ChevronRight size={14} className="breadcrumb-separator" />
-            <span className="breadcrumb-current">Career</span>
-          </nav>
-
-          {/* Hero Badge & Typography */}
-          <div className="careers-hero-header">
-            <div className="careers-badge-pill">
-              <Sparkles size={14} className="badge-icon" />
-              <span>CAREER</span>
-            </div>
-
-            <h1 className="careers-hero-title">
-              Build Your Future With <span className="gradient-cyan-text">Pravishree</span>
-            </h1>
-
-            <p className="careers-hero-subtitle">
-              Join a team where technology, creativity, and opportunity come together.
-            </p>
+          {/* Main Careers Section Context Header */}
+          <div className="careers-top-header">
+            <nav className="careers-breadcrumb" aria-label="Breadcrumb">
+              <button className="breadcrumb-link" onClick={onNavigateHome}>Home</button>
+              <ChevronRight size={14} className="breadcrumb-separator" />
+              <span className="breadcrumb-current">Careers</span>
+            </nav>
+            <h1 className="careers-main-heading">CAREERS</h1>
           </div>
 
-          {/* Culture Perks Row */}
-          <div className="careers-perks-row">
-            <div className="perk-card glass-card">
-              <div className="perk-icon cyan"><Zap size={20} /></div>
-              <div className="perk-info">
-                <h4>Cutting-Edge Tooling</h4>
-                <p>Modern workstations &amp; enterprise platforms.</p>
+          {/* Two-Panel Side-by-Side Layout (50% / 50%) */}
+          <div className="careers-two-panel-grid">
+            
+            {/* LEFT PANEL: WHY PRAVISHREE */}
+            <div className="careers-panel glass-card panel-why-pravishree">
+              <div className="panel-header">
+                <span className="panel-eyebrow">OUR CULTURE &amp; VALUE</span>
+                <h2 className="panel-title">WHY PRAVISHREE</h2>
+              </div>
+
+              <div className="panel-body">
+                <p className="panel-intro-text">
+                  Join a tech solution firm where innovation, creativity, and opportunity come together to build your digital future.
+                </p>
+
+                <div className="why-highlights-list">
+                  <div className="why-highlight-item">
+                    <div className="why-icon-box cyan"><Zap size={18} /></div>
+                    <div className="why-text">
+                      <h4>Cutting-Edge Tooling</h4>
+                      <p>Modern workstations, AI annotation platforms &amp; enterprise platforms.</p>
+                    </div>
+                  </div>
+
+                  <div className="why-highlight-item">
+                    <div className="why-icon-box blue"><Coffee size={18} /></div>
+                    <div className="why-text">
+                      <h4>Empowering Culture</h4>
+                      <p>Collaborative environment &amp; supportive leadership for continuous growth.</p>
+                    </div>
+                  </div>
+
+                  <div className="why-highlight-item">
+                    <div className="why-icon-box teal"><HeartHandshake size={18} /></div>
+                    <div className="why-text">
+                      <h4>Fast-Track Growth</h4>
+                      <p>Structured promotion pathways, bootcamps &amp; global client exposure.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div className="perk-card glass-card">
-              <div className="perk-icon blue"><Coffee size={20} /></div>
-              <div className="perk-info">
-                <h4>Empowering Culture</h4>
-                <p>Collaborative environment &amp; supportive leadership.</p>
+            {/* RIGHT PANEL: JOIN US */}
+            <div className="careers-panel glass-card panel-join-us">
+              <div className="panel-header">
+                <span className="panel-eyebrow">SELECT A PATHWAY</span>
+                <h2 className="panel-title">JOIN US</h2>
+              </div>
+
+              <div className="panel-body">
+                <div className="join-options-list">
+                  {joinUsOptions.map((opt) => {
+                    const isSelected = selectedOptionId === opt.id || selectedJobId === opt.jobId;
+
+                    return (
+                      <button
+                        key={opt.id}
+                        type="button"
+                        className={`join-option-card ${isSelected ? 'is-selected' : ''}`}
+                        onClick={() => handleOptionClick(opt)}
+                      >
+                        <div className="join-option-content">
+                          <h3 className="join-option-label">{opt.label}</h3>
+                          <p className="join-option-desc">{opt.desc}</p>
+                        </div>
+                        <div className="join-option-arrow-wrap">
+                          <ArrowRight size={18} className="join-arrow-icon" />
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             </div>
 
-            <div className="perk-card glass-card">
-              <div className="perk-icon teal"><HeartHandshake size={20} /></div>
-              <div className="perk-info">
-                <h4>Fast-Track Growth</h4>
-                <p>Structured promotions &amp; global exposure.</p>
-              </div>
-            </div>
           </div>
 
         </div>
@@ -98,16 +181,16 @@ export default function CareersPage({ onNavigateHome, onOpenApplyModal }) {
 
 
       {/* =========================================================
-          SECTION 2: MAIN CAREER INTERFACE (2-COLUMN)
+          SECTION 2: MAIN CAREER INTERFACE (JOB DETAILS & MAILTO APPLY)
          ========================================================= */}
-      <section className="careers-interface-section">
+      <section className="careers-interface-section" id="careers-interface-section">
         <div className="careers-container">
           
           <div className="careers-main-card glass-card">
             
             <div className="careers-card-header">
               <span className="section-label">OPEN POSITIONS</span>
-              <h2 className="section-title">Explore Career Opportunities</h2>
+              <h2 className="section-title">Explore Opportunities &amp; Apply</h2>
             </div>
 
             <div className="careers-interface-grid">
@@ -198,15 +281,16 @@ export default function CareersPage({ onNavigateHome, onOpenApplyModal }) {
                     </ul>
                   </div>
 
-                  {/* Action Row */}
+                  {/* Action Row - Mailto Contact Button Replaces Apply Now */}
                   <div className="job-desc-actions">
-                    <button
-                      className="btn-apply-primary"
-                      onClick={() => onOpenApplyModal && onOpenApplyModal(selectedJob)}
+                    <a
+                      href={`mailto:contact@pravishree.com?subject=${encodeURIComponent(`Career Enquiry - ${selectedJob.title}`)}`}
+                      className="btn-apply-primary btn-email-apply"
+                      title="Send your application directly to contact@pravishree.com"
                     >
-                      <span>APPLY NOW</span>
-                      <Send size={16} />
-                    </button>
+                      <Mail size={16} />
+                      <span>contact@pravishree.com</span>
+                    </a>
                     <span className="package-hint">
                       <strong>Compensation:</strong> {selectedJob.salary}
                     </span>

@@ -53,8 +53,6 @@ export default function TechBackground3D() {
     // Requested Node Color (#1ABADD / RGB: 26, 186, 222)
     const colorNodePrimary = new THREE.Color(0x1ABADD);
     const colorNodeSecondary = new THREE.Color(0x0096C7);
-    // Connecting Line Color (#A8B4BC / RGB: 168, 180, 188)
-    const colorLine = new THREE.Color(0xA8B4BC);
 
     // --- A. BACKGROUND LAYER: Distant Particles ---
     const bgParticleCount = isMobile ? 140 : 320;
@@ -130,26 +128,6 @@ export default function TechBackground3D() {
       nodePositions.push(new THREE.Vector3(x, y, z));
     }
 
-    // Dynamic Connecting Mesh Lines in Navigation Blue (5% reduced connection density)
-    const maxDistance = isMobile ? 12.35 : 16.15;
-    const maxLineSegments = particleCount * 4.56;
-    const linePositions = new Float32Array(maxLineSegments * 6);
-    const lineColors = new Float32Array(maxLineSegments * 6);
-
-    const lineGeometry = new THREE.BufferGeometry();
-    lineGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
-    lineGeometry.setAttribute('color', new THREE.BufferAttribute(lineColors, 3));
-
-    const lineMesh = new THREE.LineSegments(
-      lineGeometry,
-      new THREE.LineBasicMaterial({
-        vertexColors: true,
-        transparent: true,
-        opacity: 0.665,
-      })
-    );
-    midGroup.add(lineMesh);
-
     // Dynamic Parallax Variables
     let targetMouseX = 0;
     let targetMouseY = 0;
@@ -214,43 +192,6 @@ export default function TechBackground3D() {
           nodePositions[i].copy(node.position);
         }
 
-        // Dynamically update connecting lines in Navigation Blue
-        let lineIdx = 0;
-        const colorArray = lineMesh.geometry.attributes.color.array;
-        const posArray = lineMesh.geometry.attributes.position.array;
-
-        for (let i = 0; i < nodes.length && lineIdx < maxLineSegments; i++) {
-          for (let j = i + 1; j < nodes.length && lineIdx < maxLineSegments; j++) {
-            const dist = nodePositions[i].distanceTo(nodePositions[j]);
-            if (dist < maxDistance) {
-              const alpha = (1 - dist / maxDistance) * 0.8075;
-              const idx6 = lineIdx * 6;
-
-              posArray[idx6] = nodePositions[i].x;
-              posArray[idx6 + 1] = nodePositions[i].y;
-              posArray[idx6 + 2] = nodePositions[i].z;
-
-              posArray[idx6 + 3] = nodePositions[j].x;
-              posArray[idx6 + 4] = nodePositions[j].y;
-              posArray[idx6 + 5] = nodePositions[j].z;
-
-              colorArray[idx6] = colorLine.r * alpha;
-              colorArray[idx6 + 1] = colorLine.g * alpha;
-              colorArray[idx6 + 2] = colorLine.b * alpha;
-
-              colorArray[idx6 + 3] = colorLine.r * alpha;
-              colorArray[idx6 + 4] = colorLine.g * alpha;
-              colorArray[idx6 + 5] = colorLine.b * alpha;
-
-              lineIdx++;
-            }
-          }
-        }
-
-        lineMesh.geometry.setDrawRange(0, lineIdx * 2);
-        lineMesh.geometry.attributes.position.needsUpdate = true;
-        lineMesh.geometry.attributes.color.needsUpdate = true;
-
         bgPoints.rotation.y = elapsedTime * 0.025;
       }
 
@@ -292,7 +233,6 @@ export default function TechBackground3D() {
       nodeGeometryLarge.dispose();
       nodeMaterialPrimary.dispose();
       nodeMaterialSecondary.dispose();
-      lineGeometry.dispose();
       renderer.dispose();
     };
   }, []);

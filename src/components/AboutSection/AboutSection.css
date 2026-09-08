@@ -230,9 +230,9 @@
    ========================================================================== */
 .about-detailed-layout {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 3.5rem;
-  align-items: start;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
   position: relative;
   z-index: 5;
 }
@@ -352,16 +352,21 @@
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
+  height: 100%;
 }
 
 .about-visual-preview-card {
-  padding: 2.25rem;
+  padding: 2.5rem 2.25rem;
   background: rgba(255, 255, 255, 0.78);
   backdrop-filter: blur(12px) saturate(160%);
   -webkit-backdrop-filter: blur(12px) saturate(160%);
   border: 1px solid rgba(0, 180, 230, 0.22);
   border-radius: var(--border-radius-xl);
   box-shadow: 0 10px 36px rgba(11, 59, 96, 0.07), inset 0 0 20px rgba(255, 255, 255, 0.6);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .about-visual-header {
@@ -528,92 +533,6 @@
   }
 }
 
-/* ==========================================================================
-   3D GLASS ORB STAGE (COPIED FROM CONTACT PAGE)
-   ========================================================================== */
-.home-glass-orb-stage-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1.5rem;
-}
 
-.contact-glass-orb-stage {
-  position: relative;
-  width: 380px;
-  height: 380px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.orb-glass-sphere {
-  position: relative;
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, rgba(0, 217, 255, 0.25) 0%, rgba(6, 19, 41, 0.92) 80%);
-  border: 1.5px solid rgba(0, 217, 255, 0.45);
-  box-shadow: 0 20px 60px rgba(0, 217, 255, 0.25), inset 0 0 40px rgba(0, 217, 255, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: floatOrb 8s ease-in-out infinite;
-}
-
-@keyframes floatOrb {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-14px) rotate(6deg); }
-}
-
-.sphere-inner-ring {
-  position: absolute;
-  border-radius: 50%;
-  border: 1.5px dashed rgba(0, 217, 255, 0.35);
-}
-
-.sphere-inner-ring.ring-1 { width: 220px; height: 220px; animation: spinRing 16s linear infinite; }
-.sphere-inner-ring.ring-2 { width: 160px; height: 160px; animation: spinRingRev 12s linear infinite; }
-.sphere-inner-ring.ring-3 { width: 100px; height: 100px; animation: spinRing 8s linear infinite; }
-
-@keyframes spinRing { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-@keyframes spinRingRev { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
-
-.sphere-ambient-glow {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  background: #00D9FF;
-  filter: blur(50px);
-  opacity: 0.4;
-}
-
-.orb-meta-chip {
-  position: absolute;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 217, 255, 0.35);
-  font-size: 0.78rem;
-  font-weight: 800;
-  color: #061329;
-  box-shadow: 0 8px 24px rgba(6, 19, 41, 0.1);
-  z-index: 5;
-}
-
-.orb-meta-chip .icon-cyan {
-  color: #00D9FF;
-}
-
-.orb-meta-chip .icon-teal {
-  color: #0077B6;
-}
-
-.orb-meta-chip.top-left { top: 10px; left: -20px; }
-.orb-meta-chip.bottom-right { bottom: 20px; right: -10px; }
 
 

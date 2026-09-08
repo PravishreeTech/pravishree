@@ -6,6 +6,7 @@ import {
   CheckCircle, 
   ArrowRight,
   Send,
+  Mail,
   Zap,
   Coffee,
   HeartHandshake
@@ -107,16 +108,15 @@ export default function CareersSection({ onOpenApplyModal }) {
                   </div>
 
                   <div className="job-summary-right">
-                    <button 
+                    <a 
+                      href={`mailto:contact@pravishree.com?subject=${encodeURIComponent(`Career Enquiry - ${job.title}`)}`}
                       className="btn-primary job-apply-direct-btn"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        if (onOpenApplyModal) onOpenApplyModal(job);
-                      }}
+                      onClick={(e) => e.stopPropagation()}
+                      title="Email us your CV & Inquiry"
                     >
-                      <span>Apply Now</span>
-                      <Send size={15} />
-                    </button>
+                      <Mail size={15} />
+                      <span>contact@pravishree.com</span>
+                    </a>
                   </div>
                 </div>
 
@@ -155,15 +155,14 @@ export default function CareersSection({ onOpenApplyModal }) {
                       <span className="job-compensation-info">
                         <strong>Package:</strong> {job.salary}
                       </span>
-                      <button 
+                      <a 
+                        href={`mailto:contact@pravishree.com?subject=${encodeURIComponent(`Career Enquiry - ${job.title}`)}`}
                         className="btn-primary"
-                        onClick={() => {
-                          if (onOpenApplyModal) onOpenApplyModal(job);
-                        }}
+                        title="Email us your CV & Inquiry"
                       >
-                        <span>Submit Application for this Role</span>
-                        <ArrowRight size={16} />
-                      </button>
+                        <Mail size={16} />
+                        <span>contact@pravishree.com</span>
+                      </a>
                     </div>
 
                   </div>

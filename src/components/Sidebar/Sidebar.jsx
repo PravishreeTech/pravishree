@@ -116,6 +116,13 @@ export default function Sidebar({ isOpen, onClose, currentPage = 'home', onNavig
         const el = document.getElementById('services');
         if (el) el.scrollIntoView({ behavior: 'smooth' });
       }
+    } else if (item.id === 'portfolio') {
+      if (onNavigate) {
+        onNavigate('portfolio');
+      } else {
+        const el = document.getElementById('portfolio');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
     } else if (item.id === 'team') {
       if (onNavigate) {
         onNavigate('team');
@@ -198,6 +205,13 @@ export default function Sidebar({ isOpen, onClose, currentPage = 'home', onNavig
     } else if (targetId.startsWith('services') || targetId.startsWith('service-')) {
       if (onNavigate) {
         onNavigate('services', targetId);
+      } else {
+        const el = document.getElementById(targetId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else if (targetId === 'portfolio' || targetId.startsWith('portfolio-')) {
+      if (onNavigate) {
+        onNavigate('portfolio', targetId);
       } else {
         const el = document.getElementById(targetId);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -325,34 +339,26 @@ export default function Sidebar({ isOpen, onClose, currentPage = 'home', onNavig
                     <div className="sidebar-flyout-menu flyout-services" role="menu">
                       <div className="flyout-header-tag">Services &amp; Capabilities</div>
 
-                      <button className="flyout-item" onClick={() => handleSubItemClick('services-designing')}>
-                        <div className="flyout-icon-box cyan"><PenTool size={16} /></div>
-                        <div className="flyout-text">
-                          <span className="flyout-title">Designing</span>
-                          <span className="flyout-desc">Brand identity &amp; UI/UX</span>
-                        </div>
-                      </button>
-
-                      <button className="flyout-item" onClick={() => handleSubItemClick('services-video-editing')}>
-                        <div className="flyout-icon-box blue"><Video size={16} /></div>
-                        <div className="flyout-text">
-                          <span className="flyout-title">Video Editing</span>
-                          <span className="flyout-desc">4K Reels &amp; 3D Motion VFX</span>
-                        </div>
-                      </button>
-
-                      <button className="flyout-item" onClick={() => handleSubItemClick('services-web-development')}>
+                      <button className="flyout-item" onClick={() => handleSubItemClick('services-software-development')}>
                         <div className="flyout-icon-box navy"><Code2 size={16} /></div>
                         <div className="flyout-text">
-                          <span className="flyout-title">Web Development</span>
-                          <span className="flyout-desc">React, Next.js &amp; portals</span>
+                          <span className="flyout-title">Software Development</span>
+                          <span className="flyout-desc">Custom enterprise software</span>
                         </div>
                       </button>
 
-                      <button className="flyout-item" onClick={() => handleSubItemClick('services-mobile-apps')}>
+                      <button className="flyout-item" onClick={() => handleSubItemClick('services-website-development')}>
+                        <div className="flyout-icon-box cyan"><Globe size={16} /></div>
+                        <div className="flyout-text">
+                          <span className="flyout-title">Website Development</span>
+                          <span className="flyout-desc">Responsive web &amp; portals</span>
+                        </div>
+                      </button>
+
+                      <button className="flyout-item" onClick={() => handleSubItemClick('services-app-development')}>
                         <div className="flyout-icon-box purple"><Smartphone size={16} /></div>
                         <div className="flyout-text">
-                          <span className="flyout-title">Mobile Apps</span>
+                          <span className="flyout-title">App Development</span>
                           <span className="flyout-desc">iOS &amp; Android solutions</span>
                         </div>
                       </button>
@@ -394,21 +400,29 @@ export default function Sidebar({ isOpen, onClose, currentPage = 'home', onNavig
                             <button className="flyout-item" onClick={() => handleSubItemClick('services-bpo-domestic')}>
                               <div className="flyout-icon-box teal"><MapPin size={15} /></div>
                               <div className="flyout-text">
-                                <span className="flyout-title">Domestic BPO</span>
-                                <span className="flyout-desc">Regional multi-lingual voice &amp; chat</span>
+                                <span className="flyout-title">Domestic Voice</span>
+                                <span className="flyout-desc">Regional support &amp; chat</span>
                               </div>
                             </button>
 
                             <button className="flyout-item" onClick={() => handleSubItemClick('services-bpo-international')}>
                               <div className="flyout-icon-box sky"><Globe2 size={15} /></div>
                               <div className="flyout-text">
-                                <span className="flyout-title">International BPO</span>
-                                <span className="flyout-desc">24/7 US/UK shifts, medical billing &amp; AI data</span>
+                                <span className="flyout-title">International Voice</span>
+                                <span className="flyout-desc">24/7 US/UK shifts &amp; BPO desks</span>
                               </div>
                             </button>
                           </div>
                         )}
                       </div>
+
+                      <button className="flyout-item" onClick={() => handleSubItemClick('services-video-editing')}>
+                        <div className="flyout-icon-box blue"><Film size={16} /></div>
+                        <div className="flyout-text">
+                          <span className="flyout-title">Video Editing</span>
+                          <span className="flyout-desc">Post-production &amp; Motion VFX</span>
+                        </div>
+                      </button>
 
                     </div>
                   )}

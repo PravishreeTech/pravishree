@@ -3,11 +3,9 @@ import {
   Globe, 
   Code2, 
   Smartphone, 
-  PenTool, 
   TrendingUp, 
-  GraduationCap, 
-  Compass, 
   Headphones, 
+  Film,
   ArrowRight, 
   CheckCircle, 
   Sparkles 
@@ -19,11 +17,9 @@ const iconMap = {
   Globe,
   Code2,
   Smartphone,
-  PenTool,
   TrendingUp,
-  GraduationCap,
-  Compass,
-  Headphones
+  Headphones,
+  Film
 };
 
 export default function ServicesSection({ onSelectService }) {

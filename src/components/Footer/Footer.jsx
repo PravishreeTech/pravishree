@@ -70,25 +70,23 @@ export default function Footer({ onOpenContact, onNavigate }) {
               <li><a href="#home" onClick={(e) => handleLinkClick(e, 'home', 'hero')}>Home</a></li>
               <li><a href="#about" onClick={(e) => handleLinkClick(e, 'about', null)}>About Us</a></li>
               <li><a href="#services" onClick={(e) => handleLinkClick(e, 'services', null)}>Services</a></li>
-              <li><a href="#technologies" onClick={(e) => handleLinkClick(e, 'home', 'technologies')}>Technologies</a></li>
-              <li><a href="#portfolio" onClick={(e) => handleLinkClick(e, 'home', 'portfolio')}>Portfolio</a></li>
+              <li><a href="#portfolio" onClick={(e) => handleLinkClick(e, 'portfolio', null)}>Portfolio</a></li>
               <li><a href="#why-us" onClick={(e) => handleLinkClick(e, 'home', 'why-us')}>Why Choose Us</a></li>
-              <li><a href="#contact" onClick={(e) => handleLinkClick(e, 'home', 'contact')}>Contact</a></li>
+              <li><a href="#careers" onClick={(e) => handleLinkClick(e, 'careers', null)}>Careers</a></li>
+              <li><a href="#contact" onClick={(e) => handleLinkClick(e, 'contact', null)}>Contact</a></li>
             </ul>
           </div>
 
-          {/* Column 3: 8 Services */}
+          {/* Column 3: Official 6 Services */}
           <div className="footer-links-col">
             <h4 className="footer-col-title">Services</h4>
             <ul className="footer-nav-list">
-              <li><a href="#services" onClick={(e) => handleLinkClick(e, 'services', 'services-core-list')}>Web Development</a></li>
               <li><a href="#services" onClick={(e) => handleLinkClick(e, 'services', 'services-core-list')}>Software Development</a></li>
-              <li><a href="#services" onClick={(e) => handleLinkClick(e, 'services', 'services-core-list')}>Mobile App Development</a></li>
-              <li><a href="#services" onClick={(e) => handleLinkClick(e, 'services', 'services-core-list')}>Graphic &amp; Creative Design</a></li>
+              <li><a href="#services" onClick={(e) => handleLinkClick(e, 'services', 'services-core-list')}>Website Development</a></li>
+              <li><a href="#services" onClick={(e) => handleLinkClick(e, 'services', 'services-core-list')}>App Development</a></li>
               <li><a href="#services" onClick={(e) => handleLinkClick(e, 'services', 'services-core-list')}>Digital Marketing</a></li>
-              <li><a href="#services" onClick={(e) => handleLinkClick(e, 'services', 'services-core-list')}>E-Learning</a></li>
-              <li><a href="#services" onClick={(e) => handleLinkClick(e, 'services', 'services-core-list')}>IT Consultancy</a></li>
               <li><a href="#services" onClick={(e) => handleLinkClick(e, 'services', 'services-core-list')}>BPO Services</a></li>
+              <li><a href="#services" onClick={(e) => handleLinkClick(e, 'services', 'services-core-list')}>Video Editing</a></li>
             </ul>
           </div>
 

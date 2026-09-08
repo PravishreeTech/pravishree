@@ -1,5 +1,6 @@
 /* ==========================================================================
-   Dedicated Careers Page Styles
+   Dedicated Careers Page Styles - Pravishree Design Co.
+   Two-Panel Hero Layout (Why Pravishree | Join Us) & Mailto Apply Action
    ========================================================================== */
 
 .careers-page-root {
@@ -16,9 +17,11 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* Hero Section */
+/* =========================================================
+   HERO SECTION: TOP CONTEXT & TWO-PANEL GRID
+   ========================================================= */
 .careers-hero-section {
-  padding: 6.5rem 0 3.5rem 0;
+  padding: 6.5rem 0 2.5rem 0;
   position: relative;
 }
 
@@ -28,12 +31,16 @@
   padding: 0 2rem;
 }
 
+.careers-top-header {
+  margin-bottom: 2rem;
+}
+
 .careers-breadcrumb {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 0.85rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .breadcrumb-link {
@@ -59,124 +66,255 @@
   font-weight: 700;
 }
 
-.careers-hero-header {
+.careers-main-heading {
+  font-size: clamp(2.4rem, 4.5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.05;
+  color: #061329;
+  letter-spacing: -0.04em;
+  margin: 0.25rem 0 0 0;
+}
+
+/* Two Panels Side by Side (50% / 50%) */
+.careers-two-panel-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.careers-panel {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  max-width: 860px;
-  margin: 0 auto 3rem auto;
-  padding: 2.5rem 2.5rem;
+  padding: 2.25rem;
+  height: 100%;
+  border-radius: 24px;
   background: rgba(255, 255, 255, 0.78);
   backdrop-filter: blur(12px) saturate(160%);
   -webkit-backdrop-filter: blur(12px) saturate(160%);
   border: 1px solid rgba(0, 180, 230, 0.22);
-  border-radius: 24px;
   box-shadow: 0 10px 36px rgba(11, 59, 96, 0.07), inset 0 0 20px rgba(255, 255, 255, 0.6);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.careers-badge-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.45rem 1.2rem;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1.5px solid rgba(0, 217, 255, 0.4);
-  border-radius: 9999px;
+.careers-panel:hover {
+  border-color: rgba(0, 217, 255, 0.45);
+  box-shadow: 0 14px 44px rgba(11, 59, 96, 0.11);
+}
+
+.panel-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(0, 180, 230, 0.18);
+}
+
+.panel-eyebrow {
   font-family: var(--font-heading, sans-serif);
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   font-weight: 800;
   letter-spacing: 0.1em;
   color: #0077B6;
   text-transform: uppercase;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 4px 16px rgba(0, 119, 182, 0.08);
+  display: block;
+  margin-bottom: 0.35rem;
 }
 
-.badge-icon {
-  color: #00D9FF;
-}
-
-.careers-hero-title {
-  font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+.panel-title {
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
   font-weight: 850;
-  line-height: 1.15;
   color: #061329;
   letter-spacing: -0.03em;
-  margin-bottom: 1.25rem;
+  margin: 0;
 }
 
-.careers-hero-subtitle {
-  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
-  line-height: 1.65;
+.panel-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+/* Left Panel: Why Pravishree Details */
+.panel-intro-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
   color: #475569;
   font-weight: 500;
+  margin-bottom: 0.25rem;
 }
 
-/* Culture Perks Row */
-.careers-perks-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-top: 1rem;
+.why-highlights-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
 }
 
-.perk-card {
+.why-highlight-item {
   display: flex;
   align-items: flex-start;
-  gap: 1.1rem;
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(12px) saturate(160%);
-  -webkit-backdrop-filter: blur(12px) saturate(160%);
-  border: 1px solid rgba(0, 180, 230, 0.22);
-  border-radius: var(--border-radius-xl, 20px);
-  box-shadow: 0 10px 32px rgba(11, 59, 96, 0.07), inset 0 0 15px rgba(255, 255, 255, 0.5);
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(0, 180, 230, 0.18);
+  transition: all 0.25s ease;
 }
 
-.perk-icon {
+.why-highlight-item:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(0, 217, 255, 0.4);
+  transform: translateX(4px);
+}
+
+.why-icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
   flex-shrink: 0;
 }
 
-.perk-icon.cyan {
+.why-icon-box.cyan {
   background: rgba(0, 217, 255, 0.12);
   color: #0077B6;
 }
 
-.perk-icon.blue {
+.why-icon-box.blue {
   background: rgba(0, 119, 182, 0.12);
   color: #0077B6;
 }
 
-.perk-icon.teal {
-  background: rgba(25, 230, 208, 0.12);
-  color: #0077B6;
+.why-icon-box.teal {
+  background: rgba(25, 230, 208, 0.14);
+  color: #0F766E;
 }
 
-.perk-info h4 {
-  font-size: 1.02rem;
+.why-text h4 {
+  font-size: 0.94rem;
   font-weight: 800;
   color: #061329;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.15rem;
 }
 
-.perk-info p {
-  font-size: 0.86rem;
+.why-text p {
+  font-size: 0.84rem;
   color: #64748B;
   line-height: 1.45;
 }
 
-/* Main Career Interface */
+/* Right Panel: Join Us Option Cards */
+.join-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.join-option-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.25rem 1.4rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1.5px solid rgba(226, 232, 240, 0.9);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  width: 100%;
+  text-align: left;
+}
+
+.join-option-card:hover {
+  background: #FFFFFF;
+  border-color: rgba(0, 217, 255, 0.6);
+  transform: translateX(4px);
+  box-shadow: 0 8px 24px rgba(0, 217, 255, 0.15);
+}
+
+.join-option-card.is-selected {
+  background: #FFFFFF;
+  border-color: #00D9FF;
+  box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.25), 0 10px 28px rgba(0, 217, 255, 0.2);
+  transform: translateX(6px);
+}
+
+.join-option-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.join-option-label {
+  font-size: 1.05rem;
+  font-weight: 850;
+  color: #061329;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.join-option-desc {
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: #64748B;
+  font-weight: 500;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.join-option-card.is-selected .join-option-label {
+  color: #0077B6;
+}
+
+.join-option-card.is-selected .join-option-desc {
+  color: #334155;
+}
+
+.join-option-arrow-wrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: rgba(0, 119, 182, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.join-arrow-icon {
+  color: #0077B6;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.join-option-card:hover .join-arrow-icon,
+.join-option-card.is-selected .join-arrow-icon {
+  color: #00D9FF;
+  transform: translateX(4px);
+}
+
+.join-option-card.is-selected .join-option-arrow-wrap {
+  background: linear-gradient(135deg, #061329 0%, #0077B6 100%);
+}
+
+.join-option-card.is-selected .join-arrow-icon {
+  color: #FFFFFF;
+}
+
+
+/* =========================================================
+   MAIN CAREER INTERFACE (JOB DETAILS & MAILTO LINK)
+   ========================================================= */
 .careers-interface-section {
-  padding: 1rem 0;
+  padding: 1rem 0 3rem 0;
 }
 
 .careers-container {
@@ -444,11 +582,12 @@
   flex-wrap: wrap;
 }
 
+/* Mailto Apply Button */
 .btn-apply-primary {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  padding: 0.85rem 2rem;
+  padding: 0.85rem 1.8rem;
   border-radius: 12px;
   background: linear-gradient(135deg, #061329 0%, #0077B6 100%);
   border: 1.5px solid rgba(0, 217, 255, 0.4);
@@ -456,16 +595,19 @@
   font-family: var(--font-heading, sans-serif);
   font-size: 0.9rem;
   font-weight: 800;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
+  text-decoration: none;
   cursor: pointer;
   box-shadow: 0 8px 22px rgba(0, 119, 182, 0.35);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   outline: none;
+  word-break: break-all;
 }
 
 .btn-apply-primary:hover {
   transform: translateY(-2px);
   background: linear-gradient(135deg, #0077B6 0%, #00D9FF 100%);
+  color: #061329;
   box-shadow: 0 12px 28px rgba(0, 217, 255, 0.45);
 }
 
@@ -478,15 +620,16 @@
   color: #061329;
 }
 
-/* Responsive */
+/* Responsive Breakpoints */
 @media (max-width: 1024px) {
+  .careers-two-panel-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
   .careers-interface-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }
-
-  .careers-perks-row {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -507,5 +650,9 @@
   .btn-apply-primary {
     justify-content: center;
     width: 100%;
+  }
+
+  .careers-panel {
+    padding: 1.5rem;
   }
 }

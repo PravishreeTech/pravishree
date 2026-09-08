@@ -216,6 +216,49 @@
   border-radius: var(--border-radius-pill);
 }
 
+.modal-section-group {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.modal-subheading {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-tech-tag.srv-tag {
+  background: rgba(0, 217, 255, 0.1);
+  border-color: rgba(0, 217, 255, 0.3);
+  color: #00b4d8;
+}
+
+.modal-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 1.25rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.modal-features-list li {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.modal-features-list .feat-check {
+  color: #00D9FF;
+  flex-shrink: 0;
+}
+
 .modal-project-action-row {
   display: flex;
   gap: 1rem;
