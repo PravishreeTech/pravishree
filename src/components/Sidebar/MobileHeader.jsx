@@ -15,12 +15,17 @@ export default function MobileHeader({ onToggleSidebar, onNavigate }) {
             e.preventDefault();
             if (onNavigate) onNavigate('home');
           }}
+          aria-label="Pravishree Design Co. Home"
         >
           <img 
-            src="/assets/logo.svg" 
+            src="/assets/logo-emblem-clean.png" 
             alt="Pravishree Design Co." 
-            className="mobile-header-logo"
+            className="mobile-header-logo-img"
           />
+          <div className="mobile-header-brand-info">
+            <span className="mobile-header-brand-title">PRAVISHREE</span>
+            <span className="mobile-header-brand-tagline">DESIGN CO.</span>
+          </div>
         </a>
 
         {/* Right Hamburger Toggle */}

@@ -605,7 +605,7 @@
 .job-desc-actions {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 1rem;
   margin-top: 0.75rem;
   padding-top: 1.25rem;
@@ -640,15 +640,6 @@
   background: linear-gradient(135deg, #0077B6 0%, #00D9FF 100%);
   color: #061329;
   box-shadow: 0 12px 28px rgba(0, 217, 255, 0.45);
-}
-
-.package-hint {
-  font-size: 0.86rem;
-  color: #64748B;
-}
-
-.package-hint strong {
-  color: #061329;
 }
 
 /* Responsive Breakpoints */
@@ -691,3 +682,54 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 480px) {
+  .careers-hero-container {
+    padding: 0 1rem;
+  }
+
+  .careers-hero-section {
+    padding: 4.5rem 0 1.5rem 0;
+  }
+
+  .careers-main-card {
+    padding: 1.25rem 0.85rem;
+    border-radius: 18px;
+  }
+
+  .careers-panel {
+    padding: 1.25rem 1rem;
+    border-radius: 18px;
+  }
+
+  .careers-description-col {
+    padding: 1rem 0.75rem;
+    border-radius: 16px;
+  }
+
+  .job-item-card {
+    padding: 1rem 0.75rem;
+  }
+
+  .btn-apply-primary {
+    padding: 0.75rem 1.2rem;
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .careers-hero-container {
+    padding: 0 0.5rem;
+  }
+
+  .careers-main-card {
+    padding: 1rem 0.65rem;
+    border-radius: 16px;
+  }
+
+  .careers-panel {
+    padding: 1rem 0.75rem;
+    border-radius: 16px;
+  }
+}
+

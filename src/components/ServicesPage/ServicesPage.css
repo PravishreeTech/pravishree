@@ -1140,3 +1140,61 @@
   .floating-service-pill.pos-bottom-right { bottom: 60px; right: -10px; }
   .floating-service-pill.pos-bottom-center { bottom: 0px; }
 }
+
+@media (max-width: 480px) {
+  .services-hero-section,
+  .services-editorial-section,
+  .services-cinematic-editorial-section,
+  .services-partner-3d-section,
+  .services-final-cta {
+    padding: 45px 14px;
+  }
+
+  .glass-orb-stage {
+    width: 270px;
+    height: 270px;
+  }
+
+  .orb-core-sphere {
+    width: 95px;
+    height: 95px;
+  }
+
+  .floating-service-pill {
+    font-size: 0.68rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .floating-service-pill.pos-top-left { top: 50px; left: -4px; }
+  .floating-service-pill.pos-top-right { top: 50px; right: -4px; }
+  .floating-service-pill.pos-bottom-left { bottom: 50px; left: -4px; }
+  .floating-service-pill.pos-bottom-right { bottom: 50px; right: -4px; }
+
+  .final-cta-card { padding: 30px 16px; border-radius: 18px; }
+}
+
+@media (max-width: 360px) {
+  .services-hero-section,
+  .services-editorial-section,
+  .services-cinematic-editorial-section,
+  .services-partner-3d-section,
+  .services-final-cta {
+    padding: 35px 10px;
+  }
+
+  .glass-orb-stage {
+    width: 240px;
+    height: 240px;
+  }
+
+  .orb-core-sphere {
+    width: 80px;
+    height: 80px;
+  }
+
+  .floating-service-pill {
+    font-size: 0.62rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
+

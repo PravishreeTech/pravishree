@@ -1068,7 +1068,7 @@
 }
 
 .closing-statement-line1 {
-  font-size: clamp(40px, 4.5vw, 72px);
+  font-size: clamp(28px, 4.5vw, 72px);
   font-weight: 850;
   color: #061329;
   line-height: 1.1;
@@ -1077,7 +1077,7 @@
 }
 
 .closing-statement-line2 {
-  font-size: clamp(40px, 4.5vw, 72px);
+  font-size: clamp(28px, 4.5vw, 72px);
   font-weight: 850;
   line-height: 1.1;
   letter-spacing: -0.03em;
@@ -1153,3 +1153,50 @@
     padding: 36px 24px;
   }
 }
+
+@media (max-width: 480px) {
+  .about-hero-section,
+  .about-editorial-intro-section,
+  .about-editorial-services-section,
+  .about-editorial-mv-section,
+  .about-editorial-why-section,
+  .about-editorial-timeline-section,
+  .about-closing-statement-section {
+    padding: 45px 14px;
+  }
+
+  .about-editorial-container {
+    padding: 0 8px;
+  }
+
+  .mv-card-editorial {
+    padding: 24px 16px;
+    border-radius: 18px;
+  }
+
+  .why-feature-editorial-card {
+    padding: 20px 16px;
+  }
+
+  .timeline-step-card-glass {
+    padding: 20px 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .about-hero-section,
+  .about-editorial-intro-section,
+  .about-editorial-services-section,
+  .about-editorial-mv-section,
+  .about-editorial-why-section,
+  .about-editorial-timeline-section,
+  .about-closing-statement-section {
+    padding: 35px 10px;
+  }
+
+  .mv-card-editorial {
+    padding: 18px 12px;
+    border-radius: 16px;
+  }
+}
+

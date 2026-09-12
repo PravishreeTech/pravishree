@@ -13,7 +13,6 @@ export const careersData = [
     type: 'Full-Time / On-Site & Hybrid',
     experience: '0 - 2 Years (Freshers Welcome)',
     location: 'Headquarters & Remote',
-    salary: 'Competitive + Incentives',
     overview: 'Join our cutting-edge AI operations team responsible for labeling, categorizing, and quality-checking computer vision and NLP datasets for top global technology clients.',
     responsibilities: [
       'Perform pixel-accurate bounding box, polygon, and semantic segmentation on image/video datasets.',
@@ -34,7 +33,6 @@ export const careersData = [
     type: 'Full-Time (Day Shifts)',
     experience: '1 - 3 Years',
     location: 'Corporate Delivery Center',
-    salary: 'Industry Leading + Performance Bonuses',
     overview: 'Deliver exemplary customer experience and product support across regional domestic enterprise campaigns.',
     responsibilities: [
       'Handle inbound inquiries and outbound support communications with empathy and professionalism.',
@@ -54,7 +52,6 @@ export const careersData = [
     type: 'Full-Time (Rotational / Night Shifts)',
     experience: '1 - 4 Years',
     location: 'Global Delivery Hub (Cab Facility / Night Allowance Provided)',
-    salary: 'Attractive Package + Shift Allowances + Global Incentives',
     overview: 'Interact with global business clients, enterprise software users, and international partners across North America and Europe.',
     responsibilities: [
       'Provide premier voice support for global customers adhering to international SLA metrics.',
@@ -74,7 +71,6 @@ export const careersData = [
     type: 'Full-Time',
     experience: '2 - 5 Years',
     location: 'Creative Studio Hub',
-    salary: 'Top Tier in Creative Media',
     overview: 'Lead the visual post-production of brand films, social reels, corporate promos, and 3D motion graphics.',
     responsibilities: [
       'Edit high-fidelity video campaigns in Adobe Premiere Pro, After Effects, and DaVinci Resolve.',
@@ -94,7 +90,6 @@ export const careersData = [
     type: 'Full-Time',
     experience: '2 - 4 Years',
     location: 'Corporate Office / Hybrid',
-    salary: 'High Base + Performance ROI Share',
     overview: 'Drive exponential growth for our company and client portfolios through paid acquisition, SEO, and social funnels.',
     responsibilities: [
       'Plan and execute high-ROAS paid ad campaigns on Google Ads, Meta Ads Manager, and LinkedIn.',
@@ -114,7 +109,6 @@ export const careersData = [
     type: 'Full-Time (US Shift)',
     experience: '2 - 5 Years',
     location: 'Healthcare Delivery Center',
-    salary: 'Industry Leading + RCM Performance Incentives',
     overview: 'Ensure seamless healthcare revenue cycle operations, accurate claims processing, and denial management for US healthcare providers.',
     responsibilities: [
       'Submit clean electronic claims (CMS-1500, UB-04) to primary and secondary payers.',

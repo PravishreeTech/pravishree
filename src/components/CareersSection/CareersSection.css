@@ -238,15 +238,6 @@
   flex-wrap: wrap;
 }
 
-.job-compensation-info {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-}
-
-.job-compensation-info strong {
-  color: var(--text-heading);
-}
-
 /* Responsive */
 @media (max-width: 900px) {
   .careers-perks-grid {

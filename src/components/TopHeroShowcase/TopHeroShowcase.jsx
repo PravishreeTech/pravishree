@@ -50,6 +50,8 @@ const bannerImages = [
 export default function TopHeroShowcase() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const timerRef = useRef(null);
+  const touchStartX = useRef(null);
+  const touchEndX = useRef(null);
 
   // Restart 8-second autoplay timer
   const resetTimer = useCallback(() => {
@@ -82,11 +84,38 @@ export default function TopHeroShowcase() {
     resetTimer();
   };
 
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+    touchEndX.current = null;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) return;
+    const distance = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 40;
+    if (distance > minSwipeDistance) {
+      handleNext();
+    } else if (distance < -minSwipeDistance) {
+      handlePrev();
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
   return (
     <section className="fullscreen-banner-slideshow-section" id="hero">
       
       {/* Fullscreen Banner Slideshow Viewport */}
-      <div className="fullscreen-slideshow-viewport">
+      <div 
+        className="fullscreen-slideshow-viewport"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         <div 
           className="fullscreen-slideshow-track"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}

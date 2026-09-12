@@ -329,7 +329,7 @@ export default function CareersPage({ onNavigateHome }) {
                     </ul>
                   </div>
 
-                  {/* Action Row - Mailto Contact Button Replaces Apply Now */}
+                  {/* Action Row - Mailto Contact Button */}
                   <div className="job-desc-actions">
                     <a
                       href={`mailto:contact@pravishree.com?subject=${encodeURIComponent(`Career Enquiry - ${selectedJob.title}`)}`}
@@ -339,9 +339,6 @@ export default function CareersPage({ onNavigateHome }) {
                       <Mail size={16} />
                       <span>contact@pravishree.com</span>
                     </a>
-                    <span className="package-hint">
-                      <strong>Compensation:</strong> {selectedJob.salary}
-                    </span>
                   </div>
 
                 </div>

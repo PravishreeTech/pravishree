@@ -763,3 +763,59 @@
     font-size: 0.8rem;
   }
 }
+
+@media (max-width: 480px) {
+  .contact-hero-container {
+    padding: 0 1rem;
+  }
+
+  .contact-page-header {
+    padding: 1.5rem 1rem;
+    border-radius: 20px;
+  }
+
+  .contact-form-glass-card {
+    padding: 1.5rem 1rem;
+    border-radius: 20px;
+  }
+
+  .contact-info-card {
+    padding: 1.25rem 1rem;
+    border-radius: 18px;
+  }
+
+  .info-card-value {
+    font-size: 1.1rem;
+  }
+
+  .contact-social-row {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .contact-social-btn {
+    flex: 1 1 calc(50% - 0.5rem);
+    justify-content: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .contact-hero-container {
+    padding: 0 0.5rem;
+  }
+
+  .contact-page-header {
+    padding: 1.25rem 0.75rem;
+    border-radius: 16px;
+  }
+
+  .contact-form-glass-card {
+    padding: 1.25rem 0.75rem;
+    border-radius: 16px;
+  }
+
+  .info-card-value {
+    font-size: 1rem;
+  }
+}
+

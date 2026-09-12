@@ -195,26 +195,63 @@
 
 @media (max-width: 640px) {
   .fullscreen-banner-slideshow-section {
-    height: 60vh;
-    min-height: 320px;
+    height: 55vh;
+    min-height: 280px;
   }
 
   .fullscreen-nav-arrow {
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
   }
 
   .fullscreen-nav-arrow.arrow-left {
-    left: 0.4rem;
+    left: 0.35rem;
   }
 
   .fullscreen-nav-arrow.arrow-right {
-    right: 0.4rem;
+    right: 0.35rem;
   }
 
   .fullscreen-slide-counter {
     display: none;
   }
+
+  .fullscreen-bottom-controls {
+    bottom: 0.75rem;
+    right: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    gap: 0.4rem;
+  }
+
+  .fullscreen-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .fullscreen-dot.is-active {
+    width: 18px;
+  }
 }
+
+@media (max-width: 375px) {
+  .fullscreen-banner-slideshow-section {
+    height: 50vh;
+    min-height: 250px;
+  }
+
+  .fullscreen-nav-arrow {
+    width: 28px;
+    height: 28px;
+  }
+
+  .fullscreen-nav-arrow.arrow-left {
+    left: 0.25rem;
+  }
+
+  .fullscreen-nav-arrow.arrow-right {
+    right: 0.25rem;
+  }
+}
+
 
 

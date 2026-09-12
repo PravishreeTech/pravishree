@@ -158,9 +158,6 @@ export default function CareersSection({ onOpenApplyModal }) {
                     </div>
 
                     <div className="job-expanded-footer">
-                      <span className="job-compensation-info">
-                        <strong>Package:</strong> {job.salary}
-                      </span>
                       <a 
                         href={`mailto:contact@pravishree.com?subject=${encodeURIComponent(`Career Enquiry - ${job.title}`)}`}
                         className="btn-primary"
