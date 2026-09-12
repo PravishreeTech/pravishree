@@ -10,7 +10,8 @@ import {
   ChevronRight, 
   Sparkles, 
   CheckCircle2, 
-  ExternalLink 
+  ExternalLink,
+  Cloud 
 } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
