@@ -52,7 +52,7 @@ export default function PortfolioPage({ onNavigateHome, onOpenProjectModal, onOp
 
         {/* Category Filter Tabs */}
         <div className="portfolio-categories-bar" role="tablist" aria-label="Project Categories">
-          {portfolioCategories.map((cat) => {
+          {['ALL', ...portfolioCategories].map((cat) => {
             const count = cat === 'ALL'
               ? portfolioItems.length
               : portfolioItems.filter(p => p.category.toUpperCase() === cat.toUpperCase()).length;

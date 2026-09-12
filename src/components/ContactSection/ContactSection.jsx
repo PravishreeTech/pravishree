@@ -80,7 +80,13 @@ export default function ContactSection({ selectedService, onFormSuccess }) {
 
   return (
     <section className="contact-section" id="contact">
-      <div className="container">
+      <div className="ambient-watermark-wrap" aria-hidden="true">
+        <span className="ambient-watermark-text">
+          CONTACT
+        </span>
+      </div>
+
+      <div className="container relative-z">
         
         {/*  Section Header  */}
         <div className="section-header">
@@ -145,10 +151,11 @@ export default function ContactSection({ selectedService, onFormSuccess }) {
                   <Building size={20} />
                 </div>
                 <div className="channel-text">
-                  <span className="channel-label">Corporate Headquarters</span>
+                  <span className="channel-label">Corporate Office Address</span>
                   <address className="channel-value address">
-                    Pravishree Tech Solutions Hub, Technology Corridor,<br />
-                    Bangalore / Chennai Hub, India
+                    Amma Apartments, Flat No - 302,<br />
+                    9-14-7, CBM Compound, Asilmetta,<br />
+                    Visakhapatnam, Andhra Pradesh - 530003
                   </address>
                 </div>
               </div>

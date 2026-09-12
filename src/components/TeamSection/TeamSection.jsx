@@ -99,10 +99,15 @@ export default function TeamSection({ onNavigateToTeam }) {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Decorative ambient background ring */}
+      {/* Decorative ambient background ring & typography */}
       <div className="team-bg-3d-ring" aria-hidden="true" />
+      <div className="ambient-watermark-wrap" aria-hidden="true">
+        <span className="ambient-watermark-text">
+          LEADERSHIP
+        </span>
+      </div>
 
-      <div className="container">
+      <div className="container relative-z">
         
         {/* Section Header */}
         <div className="section-header">

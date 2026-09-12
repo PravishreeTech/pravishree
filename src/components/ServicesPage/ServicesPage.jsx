@@ -169,7 +169,7 @@ export default function ServicesPage({ onNavigateHome, onOpenContact }) {
 
               <h1 className="services-hero-title gsap-hero-anim">
                 Technology. Creativity. <br />
-                <span className="gradient-cyan-text">Business.</span>
+                <span className="gradient-cyan-text">Business. Solutions</span>
               </h1>
 
               <p className="services-hero-subtitle gsap-hero-anim">
@@ -208,25 +208,111 @@ export default function ServicesPage({ onNavigateHome, onOpenContact }) {
             {/* Right 3D Orb Stage */}
             <div className="services-hero-stage-wrap gsap-hero-anim">
               <div className="glass-orb-stage">
+                
+                {/* SVG Connection Lines connecting Pills to Sphere Center */}
+                <svg className="orb-connection-svg" viewBox="0 0 460 460" fill="none" aria-hidden="true">
+                  <line x1="230" y1="230" x2="230" y2="35" className="conn-line conn-1" />
+                  <line x1="230" y1="230" x2="45" y2="120" className="conn-line conn-2" />
+                  <line x1="230" y1="230" x2="415" y2="120" className="conn-line conn-3" />
+                  <line x1="230" y1="230" x2="45" y2="340" className="conn-line conn-4" />
+                  <line x1="230" y1="230" x2="415" y2="340" className="conn-line conn-5" />
+                  <line x1="230" y1="230" x2="230" y2="425" className="conn-line conn-6" />
+                </svg>
+
+                {/* Central Multi-Layer Glowing Sphere */}
                 <div className="orb-core-sphere">
                   <div className="orb-ring ring-1"></div>
                   <div className="orb-ring ring-2"></div>
                   <div className="orb-ring ring-3"></div>
+                  <div className="orb-orbital-ring ring-4"></div>
                   <div className="orb-inner-light"></div>
+                  <div className="orb-center-pulse"></div>
                 </div>
 
-                <div className="floating-capability-card pos-top-right">
+                {/* 1. Software Development (Top Center) */}
+                <button
+                  type="button"
+                  className={`floating-service-pill pos-top-center float-phase-1 ${activeServiceIndex === 0 ? 'is-active' : ''}`}
+                  onClick={() => {
+                    setActiveServiceIndex(0);
+                    handleScrollToCore();
+                  }}
+                  title="Software Development"
+                >
                   <Code2 size={16} className="cap-icon cyan" />
-                  <span>Full-Stack Software</span>
-                </div>
-                <div className="floating-capability-card pos-bottom-left">
-                  <Cloud size={16} className="cap-icon blue" />
-                  <span>IT Infrastructure</span>
-                </div>
-                <div className="floating-capability-card pos-bottom-right">
-                  <Headphones size={16} className="cap-icon turquoise" />
-                  <span>BPO Operations</span>
-                </div>
+                  <span>Software Development</span>
+                </button>
+
+                {/* 2. Website Development (Top Left) */}
+                <button
+                  type="button"
+                  className={`floating-service-pill pos-top-left float-phase-2 ${activeServiceIndex === 1 ? 'is-active' : ''}`}
+                  onClick={() => {
+                    setActiveServiceIndex(1);
+                    handleScrollToCore();
+                  }}
+                  title="Website Development"
+                >
+                  <Globe size={16} className="cap-icon teal" />
+                  <span>Website Development</span>
+                </button>
+
+                {/* 3. App Development (Top Right) */}
+                <button
+                  type="button"
+                  className={`floating-service-pill pos-top-right float-phase-3 ${activeServiceIndex === 2 ? 'is-active' : ''}`}
+                  onClick={() => {
+                    setActiveServiceIndex(2);
+                    handleScrollToCore();
+                  }}
+                  title="App Development"
+                >
+                  <Smartphone size={16} className="cap-icon blue" />
+                  <span>App Development</span>
+                </button>
+
+                {/* 4. Digital Marketing (Bottom Left) */}
+                <button
+                  type="button"
+                  className={`floating-service-pill pos-bottom-left float-phase-4 ${activeServiceIndex === 3 ? 'is-active' : ''}`}
+                  onClick={() => {
+                    setActiveServiceIndex(3);
+                    handleScrollToCore();
+                  }}
+                  title="Digital Marketing"
+                >
+                  <TrendingUp size={16} className="cap-icon teal" />
+                  <span>Digital Marketing</span>
+                </button>
+
+                {/* 5. BPO Services (Bottom Right) */}
+                <button
+                  type="button"
+                  className={`floating-service-pill pos-bottom-right float-phase-5 ${activeServiceIndex === 4 ? 'is-active' : ''}`}
+                  onClick={() => {
+                    setActiveServiceIndex(4);
+                    handleScrollToCore();
+                  }}
+                  title="BPO Services"
+                >
+                  <Headphones size={16} className="cap-icon blue" />
+                  <span>BPO Services</span>
+                </button>
+
+                {/* 6. Video Editing (Bottom Center) */}
+                <button
+                  type="button"
+                  className={`floating-service-pill pos-bottom-center float-phase-6 ${activeServiceIndex === 5 ? 'is-active' : ''}`}
+                  onClick={() => {
+                    setActiveServiceIndex(5);
+                    handleScrollToCore();
+                  }}
+                  title="Video Editing"
+                >
+                  <Film size={16} className="cap-icon emerald" />
+                  <span>Video Editing</span>
+                </button>
+
               </div>
             </div>
           </div>
@@ -245,55 +331,33 @@ export default function ServicesPage({ onNavigateHome, onOpenContact }) {
             <div className="marquee-auto-group">
               <span className="marquee-word-navy">SOFTWARE</span>
               <span className="marquee-star">✦</span>
-              <span className="marquee-word-outline">WEB</span>
+              <span className="marquee-word-outline">WEBSITE</span>
               <span className="marquee-star">✦</span>
-              <span className="marquee-word-navy">MOBILE</span>
+              <span className="marquee-word-navy">APP</span>
               <span className="marquee-star">✦</span>
-              <span className="marquee-word-outline">CREATIVE</span>
-              <span className="marquee-star">✦</span>
-              <span className="marquee-word-navy">MARKETING</span>
-              <span className="marquee-star">✦</span>
-              <span className="marquee-word-outline">IT</span>
+              <span className="marquee-word-outline">MARKETING</span>
               <span className="marquee-star">✦</span>
               <span className="marquee-word-navy">BPO</span>
+              <span className="marquee-star">✦</span>
+              <span className="marquee-word-outline">VIDEO EDITING</span>
               <span className="marquee-star">✦</span>
             </div>
 
             <div className="marquee-auto-group">
               <span className="marquee-word-navy">SOFTWARE</span>
               <span className="marquee-star">✦</span>
-              <span className="marquee-word-outline">WEB</span>
+              <span className="marquee-word-outline">WEBSITE</span>
               <span className="marquee-star">✦</span>
-              <span className="marquee-word-navy">MOBILE</span>
+              <span className="marquee-word-navy">APP</span>
               <span className="marquee-star">✦</span>
-              <span className="marquee-word-outline">CREATIVE</span>
-              <span className="marquee-star">✦</span>
-              <span className="marquee-word-navy">MARKETING</span>
-              <span className="marquee-star">✦</span>
-              <span className="marquee-word-outline">IT</span>
+              <span className="marquee-word-outline">MARKETING</span>
               <span className="marquee-star">✦</span>
               <span className="marquee-word-navy">BPO</span>
               <span className="marquee-star">✦</span>
+              <span className="marquee-word-outline">VIDEO EDITING</span>
+              <span className="marquee-star">✦</span>
             </div>
 
-          </div>
-        </div>
-      </section>
-
-
-      {/* =========================================================
-          SECTION 3: SERVICE INTRO STATEMENT
-         ========================================================= */}
-      <section className="services-editorial-section">
-        <div className="editorial-container">
-          <div className="editorial-content-box">
-            <span className="editorial-label">CAPABILITIES OVERVIEW</span>
-            <h2 className="editorial-headline">
-              Solutions Built Around Your Business.
-            </h2>
-            <p className="editorial-paragraph">
-              From software and websites to mobile applications, creative solutions, digital marketing, IT consulting and business operations, Pravishree brings multiple capabilities together under one technology partner.
-            </p>
           </div>
         </div>
       </section>

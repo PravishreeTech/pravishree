@@ -185,15 +185,26 @@ export default function ContactPage({ onNavigateHome, onFormSuccess }) {
 
 
       {/* =========================================================
-          SECTION 2: REPOSITIONED ANIMATED TYPOGRAPHY MARQUEE
+          SECTION 2: SEAMLESS AUTO-SCROLLING TYPOGRAPHY MARQUEE
          ========================================================= */}
-      <section className="contact-marquee-section" ref={marqueeRef}>
-        <div className="marquee-track-wrap">
-          <div className="marquee-text-content" ref={marqueeTextRef}>
-            <span>TECHNOLOGY.</span>
-            <span className="outline">CREATIVITY.</span>
-            <span>POSSIBILITY.</span>
-            <span className="outline">PRAVISHREE.</span>
+      <section className="contact-marquee-section" aria-label="Brand Philosophy Marquee">
+        <div className="contact-marquee-viewport">
+          <div className="contact-marquee-track">
+            <div className="contact-marquee-group">
+              <span className="marquee-word-filled">TECHNOLOGY.</span>
+              <span className="marquee-word-outline">CREATIVITY.</span>
+              <span className="marquee-word-filled">BUSINESS.</span>
+            </div>
+            <div className="contact-marquee-group">
+              <span className="marquee-word-filled">TECHNOLOGY.</span>
+              <span className="marquee-word-outline">CREATIVITY.</span>
+              <span className="marquee-word-filled">BUSINESS.</span>
+            </div>
+            <div className="contact-marquee-group">
+              <span className="marquee-word-filled">TECHNOLOGY.</span>
+              <span className="marquee-word-outline">CREATIVITY.</span>
+              <span className="marquee-word-filled">BUSINESS.</span>
+            </div>
           </div>
         </div>
       </section>
@@ -237,13 +248,13 @@ export default function ContactPage({ onNavigateHome, onFormSuccess }) {
               <div className="contact-map-card glass-card">
                 <div className="map-card-header">
                   <MapPin size={16} className="icon-cyan" />
-                  <span>Corporate Headquarters · Visakhapatnam</span>
+                  <span>Corporate Headquarters · Asilmetta, Visakhapatnam</span>
                 </div>
 
                 <div className="map-iframe-wrapper">
                   <iframe
                     title="Pravishree Design Co. Office Location"
-                    src="https://maps.google.com/maps?q=Visakhapatnam%2C%20Andhra%20Pradesh%2C%20India&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    src="https://maps.google.com/maps?q=Amma%20Apartments%2C%20Flat%20No%20-%20302%2C%209-14-7%2C%20CBM%20Compound%2C%20Asilmetta%2C%20Visakhapatnam%2C%20Andhra%20Pradesh%20530003&t=&z=16&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -253,7 +264,7 @@ export default function ContactPage({ onNavigateHome, onFormSuccess }) {
                   ></iframe>
 
                   <a 
-                    href="https://www.google.com/maps/search/?api=1&query=Visakhapatnam%2C+Andhra+Pradesh%2C+India" 
+                    href="https://www.google.com/maps/search/?api=1&query=Amma+Apartments%2C+Flat+No+-+302%2C+9-14-7%2C+CBM+Compound%2C+Asilmetta%2C+Visakhapatnam%2C+Andhra+Pradesh+530003" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="btn-open-google-maps"
@@ -425,13 +436,18 @@ export default function ContactPage({ onNavigateHome, onFormSuccess }) {
             </div>
 
             {/* CARD 3: ADDRESS */}
-            <div className="bottom-info-card glass-card">
+            <div className="bottom-info-card glass-card card-address-card">
               <div className="info-card-icon-wrap teal">
                 <MapPin size={22} />
               </div>
               <span className="info-card-label">ADDRESS</span>
-              <h3 className="info-card-value">Visakhapatnam, India</h3>
-              <span className="info-card-subval">Andhra Pradesh · Technology Corridor</span>
+              <address className="info-card-full-address">
+                Amma Apartments, Flat No - 302<br />
+                9-14-7, CBM Compound<br />
+                Asilmetta<br />
+                Visakhapatnam<br />
+                Andhra Pradesh - 530003
+              </address>
             </div>
 
           </div>

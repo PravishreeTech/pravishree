@@ -69,8 +69,8 @@ export default function ProcessSection() {
       
       {/* Ambient Background Typography */}
       <div className="ambient-watermark-wrap" aria-hidden="true">
-        <span className="ambient-watermark-text" style={{ top: '2.5%', left: '3%' }}>
-          Workflow
+        <span className="ambient-watermark-text">
+          WORKFLOW
         </span>
       </div>
 

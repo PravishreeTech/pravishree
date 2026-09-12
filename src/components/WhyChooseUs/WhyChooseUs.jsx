@@ -67,8 +67,8 @@ export default function WhyChooseUs() {
       
       {/* Ambient Background Typography */}
       <div className="ambient-watermark-wrap" aria-hidden="true">
-        <span className="ambient-watermark-text" style={{ top: '2.5%', right: '3%' }}>
-          Innovation
+        <span className="ambient-watermark-text">
+          INNOVATION
         </span>
       </div>
 

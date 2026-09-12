@@ -9,19 +9,29 @@ import { portfolioCategories, portfolioItems } from '../../data/portfolioData';
 import './PortfolioSection.css';
 
 export default function PortfolioSection({ onOpenProjectModal }) {
-  const [activeCategory, setActiveCategory] = useState('All');
+  const [activeCategory, setActiveCategory] = useState('SOFTWARE');
+  const [isAnimating, setIsAnimating] = useState(false);
 
-  const filteredItems = activeCategory === 'All' 
-    ? portfolioItems 
-    : portfolioItems.filter(item => item.category.toLowerCase() === activeCategory.toLowerCase());
+  const handleCategoryChange = (cat) => {
+    if (cat.toUpperCase() === activeCategory.toUpperCase()) return;
+    setIsAnimating(true);
+    setTimeout(() => {
+      setActiveCategory(cat);
+      setIsAnimating(false);
+    }, 120);
+  };
+
+  const filteredItems = portfolioItems.filter(
+    item => item.category.toUpperCase() === activeCategory.toUpperCase()
+  );
 
   return (
     <section className="portfolio-section" id="portfolio">
       
       {/* Ambient Background Typography */}
       <div className="ambient-watermark-wrap" aria-hidden="true">
-        <span className="ambient-watermark-text" style={{ top: '2.5%', left: '3%' }}>
-          Impact
+        <span className="ambient-watermark-text">
+          IMPACT
         </span>
       </div>
 
@@ -43,28 +53,27 @@ export default function PortfolioSection({ onOpenProjectModal }) {
 
         {/* Filter Categories Pill Nav */}
         <div className="portfolio-filter-nav" role="tablist">
-          {portfolioCategories.map((cat) => (
-            <button
-              key={cat}
-              className={`portfolio-tab-btn ${activeCategory === cat ? 'active' : ''}`}
-              onClick={() => setActiveCategory(cat)}
-              role="tab"
-              aria-selected={activeCategory === cat}
-            >
-              <span>{cat}</span>
-              {cat === 'All' ? (
-                <span className="count-tag">{portfolioItems.length}</span>
-              ) : (
-                <span className="count-tag">
-                  {portfolioItems.filter(p => p.category.toLowerCase() === cat.toLowerCase()).length}
-                </span>
-              )}
-            </button>
-          ))}
+          {portfolioCategories.map((cat) => {
+            const count = portfolioItems.filter(p => p.category.toUpperCase() === cat.toUpperCase()).length;
+            const isActive = activeCategory.toUpperCase() === cat.toUpperCase();
+
+            return (
+              <button
+                key={cat}
+                className={`portfolio-tab-btn ${isActive ? 'active' : ''}`}
+                onClick={() => handleCategoryChange(cat)}
+                role="tab"
+                aria-selected={isActive}
+              >
+                <span>{cat}</span>
+                <span className="count-tag">{count}</span>
+              </button>
+            );
+          })}
         </div>
 
         {/* Large Visual Portfolio Layout (2-Column Premium Showcase) */}
-        <div className="portfolio-large-grid">
+        <div className={`portfolio-large-grid ${isAnimating ? 'portfolio-grid-animating' : 'portfolio-grid-fade-in'}`}>
           {filteredItems.map((item) => (
             <div 
               key={item.id} 

@@ -19,26 +19,30 @@ import './CareersPage.css';
 const joinUsOptions = [
   { 
     id: 'dev', 
+    num: '01',
     label: 'Development', 
     desc: 'Build and maintain modern websites, web applications, and software solutions using current technologies and development practices.',
     jobId: 'data-annotators' 
   },
   { 
     id: 'design-ve', 
-    label: 'Design & VE', 
+    num: '02',
+    label: 'Design & Video Editing', 
     desc: 'Create engaging visual designs, user experiences, and creative content that bring ideas and digital products to life.',
     jobId: 'video-editors' 
   },
   { 
     id: 'dm', 
-    label: 'DM', 
+    num: '03',
+    label: 'Digital Marketing', 
     desc: 'Plan and execute digital marketing campaigns, social media strategies, and online promotions to strengthen brand visibility.',
     jobId: 'digital-marketers' 
   },
   { 
     id: 'voice-process', 
-    label: 'D&T Voice Process', 
-    desc: 'Communicate with customers professionally, handle voice-based processes, and provide reliable support while maintaining service quality.',
+    num: '04',
+    label: 'Domestic & International Voice Process', 
+    desc: 'Communicate with customers professionally, handle domestic and international voice-based processes, and provide reliable customer support while maintaining service quality.',
     jobId: 'domestic-voice' 
   }
 ];
@@ -161,6 +165,7 @@ export default function CareersPage({ onNavigateHome }) {
                         onClick={() => handleOptionClick(opt)}
                       >
                         <div className="join-option-content">
+                          <span className="join-option-num">{opt.num}</span>
                           <h3 className="join-option-label">{opt.label}</h3>
                           <p className="join-option-desc">{opt.desc}</p>
                         </div>

@@ -31,7 +31,7 @@ export default function AboutSection() {
       {/* Ambient Background Typography */}
       <div className="ambient-watermark-wrap" aria-hidden="true">
         <span className="ambient-watermark-text">
-          Possibilities
+          POSSIBILITIES
         </span>
       </div>
 

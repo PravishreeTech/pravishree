@@ -28,7 +28,13 @@ export default function CareersSection({ onOpenApplyModal }) {
 
   return (
     <section className="careers-section" id="careers">
-      <div className="container">
+      <div className="ambient-watermark-wrap" aria-hidden="true">
+        <span className="ambient-watermark-text">
+          CAREERS
+        </span>
+      </div>
+
+      <div className="container relative-z">
         
         {/*  Section Header  */}
         <div className="section-header">

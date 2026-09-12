@@ -12,13 +12,10 @@ import TeamPage from './components/TeamPage/TeamPage';
 import CareersPage from './components/CareersPage/CareersPage';
 import ContactPage from './components/ContactPage/ContactPage';
 import ServicesSection from './components/ServicesSection/ServicesSection';
-import PortfolioSection from './components/PortfolioSection/PortfolioSection';
 import WhyChooseUs from './components/WhyChooseUs/WhyChooseUs';
 import ProcessSection from './components/ProcessSection/ProcessSection';
 import TestimonialsSection from './components/TestimonialsSection/TestimonialsSection';
 import TeamSection from './components/TeamSection/TeamSection';
-import CareersSection from './components/CareersSection/CareersSection';
-import FinalCTASection from './components/FinalCTASection/FinalCTASection';
 import ContactSection from './components/ContactSection/ContactSection';
 import Footer from './components/Footer/Footer';
 import ApplyJobModal from './components/Common/ApplyJobModal';
@@ -272,12 +269,7 @@ export default function App() {
                 onSelectService={handleOpenContactWithService} 
               />
 
-              {/* 4. PORTFOLIO: Ideas Into Impact (Large Visual Presentation) */}
-              <PortfolioSection 
-                onOpenProjectModal={(proj) => setSelectedProject(proj)} 
-              />
-
-              {/* 6. WHY PRAVISHREE: 6 Feature Points with Alternating Reveals */}
+              {/* 4. WHY PRAVISHREE: 6 Feature Points with Alternating Reveals */}
               <WhyChooseUs />
 
               {/* 7. HOW WE WORK: Horizontal / Vertical Interactive Process Timeline */}
@@ -291,15 +283,7 @@ export default function App() {
                 onNavigateToTeam={(memberId) => handleNavigate('team', memberId)}
               />
 
-              {/* 10. CAREERS: Hiring Opportunities */}
-              <CareersSection 
-                onOpenApplyModal={(job) => setSelectedJob(job)} 
-              />
-
-              {/* 11. FINAL CTA: Let's Build Something Extraordinary Together */}
-              <FinalCTASection />
-
-              {/* 12. CONTACT: Contact Form */}
+              {/* 10. CONTACT: Contact Form */}
               <ContactSection 
                 selectedService={selectedService}
                 onFormSuccess={showToast}

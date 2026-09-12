@@ -12,10 +12,10 @@
 /* Ambient Background Typography */
 .ambient-watermark-wrap {
   position: absolute;
-  top: 2.5%;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   pointer-events: none;
@@ -25,14 +25,15 @@
 
 .ambient-watermark-text {
   font-family: var(--font-heading, sans-serif);
-  font-size: clamp(6.5rem, 17vw, 20rem);
+  font-size: clamp(4.5rem, 14vw, 16rem);
   font-weight: 900;
   text-transform: uppercase;
-  color: rgba(0, 119, 182, 0.045);
-  letter-spacing: -0.04em;
   user-select: none;
   line-height: 0.85;
   white-space: nowrap;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .relative-z {
@@ -232,7 +233,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  align-items: stretch;
+  align-items: flex-start;
   position: relative;
   z-index: 5;
 }
@@ -351,30 +352,33 @@
 .about-visual-col {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
-  height: 100%;
+  gap: 1.25rem;
+  height: auto;
+  flex: 1;
 }
 
 .about-visual-preview-card {
-  padding: 2.5rem 2.25rem;
+  padding: 2.25rem 2rem;
   background: rgba(255, 255, 255, 0.78);
   backdrop-filter: blur(12px) saturate(160%);
   -webkit-backdrop-filter: blur(12px) saturate(160%);
   border: 1px solid rgba(0, 180, 230, 0.22);
   border-radius: var(--border-radius-xl);
   box-shadow: 0 10px 36px rgba(11, 59, 96, 0.07), inset 0 0 20px rgba(255, 255, 255, 0.6);
-  height: 100%;
+  height: auto;
+  min-height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 1.15rem;
 }
 
 .about-visual-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.75rem;
-  padding-bottom: 1.15rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--border-light);
 }
 

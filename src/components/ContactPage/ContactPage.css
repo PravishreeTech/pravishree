@@ -152,36 +152,76 @@
 
 
 /* =========================================================
-   SECTION 2: REPOSITIONED ANIMATED TYPOGRAPHY MARQUEE
+   SECTION 2: SEAMLESS AUTO-SCROLLING TYPOGRAPHY MARQUEE
    ========================================================= */
 .contact-marquee-section {
-  padding: 2.5rem 0;
+  padding: 1.75rem 0;
   background: transparent;
   overflow: hidden;
   position: relative;
-  margin: 1rem 0;
+  width: 100%;
+  margin: 0.5rem 0;
+  border-top: 1px solid rgba(0, 180, 230, 0.15);
+  border-bottom: 1px solid rgba(0, 180, 230, 0.15);
 }
 
-.marquee-track-wrap {
-  display: flex;
+.contact-marquee-viewport {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.contact-marquee-track {
+  display: inline-flex;
+  width: max-content;
+  animation: contactInfiniteMarquee 26s linear infinite;
+  will-change: transform;
+}
+
+@keyframes contactInfiniteMarquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-33.333333%);
+  }
+}
+
+.contact-marquee-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding-right: 2.5rem;
   white-space: nowrap;
 }
 
-.marquee-text-content {
-  display: flex;
-  gap: 3rem;
+.marquee-word-filled {
   font-family: var(--font-heading, sans-serif);
-  font-size: clamp(3.5rem, 8vw, 8.5rem);
+  font-size: clamp(2.6rem, 5.2vw, 5.2rem);
   font-weight: 900;
-  line-height: 0.9;
+  line-height: 1;
   text-transform: uppercase;
   color: #061329;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
 }
 
-.marquee-text-content .outline {
+.marquee-word-outline {
+  font-family: var(--font-heading, sans-serif);
+  font-size: clamp(2.6rem, 5.2vw, 5.2rem);
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
   color: transparent;
-  -webkit-text-stroke: 2.5px #0077B6;
+  -webkit-text-stroke: 2px #0077B6;
+  letter-spacing: -0.03em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-marquee-track {
+    animation-duration: 60s;
+  }
 }
 
 
@@ -548,14 +588,18 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.75rem;
+  align-items: stretch;
 }
 
 .bottom-info-card {
-  padding: 2.25rem 2rem;
+  padding: 2.25rem 1.85rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.5rem;
+  justify-content: flex-start;
+  gap: 0.45rem;
+  height: 100%;
+  min-height: 200px;
 }
 
 .bottom-info-card:hover {
@@ -573,6 +617,7 @@
   justify-content: center;
   margin-bottom: 0.6rem;
   box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+  flex-shrink: 0;
 }
 
 .info-card-icon-wrap.blue {
@@ -626,6 +671,20 @@
   color: #64748B;
   font-weight: 500;
   line-height: 1.4;
+}
+
+.card-address-card {
+  justify-content: flex-start;
+}
+
+.info-card-full-address {
+  font-style: normal;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #061329;
+  line-height: 1.35;
+  margin-top: 0.15rem;
+  word-break: break-word;
 }
 
 

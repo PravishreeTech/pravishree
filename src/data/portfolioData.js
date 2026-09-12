@@ -1,5 +1,4 @@
 export const portfolioCategories = [
-  'ALL',
   'SOFTWARE',
   'WEBSITES',
   'APPS',

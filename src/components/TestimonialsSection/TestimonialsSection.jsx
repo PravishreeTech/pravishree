@@ -55,8 +55,8 @@ export default function TestimonialsSection() {
       
       {/* Ambient Background Typography */}
       <div className="ambient-watermark-wrap" aria-hidden="true">
-        <span className="ambient-watermark-text" style={{ top: '2.5%', right: '3%' }}>
-          Trust
+        <span className="ambient-watermark-text">
+          TRUST
         </span>
       </div>
 
