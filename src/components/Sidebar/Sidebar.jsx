@@ -176,6 +176,12 @@ export default function Sidebar({ isOpen, onClose, currentPage = 'home', onNavig
   const handleItemClick = (e, item) => {
     e.preventDefault();
 
+    if (window.innerWidth <= 1024) {
+      // Immediate single tap navigation on mobile/tablet
+      handleSingleClick(item);
+      return;
+    }
+
     if (clickTimeoutRef.current) {
       // Second click within timeout -> Double Click
       clearTimeout(clickTimeoutRef.current);
@@ -282,6 +288,7 @@ export default function Sidebar({ isOpen, onClose, currentPage = 'home', onNavig
                   >
                     <span className="nav-active-indicator" aria-hidden="true"></span>
                     <IconComp size={22} className="sidebar-main-icon" />
+                    <span className="sidebar-mobile-item-label">{item.label}</span>
 
                     {/* Small Dot for items with submenus */}
                     {item.hasDropdown && (

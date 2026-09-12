@@ -10,10 +10,61 @@ import {
   Zap,
   Coffee,
   HeartHandshake,
-  ArrowRight
+  ArrowRight,
+  Users,
+  TrendingUp,
+  GraduationCap,
+  Target,
+  Layers
 } from 'lucide-react';
 import { careersData } from '../../data/careersData';
 import './CareersPage.css';
+
+// 6 Feature cards for Why Pravishree 2x3 grid
+const whyFeatures = [
+  {
+    num: '01',
+    icon: Zap,
+    colorClass: 'cyan',
+    title: 'Cutting-Edge Tooling',
+    desc: 'Modern workstations, AI annotation platforms & enterprise tools.'
+  },
+  {
+    num: '02',
+    icon: Users,
+    colorClass: 'blue',
+    title: 'Empowering Culture',
+    desc: 'Collaborative environment & supportive leadership for continuous growth.'
+  },
+  {
+    num: '03',
+    icon: TrendingUp,
+    colorClass: 'teal',
+    title: 'Fast-Track Growth',
+    desc: 'Structured promotion pathways, bootcamps & global client exposure.'
+  },
+  {
+    num: '04',
+    icon: GraduationCap,
+    colorClass: 'cyan',
+    title: 'Learning & Development',
+    desc: 'Skill workshops, certification support & dedicated mentorship.'
+  },
+  {
+    num: '05',
+    icon: Target,
+    colorClass: 'blue',
+    title: 'Meaningful Work',
+    desc: 'Direct impact on live global products & high-visibility projects.'
+  },
+  {
+    num: '06',
+    icon: Layers,
+    colorClass: 'teal',
+    title: 'Career Opportunities',
+    desc: 'Diverse paths across software, design, marketing & operations.'
+  }
+];
 
 // 4 explicit job option cards with descriptions for Join Us panel
 const joinUsOptions = [
@@ -117,30 +168,22 @@ export default function CareersPage({ onNavigateHome }) {
                   Join a tech solution firm where innovation, creativity, and opportunity come together to build your digital future.
                 </p>
 
-                <div className="why-highlights-list">
-                  <div className="why-highlight-item">
-                    <div className="why-icon-box cyan"><Zap size={18} /></div>
-                    <div className="why-text">
-                      <h4>Cutting-Edge Tooling</h4>
-                      <p>Modern workstations, AI annotation platforms &amp; enterprise platforms.</p>
-                    </div>
-                  </div>
-
-                  <div className="why-highlight-item">
-                    <div className="why-icon-box blue"><Coffee size={18} /></div>
-                    <div className="why-text">
-                      <h4>Empowering Culture</h4>
-                      <p>Collaborative environment &amp; supportive leadership for continuous growth.</p>
-                    </div>
-                  </div>
-
-                  <div className="why-highlight-item">
-                    <div className="why-icon-box teal"><HeartHandshake size={18} /></div>
-                    <div className="why-text">
-                      <h4>Fast-Track Growth</h4>
-                      <p>Structured promotion pathways, bootcamps &amp; global client exposure.</p>
-                    </div>
-                  </div>
+                <div className="why-features-grid">
+                  {whyFeatures.map((item) => {
+                    const IconComp = item.icon;
+                    return (
+                      <div key={item.num} className="why-feature-card">
+                        <div className="why-card-header-row">
+                          <div className={`why-icon-box ${item.colorClass}`}>
+                            <IconComp size={18} />
+                          </div>
+                          <span className="why-feature-num">{item.num}</span>
+                        </div>
+                        <h4 className="why-feature-title">{item.title}</h4>
+                        <p className="why-feature-desc">{item.desc}</p>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>

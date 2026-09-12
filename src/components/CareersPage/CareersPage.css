@@ -144,28 +144,63 @@
   margin-bottom: 0.25rem;
 }
 
-.why-highlights-list {
-  display: flex;
-  flex-direction: column;
+.why-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.85rem;
   margin-top: 0.25rem;
+  flex: 1;
 }
 
-.why-highlight-item {
+.why-feature-card {
   display: flex;
-  align-items: flex-start;
-  gap: 0.85rem;
-  padding: 0.85rem 1rem;
+  flex-direction: column;
+  padding: 1.1rem;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.65);
-  border: 1px solid rgba(0, 180, 230, 0.18);
-  transition: all 0.25s ease;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(0, 180, 230, 0.2);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(6, 19, 41, 0.03);
 }
 
-.why-highlight-item:hover {
-  background: rgba(255, 255, 255, 0.95);
-  border-color: rgba(0, 217, 255, 0.4);
-  transform: translateX(4px);
+.why-feature-card:hover {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: #00D9FF;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(0, 217, 255, 0.18);
+}
+
+.why-card-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.65rem;
+}
+
+.why-feature-num {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.78rem;
+  font-weight: 850;
+  color: #0077B6;
+  background: rgba(0, 119, 182, 0.08);
+  padding: 0.2rem 0.55rem;
+  border-radius: 8px;
+  letter-spacing: 0.05em;
+}
+
+.why-feature-title {
+  font-size: 0.92rem;
+  font-weight: 850;
+  color: #061329;
+  margin-bottom: 0.35rem;
+  line-height: 1.25;
+}
+
+.why-feature-desc {
+  font-size: 0.81rem;
+  color: #64748B;
+  line-height: 1.45;
+  margin: 0;
 }
 
 .why-icon-box {
@@ -191,19 +226,6 @@
 .why-icon-box.teal {
   background: rgba(25, 230, 208, 0.14);
   color: #0F766E;
-}
-
-.why-text h4 {
-  font-size: 0.94rem;
-  font-weight: 800;
-  color: #061329;
-  margin-bottom: 0.15rem;
-}
-
-.why-text p {
-  font-size: 0.84rem;
-  color: #64748B;
-  line-height: 1.45;
 }
 
 /* Right Panel: Join Us Option Cards */
@@ -663,5 +685,9 @@
 
   .careers-panel {
     padding: 1.5rem;
+  }
+
+  .why-features-grid {
+    grid-template-columns: 1fr;
   }
 }

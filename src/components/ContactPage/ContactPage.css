@@ -666,11 +666,19 @@
   color: #00D9FF;
 }
 
+.info-card-timings {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.2rem;
+}
+
 .info-card-subval {
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   color: #64748B;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.4;
+  letter-spacing: 0.01em;
 }
 
 .card-address-card {
@@ -679,12 +687,27 @@
 
 .info-card-full-address {
   font-style: normal;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #061329;
-  line-height: 1.35;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
   margin-top: 0.15rem;
-  word-break: break-word;
+  width: 100%;
+}
+
+.address-blue-line {
+  color: #0077B6;
+  font-weight: 800;
+  font-size: 0.95rem;
+  display: block;
+  letter-spacing: -0.01em;
+}
+
+.address-navy-line {
+  color: #061329;
+  font-weight: 700;
+  font-size: 0.88rem;
+  display: block;
+  line-height: 1.35;
 }
 
 

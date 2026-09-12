@@ -3,14 +3,18 @@ import {
   MapPin, 
   ChevronRight, 
   Sparkles, 
-  Quote, 
-  Users
+  Users,
+  ShieldCheck,
+  CheckCircle2
 } from 'lucide-react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import TeamSection from '../TeamSection/TeamSection';
 import './TeamPage.css';
 
-// Custom SVG Brand Icons
+gsap.registerPlugin(ScrollTrigger);
+
+// Custom Brand & Contact Icons (Consistent Pravishree Styling)
 const LinkedInIcon = ({ size = 18 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -19,17 +23,9 @@ const LinkedInIcon = ({ size = 18 }) => (
   </svg>
 );
 
-const InstagramIcon = ({ size = 18 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-  </svg>
-);
-
-const TwitterIcon = ({ size = 18 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+const WhatsAppIcon = ({ size = 18 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.888 9.885m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
   </svg>
 );
 
@@ -42,38 +38,54 @@ const MailIcon = ({ size = 18 }) => (
 
 export default function TeamPage({ onNavigateHome }) {
   const heroRef = useRef(null);
+  const aboutTeamRef = useRef(null);
 
   // Founder Data (Ratnakar Chilaka)
   const founder = {
     name: 'Ratnakar Chilaka',
-    position: 'Founder & Chief Executive Officer',
+    position: 'Founder & CEO',
     company: 'Pravishree Design Co.',
     location: 'Visakhapatnam, Andhra Pradesh',
-    description: "At the heart of Pravishree's journey is a commitment to building practical technology and digital solutions that create meaningful value for businesses. Leading Pravishree with a focus on innovation, technology, client success and sustainable growth.",
-    quote: "Technology is most valuable when it solves a real problem. At Pravishree, our goal is to combine innovation, creativity, and business understanding to build solutions that help our clients move forward with confidence.",
-    image: '/assets/team/team-1.svg',
+    bioP1: "Ratnakar Chilaka is the Founder and CEO of Pravishree Design Co., bringing technology, creativity, and business solutions together. With a background in technology and graphic design, he founded Pravishree in 2019 to help businesses turn ideas into impactful digital solutions.",
+    bioP2: "Under his leadership, Pravishree has grown into a multi-service technology and digital solutions company offering software, web & app development, graphic design, digital marketing, video editing, consultancy, and BPO services. His philosophy is simple: understand the client, create with purpose, deliver with quality, and build for long-term growth.",
+    image: '/assets/team/ratnakar-chilaka.jpg',
     socials: {
-      linkedin: 'https://www.linkedin.com',
-      instagram: 'https://www.instagram.com',
-      twitter: 'https://x.com',
-      email: 'mailto:contact@pravishree.com'
+      linkedin: 'https://www.linkedin.com/in/chilaka-ratnakar-34128b12a/',
+      whatsapp: 'https://wa.me/918331962896',
+      email: 'mailto:pravishreedesignco@gmail.com'
     }
   };
 
-  // EXACTLY 3 Clean Team Photo Containers (Photo Only - No Text/Role/Data)
-  const teamPhotos = [
-    { id: 'teamPhoto1', image: '/assets/team/team-2.svg' },
-    { id: 'teamPhoto2', image: '/assets/team/team-3.svg' },
-    { id: 'teamPhoto3', image: '/assets/team/team-4.svg' }
-  ];
-
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
     const ctx = gsap.context(() => {
+      // 1. Hero Entry Animations
       if (heroRef.current) {
         gsap.fromTo(
           heroRef.current.querySelectorAll('.gsap-team-anim'),
-          { y: 30, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.85, stagger: 0.12, ease: 'power3.out' }
+          { y: 25, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.85, stagger: 0.1, ease: 'power3.out' }
+        );
+      }
+
+      // 2. About Team Scroll-Reveal Animation
+      if (aboutTeamRef.current) {
+        gsap.fromTo(
+          aboutTeamRef.current.querySelectorAll('.gsap-about-team-anim'),
+          { y: 25, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.75,
+            stagger: 0.1,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: aboutTeamRef.current,
+              start: 'top 80%',
+              toggleActions: 'play none none none'
+            }
+          }
         );
       }
     });
@@ -85,9 +97,9 @@ export default function TeamPage({ onNavigateHome }) {
     <div className="team-page-root">
       
       {/* =========================================================
-          1. ABOUT RATNAKAR.CH SECTION
-          - Ratnakar description on LEFT
-          - Founder photo ONLY on RIGHT (no text overlay)
+          SECTION 1: LEADERSHIP PROFILE — RATNAKAR CHILAKA
+          - Left: Breadcrumb, Badge, Heading, Role, Location, Bio, 3 Socials
+          - Right: Actual Portrait Photo with Name & Role Overlay Card
          ========================================================= */}
       <section className="ratnakar-hero-section" ref={heroRef}>
         <div className="team-hero-container">
@@ -113,7 +125,7 @@ export default function TeamPage({ onNavigateHome }) {
 
               <div className="ceo-title-meta">
                 <span className="meta-position">{founder.position}</span>
-                <span className="meta-bullet">•</span>
+                <span className="meta-bullet">–</span>
                 <span className="meta-company">{founder.company}</span>
               </div>
 
@@ -122,56 +134,67 @@ export default function TeamPage({ onNavigateHome }) {
                 <span>{founder.location}</span>
               </div>
 
-              <p className="ceo-lead-statement">
-                "{founder.description}"
-              </p>
-
-              <div className="ceo-quote-block">
-                <Quote size={20} className="quote-icon-inline" />
-                <p className="ceo-quote-text">
-                  "{founder.quote}"
+              {/* Compact & Beautifully Formatted Biography */}
+              <div className="ceo-bio-block">
+                <p className="ceo-bio-paragraph">
+                  {founder.bioP1}
+                </p>
+                <p className="ceo-bio-paragraph">
+                  {founder.bioP2}
                 </p>
               </div>
 
+              {/* Exactly 3 Leadership Contact Icons */}
               <div className="ceo-socials-block">
                 <span className="socials-label">CONNECT WITH LEADERSHIP</span>
                 <div className="social-buttons-row">
-                  {founder.socials.linkedin && (
-                    <a href={founder.socials.linkedin} target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="LinkedIn">
-                      <LinkedInIcon size={18} />
-                    </a>
-                  )}
-                  {founder.socials.instagram && (
-                    <a href={founder.socials.instagram} target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="Instagram">
-                      <InstagramIcon size={18} />
-                    </a>
-                  )}
-                  {founder.socials.twitter && (
-                    <a href={founder.socials.twitter} target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="X (Twitter)">
-                      <TwitterIcon size={18} />
-                    </a>
-                  )}
-                  {founder.socials.email && (
-                    <a href={founder.socials.email} target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="Email">
-                      <MailIcon size={18} />
-                    </a>
-                  )}
+                  <a 
+                    href={founder.socials.linkedin} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="social-btn" 
+                    title="LinkedIn"
+                    aria-label="Open Ratnakar Chilaka LinkedIn profile"
+                  >
+                    <LinkedInIcon size={18} />
+                  </a>
+
+                  <a 
+                    href={founder.socials.whatsapp} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="social-btn" 
+                    title="WhatsApp"
+                    aria-label="Contact Pravishree on WhatsApp"
+                  >
+                    <WhatsAppIcon size={18} />
+                  </a>
+
+                  <a 
+                    href={founder.socials.email} 
+                    className="social-btn" 
+                    title="Email"
+                    aria-label="Email Pravishree Design Co."
+                  >
+                    <MailIcon size={18} />
+                  </a>
                 </div>
               </div>
             </div>
 
-            {/* RIGHT COLUMN: Founder Photo ONLY (No text overlay) */}
+            {/* RIGHT COLUMN: Founder Photo Card with Natural Face Framing */}
             <div className="ceo-portrait-right gsap-team-anim">
               <div className="founder-photo-card-frame">
-                {founder.image ? (
-                  <img 
-                    src={founder.image} 
-                    alt={founder.name} 
-                    className="founder-photo-img"
-                  />
-                ) : (
-                  <div className="founder-photo-empty-slot"></div>
-                )}
+                <img 
+                  src={founder.image} 
+                  alt="Ratnakar Chilaka – Founder & CEO, Pravishree Design Co." 
+                  className="founder-photo-img"
+                  style={{ objectPosition: 'center 3%' }}
+                />
+                <div className="founder-card-footer">
+                  <span className="founder-footer-name">{founder.name}</span>
+                  <span className="founder-footer-role">Founder &amp; CEO • Pravishree Design Co.</span>
+                </div>
               </div>
             </div>
 
@@ -182,63 +205,90 @@ export default function TeamPage({ onNavigateHome }) {
 
 
       {/* =========================================================
-          2. ABOUT TEAM SECTION
-          - Heading: "ABOUT TEAM"
-          - Team description underneath
+          SECTION 2: ABOUT TEAM SECTION (TWO-COLUMN EDITORIAL)
+          - Left: Eyebrow, Heading, Subheading, Body Paragraphs, Closing Statement
+          - Right: Prominent Team Group Photo / Showcase Card
          ========================================================= */}
-      <section className="about-team-section" id="about-team">
-        <div className="about-team-container">
+      <section className="about-team-editorial-section" id="about-team" ref={aboutTeamRef}>
+        <div className="about-team-editorial-container">
           
-          <div className="about-team-header-panel">
-            <div className="team-section-badge">
-              <Users size={15} />
-              <span>OUR MULTIDISCIPLINARY TEAM</span>
-            </div>
-            <h2 className="about-team-heading">
-              ABOUT <span className="gradient-cyan-text">TEAM</span>
-            </h2>
-            <p className="about-team-description">
-              A multidisciplinary team combining technology, creativity, strategy and operational expertise to build solutions that move businesses forward.
-            </p>
-          </div>
+          <div className="about-team-editorial-card glass-card">
+            <div className="about-team-two-col-grid">
+              
+              {/* LEFT COLUMN: Editorial Content */}
+              <div className="about-team-text-col">
+                <div className="about-team-badge gsap-about-team-anim">
+                  <Sparkles size={14} className="badge-sparkle-icon" />
+                  <span>ABOUT TEAM</span>
+                </div>
 
-          {/* =========================================================
-              3. EXACTLY 3 CLEAN TEAM PHOTO SLOTS ONLY
-              - PHOTO CONTAINERS ONLY
-              - NO NAME
-              - NO ROLE
-              - NO INITIALS
-              - NO ICON / AVATAR
-              - NO TEXT (INSIDE OR BELOW)
-             ========================================================= */}
-          <div className="team-photos-grid-section">
-            <div className="team-photos-grid">
-              {teamPhotos.map((photo) => (
-                <div key={photo.id} className="team-photo-card">
-                  <div className="team-photo-wrapper">
-                    {photo.image ? (
-                      <img 
-                        src={photo.image} 
-                        alt="Team Photo" 
-                        className="team-photo-img" 
-                      />
-                    ) : (
-                      <div className="team-photo-empty-slot"></div>
-                    )}
+                <h2 className="about-team-main-heading gsap-about-team-anim">
+                  People Behind the <span className="gradient-cyan-text">Ideas</span>
+                </h2>
+
+                <p className="about-team-subheading gsap-about-team-anim">
+                  A Team Driven by Creativity, Technology &amp; Excellence
+                </p>
+
+                <div className="about-team-body-paragraphs">
+                  <p className="about-team-para gsap-about-team-anim">
+                    At Pravishree Design Co., our greatest strength is our people. We bring together creative minds, technology professionals, digital specialists, and BPO experts who share a common vision—to transform ideas into meaningful business solutions.
+                  </p>
+
+                  <p className="about-team-para gsap-about-team-anim">
+                    Our team combines strategic thinking, technical expertise, creativity, and industry knowledge to deliver solutions that are not only visually impressive but also purposeful, scalable, and results-driven.
+                  </p>
+
+                  <p className="about-team-para gsap-about-team-anim">
+                    We believe great work happens when talent meets collaboration. By working closely with our clients and with each other, we turn challenges into opportunities, ideas into experiences, and business goals into measurable outcomes.
+                  </p>
+                </div>
+
+                <div className="about-team-closing-statement gsap-about-team-anim">
+                  <p className="closing-statement-text">
+                    Together, we <span className="highlight-cyan">create</span>. Together, we <span className="highlight-cyan">innovate</span>. Together, we <span className="highlight-cyan">grow</span>.
+                  </p>
+                </div>
+              </div>
+
+              {/* RIGHT COLUMN: Team Visual / Group Photo Frame */}
+              <div className="about-team-visual-col gsap-about-team-anim">
+                <div className="about-team-photo-frame">
+                  <div className="about-team-photo-inner">
+                    <div className="team-group-ambient-canvas">
+                      <div className="group-ambient-orb" />
+                      <div className="group-card-badge">
+                        <Users size={18} className="text-cyan" />
+                        <span>Pravishree Collective</span>
+                      </div>
+                      <h3 className="group-card-title">Engineering Digital Excellence</h3>
+                      <p className="group-card-desc">
+                        Our multidisciplinary units in India &amp; USA work synchronously across design, code, and 24/7 client operations.
+                      </p>
+                      <div className="group-card-pills">
+                        <span className="pill-tag">Engineering</span>
+                        <span className="pill-tag">UI/UX</span>
+                        <span className="pill-tag">BPO Ops</span>
+                        <span className="pill-tag">Marketing</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              ))}
+              </div>
+
             </div>
           </div>
 
         </div>
       </section>
 
+
       {/* =========================================================
-          4. HOME PAGE INTERACTIVE TEAM ANIMATION / SECTION
-          - Reused exact Home page TeamSection component at the end of Team page
+          SECTION 3: MAIN INTERACTIVE TEAM SHOWCASE
+          - Left: Numbered Member List (01 to 05)
+          - Right: Dynamic Selected Member Profile / Image Panel
          ========================================================= */}
-      <section className="team-bottom-animation-section">
+      <section className="team-bottom-animation-section" id="team-members">
         <TeamSection />
       </section>
 

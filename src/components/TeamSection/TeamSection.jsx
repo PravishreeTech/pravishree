@@ -7,61 +7,54 @@ export default function TeamSection({ onNavigateToTeam }) {
   const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
   const containerRef = useRef(null);
 
-  // Raw placeholder team members for Home Page preview
+  // 5 Official Team Members
   const teamMembers = [
     {
       id: 'ratnakar-chilaka',
       number: '01',
       name: 'Ratnakar Chilaka',
-      role: 'Chief Executive Officer',
+      role: 'Founder & CEO',
       company: 'Pravishree Design Co.',
-      image: null,
+      image: '/assets/team/ratnakar-chilaka.jpg',
+      imagePosition: 'center 8%',
       accentColor: '#00D9FF'
     },
     {
-      id: 'priya-sharma',
+      id: 'vihaan-raj',
       number: '02',
-      name: 'Priya Sharma',
-      role: 'Technology Lead',
+      name: 'G. Vihaan Raj',
+      role: 'Operational Head – USA',
       company: 'Pravishree Design Co.',
       image: null,
       accentColor: '#19E6D0'
     },
     {
-      id: 'arjun-kumar',
+      id: 'suma-sree',
       number: '03',
-      name: 'Arjun Kumar',
-      role: 'Software Development Lead',
+      name: 'Ch. Suma Sree',
+      role: 'Senior Developer',
       company: 'Pravishree Design Co.',
       image: null,
       accentColor: '#1677FF'
     },
     {
-      id: 'sneha-reddy',
+      id: 'mohammed',
       number: '04',
-      name: 'Sneha Reddy',
-      role: 'Creative & Design Lead',
+      name: 'S. Mohammed',
+      role: 'Operational Manager – INDIA',
       company: 'Pravishree Design Co.',
       image: null,
       accentColor: '#00D9FF'
     },
     {
-      id: 'rahul-varma',
+      id: 'm-akash',
       number: '05',
-      name: 'Rahul Varma',
-      role: 'Digital Solutions Specialist',
+      name: 'M. Akash',
+      role: 'BPO Operations Head',
       company: 'Pravishree Design Co.',
-      image: null,
+      image: '/assets/team/m-akash.jpg',
+      imagePosition: 'center 38%',
       accentColor: '#19E6D0'
-    },
-    {
-      id: 'ananya-rao',
-      number: '06',
-      name: 'Ananya Rao',
-      role: 'Operations & Business Services Lead',
-      company: 'Pravishree Design Co.',
-      image: null,
-      accentColor: '#1677FF'
     }
   ];
 
@@ -83,11 +76,10 @@ export default function TeamSection({ onNavigateToTeam }) {
     setMouseOffset({ x: 0, y: 0 });
   };
 
-  const handleMemberClick = (memberId) => {
+  const handleMemberClick = (index, memberId) => {
+    setActiveMemberIndex(index);
     if (onNavigateToTeam) {
       onNavigateToTeam(memberId);
-    } else {
-      window.location.hash = 'team';
     }
   };
 
@@ -135,7 +127,7 @@ export default function TeamSection({ onNavigateToTeam }) {
                   key={member.id}
                   className={`home-team-row ${isActive ? 'is-active' : ''}`}
                   onMouseEnter={() => setActiveMemberIndex(index)}
-                  onClick={() => handleMemberClick(member.id)}
+                  onClick={() => handleMemberClick(index, member.id)}
                 >
                   <span className="row-num">{member.number}</span>
                   <div className="row-info-wrap">
@@ -176,6 +168,7 @@ export default function TeamSection({ onNavigateToTeam }) {
                           src={member.image} 
                           alt={member.name} 
                           className="home-card-img"
+                          style={{ objectPosition: member.imagePosition || 'center 20%' }}
                         />
                       ) : (
                         <div className="home-card-placeholder">
@@ -193,7 +186,7 @@ export default function TeamSection({ onNavigateToTeam }) {
 
                         <button 
                           className="home-card-explore-btn"
-                          onClick={() => handleMemberClick(member.id)}
+                          onClick={() => handleMemberClick(index, member.id)}
                         >
                           <span>View Full Profile</span>
                           <ArrowRight size={14} />
