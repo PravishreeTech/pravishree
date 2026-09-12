@@ -95,14 +95,6 @@ export default function PortfolioPage({ onNavigateHome, onOpenProjectModal, onOp
 
   return (
     <div className="portfolio-page-root" ref={containerRef}>
-      
-      {/* Ambient Background Typography */}
-      <div className="ambient-watermark-wrap" aria-hidden="true">
-        <span className="ambient-watermark-text" style={{ top: '3%', left: '2%' }}>
-          PORTFOLIO
-        </span>
-      </div>
-
       <div className="portfolio-page-container">
         
         {/* Page Top Context Header */}
