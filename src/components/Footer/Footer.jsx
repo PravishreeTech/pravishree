@@ -47,10 +47,10 @@ export default function Footer({ onOpenContact, onNavigate }) {
           
           {/* Column 1: Brand */}
           <div className="footer-brand-col">
-            <a href="#home" className="footer-logo-link" onClick={(e) => handleLinkClick(e, 'home', 'hero')}>
+            <a href="#home" className="footer-logo-link" onClick={(e) => handleLinkClick(e, 'home', 'hero')} aria-label="Pravishree Design Co. - Back to Top">
               <img 
-                src="/assets/logo.svg" 
-                alt="Pravishree - A Tech Solution Firm" 
+                src="/assets/logo-emblem-clean.png" 
+                alt="Pravishree Design Co." 
                 className="footer-logo-img"
               />
             </a>

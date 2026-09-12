@@ -250,7 +250,7 @@ export default function Sidebar({ isOpen, onClose, currentPage = 'home', onNavig
         <div className="sidebar-header compact">
           <a href="#" className="sidebar-logo-link" onClick={() => handleSingleClick(navItems[0])} title="Pravishree Design Co.">
             <img 
-              src="/assets/logo-icon.svg" 
+              src="/assets/logo-emblem-clean.png" 
               alt="Pravishree Design Co." 
               className="sidebar-emblem-img"
             />

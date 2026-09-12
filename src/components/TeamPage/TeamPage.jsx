@@ -254,25 +254,11 @@ export default function TeamPage({ onNavigateHome }) {
               {/* RIGHT COLUMN: Team Visual / Group Photo Frame */}
               <div className="about-team-visual-col gsap-about-team-anim">
                 <div className="about-team-photo-frame">
-                  <div className="about-team-photo-inner">
-                    <div className="team-group-ambient-canvas">
-                      <div className="group-ambient-orb" />
-                      <div className="group-card-badge">
-                        <Users size={18} className="text-cyan" />
-                        <span>Pravishree Collective</span>
-                      </div>
-                      <h3 className="group-card-title">Engineering Digital Excellence</h3>
-                      <p className="group-card-desc">
-                        Our multidisciplinary units in India &amp; USA work synchronously across design, code, and 24/7 client operations.
-                      </p>
-                      <div className="group-card-pills">
-                        <span className="pill-tag">Engineering</span>
-                        <span className="pill-tag">UI/UX</span>
-                        <span className="pill-tag">BPO Ops</span>
-                        <span className="pill-tag">Marketing</span>
-                      </div>
-                    </div>
-                  </div>
+                  <img 
+                    src="/assets/team/pravishree-team-group.jpg" 
+                    alt="Pravishree Design Co. - Our Team - People Behind the Ideas" 
+                    className="about-team-group-img" 
+                  />
                 </div>
               </div>
 

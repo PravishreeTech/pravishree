@@ -689,92 +689,36 @@
 .about-team-photo-frame {
   position: relative;
   width: 100%;
-  min-height: 420px;
   border-radius: 24px;
   overflow: hidden;
-  background: linear-gradient(135deg, #061329 0%, #0B1F3A 100%);
+  background: #061329;
   border: 1.5px solid rgba(0, 217, 255, 0.35);
-  box-shadow: 0 16px 40px rgba(6, 19, 41, 0.2), 0 0 35px rgba(0, 217, 255, 0.12);
+  box-shadow: 0 20px 45px rgba(6, 19, 41, 0.16), 0 0 30px rgba(0, 217, 255, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.about-team-photo-inner {
+.about-team-photo-frame:hover {
+  border-color: #00D9FF;
+  box-shadow: 0 25px 55px rgba(6, 19, 41, 0.22), 0 0 45px rgba(0, 217, 255, 0.25);
+  transform: translateY(-3px);
+}
+
+.about-team-group-img {
   width: 100%;
-  height: 100%;
-  position: relative;
+  height: auto;
+  aspect-ratio: 16 / 10.5;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  border-radius: 22px;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.team-group-ambient-canvas {
-  position: relative;
-  padding: 3rem 2.25rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1.25rem;
-  z-index: 2;
-  height: 100%;
-  justify-content: center;
-}
-
-.group-ambient-orb {
-  position: absolute;
-  top: -40px;
-  right: -40px;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 217, 255, 0.25) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.group-card-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  border-radius: 9999px;
-  background: rgba(0, 217, 255, 0.12);
-  border: 1px solid rgba(0, 217, 255, 0.3);
-  font-size: 13px;
-  font-weight: 700;
-  color: #00D9FF;
-  letter-spacing: 0.04em;
-}
-
-.group-card-title {
-  font-size: 1.6rem;
-  font-weight: 850;
-  color: #FFFFFF;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-  margin: 0;
-}
-
-.group-card-desc {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #94A3B8;
-  margin: 0;
-}
-
-.group-card-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 0.5rem;
-}
-
-.pill-tag {
-  font-size: 0.78rem;
-  font-weight: 750;
-  padding: 4px 12px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(0, 217, 255, 0.2);
-  color: #E2E8F0;
-  letter-spacing: 0.02em;
+.about-team-photo-frame:hover .about-team-group-img {
+  transform: scale(1.02);
 }
 
 

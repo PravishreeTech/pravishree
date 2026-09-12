@@ -23,10 +23,17 @@
 
 /* Brand Col */
 .footer-logo-img {
-  height: 44px;
+  height: 54px;
   width: auto;
-  filter: brightness(0) invert(1);
-  margin-bottom: 1.25rem;
+  max-width: 60px;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 1.15rem;
+  transition: transform var(--transition-fast);
+}
+
+.footer-logo-link:hover .footer-logo-img {
+  transform: scale(1.06);
 }
 
 .footer-brand-desc {
