@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-import { 
-  MapPin, 
-  ChevronRight, 
-  Sparkles, 
+import {
+  MapPin,
+  ChevronRight,
+  Sparkles,
   Users,
   ShieldCheck,
   CheckCircle2
@@ -95,7 +95,7 @@ export default function TeamPage({ onNavigateHome }) {
 
   return (
     <div className="team-page-root">
-      
+
       {/* =========================================================
           SECTION 1: LEADERSHIP PROFILE — RATNAKAR CHILAKA
           - Left: Breadcrumb, Badge, Heading, Role, Location, Bio, 3 Socials
@@ -103,7 +103,7 @@ export default function TeamPage({ onNavigateHome }) {
          ========================================================= */}
       <section className="ratnakar-hero-section" ref={heroRef}>
         <div className="team-hero-container">
-          
+
           <nav className="team-breadcrumb gsap-team-anim" aria-label="Breadcrumb">
             <button className="breadcrumb-link" onClick={onNavigateHome}>Home</button>
             <ChevronRight size={14} className="breadcrumb-separator" />
@@ -111,14 +111,14 @@ export default function TeamPage({ onNavigateHome }) {
           </nav>
 
           <div className="ceo-asymmetric-grid">
-            
+
             {/* LEFT COLUMN: Founder Description & Info */}
             <div className="ceo-info-left gsap-team-anim">
               <div className="team-badge-pill">
                 <Sparkles size={14} className="badge-sparkle-icon" />
                 <span>ABOUT RATNAKAR.CH</span>
               </div>
-              
+
               <h1 className="ceo-name-heading">
                 {founder.name}
               </h1>
@@ -148,31 +148,31 @@ export default function TeamPage({ onNavigateHome }) {
               <div className="ceo-socials-block">
                 <span className="socials-label">CONNECT WITH LEADERSHIP</span>
                 <div className="social-buttons-row">
-                  <a 
-                    href={founder.socials.linkedin} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="social-btn" 
+                  <a
+                    href={founder.socials.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-btn"
                     title="LinkedIn"
                     aria-label="Open Ratnakar Chilaka LinkedIn profile"
                   >
                     <LinkedInIcon size={18} />
                   </a>
 
-                  <a 
-                    href={founder.socials.whatsapp} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="social-btn" 
+                  <a
+                    href={founder.socials.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-btn"
                     title="WhatsApp"
                     aria-label="Contact Pravishree on WhatsApp"
                   >
                     <WhatsAppIcon size={18} />
                   </a>
 
-                  <a 
-                    href={founder.socials.email} 
-                    className="social-btn" 
+                  <a
+                    href={founder.socials.email}
+                    className="social-btn"
                     title="Email"
                     aria-label="Email Pravishree Design Co."
                   >
@@ -185,9 +185,9 @@ export default function TeamPage({ onNavigateHome }) {
             {/* RIGHT COLUMN: Founder Photo Card with Natural Face Framing */}
             <div className="ceo-portrait-right gsap-team-anim">
               <div className="founder-photo-card-frame">
-                <img 
-                  src={founder.image} 
-                  alt="Ratnakar Chilaka – Founder & CEO, Pravishree Design Co." 
+                <img
+                  src={founder.image}
+                  alt="Ratnakar Chilaka – Founder & CEO, Pravishree Design Co."
                   className="founder-photo-img"
                   style={{ objectPosition: 'center 3%' }}
                 />
@@ -211,10 +211,10 @@ export default function TeamPage({ onNavigateHome }) {
          ========================================================= */}
       <section className="about-team-editorial-section" id="about-team" ref={aboutTeamRef}>
         <div className="about-team-editorial-container">
-          
+
           <div className="about-team-editorial-card glass-card">
             <div className="about-team-two-col-grid">
-              
+
               {/* LEFT COLUMN: Editorial Content */}
               <div className="about-team-text-col">
                 <div className="about-team-badge gsap-about-team-anim">
@@ -243,26 +243,28 @@ export default function TeamPage({ onNavigateHome }) {
                     We believe great work happens when talent meets collaboration. By working closely with our clients and with each other, we turn challenges into opportunities, ideas into experiences, and business goals into measurable outcomes.
                   </p>
                 </div>
-
-                <div className="about-team-closing-statement gsap-about-team-anim">
-                  <p className="closing-statement-text">
-                    Together, we <span className="highlight-cyan">create</span>. Together, we <span className="highlight-cyan">innovate</span>. Together, we <span className="highlight-cyan">grow</span>.
-                  </p>
-                </div>
               </div>
 
               {/* RIGHT COLUMN: Team Visual / Group Photo Frame */}
               <div className="about-team-visual-col gsap-about-team-anim">
                 <div className="about-team-photo-frame">
-                  <img 
-                    src="/assets/team/pravishree-team-group.jpg" 
-                    alt="Pravishree Design Co. - Our Team - People Behind the Ideas" 
-                    className="about-team-group-img" 
+                  <img
+                    src="/assets/team/pravishree-team-group.jpg"
+                    alt="Pravishree Design Co. - Our Team - People Behind the Ideas"
+                    className="about-team-group-img"
                   />
                 </div>
               </div>
 
             </div>
+
+            {/* FULL-WIDTH CLOSING STATEMENT */}
+            <div className="about-team-closing-statement gsap-about-team-anim">
+              <p className="closing-statement-text">
+                Together,    we <span className="highlight-cyan">create</span>. Together,   we <span className="highlight-cyan">innovate</span>. Together, we <span className="highlight-cyan">grow</span>.
+              </p>
+            </div>
+
           </div>
 
         </div>

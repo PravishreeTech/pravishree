@@ -250,13 +250,32 @@ export default function ServicesSection({ onSelectService }) {
     return () => clearInterval(interval);
   }, [isHovered, isReducedMotion, totalServices]);
 
-  // Navigation Handlers
+  const lastAdvanceTimeRef = useRef(0);
+
+  // Navigation Handlers with rapid tap prevention
   const handlePrev = () => {
+    const now = Date.now();
+    if (now - lastAdvanceTimeRef.current < 280) return;
+    lastAdvanceTimeRef.current = now;
     setActiveIndex((prev) => (prev - 1 + totalServices) % totalServices);
   };
 
   const handleNext = () => {
+    const now = Date.now();
+    if (now - lastAdvanceTimeRef.current < 280) return;
+    lastAdvanceTimeRef.current = now;
     setActiveIndex((prev) => (prev + 1) % totalServices);
+  };
+
+  const handleCardClick = (index, isActive) => {
+    if (isActive) {
+      handleNext();
+    } else {
+      const now = Date.now();
+      if (now - lastAdvanceTimeRef.current < 280) return;
+      lastAdvanceTimeRef.current = now;
+      setActiveIndex(index);
+    }
   };
 
   // Mouse Parallax Handler
@@ -417,9 +436,16 @@ export default function ServicesSection({ onSelectService }) {
                   <div
                     key={service.id}
                     className={`service-3d-card ${transformClass} ${isActive ? 'is-active' : ''}`}
-                    onClick={() => setActiveIndex(index)}
-                    role="group"
-                    aria-label={`${service.num} ${service.title}`}
+                    onClick={() => handleCardClick(index, isActive)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        handleCardClick(index, isActive);
+                      }
+                    }}
+                    tabIndex={isActive ? 0 : -1}
+                    role="button"
+                    aria-label={`${service.num} ${service.title} - ${isActive ? 'Tap or click to advance to next service' : 'Click to select this service'}`}
                   >
                     {/* Top Row Header */}
                     <div className="card-3d-top">
