@@ -7,6 +7,7 @@ export const servicesData = [
     iconName: 'Code2',
     badge: 'Enterprise Architecture',
     accentColor: '#00D9FF',
+    image: '/assets/services/home-01-software.jpg',
     compactPills: ['Enterprise Systems', 'Cloud Solutions', 'API Integration'],
     features: ['Custom Enterprise Portals', 'Cloud Native & Microservices', 'Secure Database Systems', 'API & Integration Engines']
   },
@@ -18,6 +19,7 @@ export const servicesData = [
     iconName: 'Globe',
     badge: 'High Performance',
     accentColor: '#0077B6',
+    image: '/assets/services/home-02-website.jpg',
     compactPills: ['High Performance', 'Responsive UI/UX', 'Custom CMS'],
     features: ['Modern Frontend Frameworks', 'Responsive & Mobile-First', 'Fast Loading & SEO Optimized', 'Custom CMS & API Integrations']
   },
@@ -29,6 +31,7 @@ export const servicesData = [
     iconName: 'Smartphone',
     badge: 'iOS & Android',
     accentColor: '#19E6D0',
+    image: '/assets/services/home-03-app.jpg',
     compactPills: ['iOS & Android', 'Native Performance', 'Real-Time Sync'],
     features: ['Cross-Platform & Native Apps', 'Frictionless UI/UX Flow', 'Real-Time Data Sync', 'App Store Optimization']
   },
@@ -40,6 +43,7 @@ export const servicesData = [
     iconName: 'TrendingUp',
     badge: 'Growth Engine',
     accentColor: '#0284C7',
+    image: '/assets/services/home-04-marketing.jpg',
     compactPills: ['Growth Strategy', 'Targeted Ads', 'Conversion Funnels'],
     features: ['Technical & Organic SEO', 'Targeted Performance Ads', 'Social Media Strategy', 'Conversion Rate Optimization']
   },
@@ -51,6 +55,7 @@ export const servicesData = [
     iconName: 'Headphones',
     badge: '24/7 Operations',
     accentColor: '#00D9FF',
+    image: '/assets/services/home-05-bpo.jpg',
     compactPills: ['24/7 Operations', 'Voice & Chat Support', 'Back-Office Workflow'],
     features: ['Inbound & Outbound Customer Care', 'Domestic & International Voice Desks', 'Back-Office & Data Management', 'Tier 1/2 Technical Support']
   },
@@ -62,6 +67,7 @@ export const servicesData = [
     iconName: 'Film',
     badge: 'Post-Production Studio',
     accentColor: '#19E6D0',
+    image: '/assets/services/home-06-video.jpg',
     compactPills: ['Motion Graphics', 'Color Grading', 'Post-Production'],
     features: ['High-Fidelity Video Editing', '2D & 3D Motion Graphics', 'Visual Effects & Color Grading', 'Social Reels & Corporate Promos']
   }

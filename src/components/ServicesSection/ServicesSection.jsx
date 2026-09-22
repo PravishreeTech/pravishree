@@ -453,8 +453,15 @@ export default function ServicesSection({ onSelectService }) {
                       <span className="card-badge-tag">{service.badge}</span>
                     </div>
 
-                    {/* Abstract Service Graphic */}
-                    <ServiceAbstractVisual serviceId={service.id} />
+                    {/* Service Image Visual */}
+                    <div className="svc-card-visual-wrap">
+                      <img 
+                        src={service.image} 
+                        alt={service.title} 
+                        className="svc-card-img" 
+                        loading="lazy" 
+                      />
+                    </div>
 
                     {/* Service Title & Summary */}
                     <div className="card-3d-body">

@@ -123,17 +123,6 @@
   box-shadow: 0 0 4px var(--color-accent-cyan);
 }
 
-.sidebar-hiring-dot {
-  position: absolute;
-  top: 7px;
-  right: 7px;
-  width: 6px;
-  height: 6px;
-  background: #10B981;
-  border-radius: 50%;
-  box-shadow: 0 0 6px #10B981;
-}
-
 /* Active Bar Indicator */
 .nav-active-indicator {
   position: absolute;

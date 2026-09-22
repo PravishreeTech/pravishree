@@ -294,10 +294,6 @@ export default function Sidebar({ isOpen, onClose, currentPage = 'home', onNavig
                     {item.hasDropdown && (
                       <span className="sidebar-dropdown-dot" title="Double-click to view submenus"></span>
                     )}
-
-                    {item.id === 'careers' && (
-                      <span className="sidebar-hiring-dot" title="We are hiring!"></span>
-                    )}
                   </button>
 
                   {/* HOVER TOOLTIP / LABEL (Appears to the RIGHT of the icon) */}

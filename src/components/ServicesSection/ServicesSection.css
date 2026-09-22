@@ -346,8 +346,35 @@
 
 
 /* ==========================================================================
-   ABSTRACT TECH VISUAL GRAPHICS (PANEL INSIDE EACH CARD)
+   SERVICE CARD IMAGE VISUALS (PANEL INSIDE EACH CARD)
    ========================================================================== */
+.svc-card-visual-wrap {
+  position: relative;
+  width: 100%;
+  height: 165px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #061329;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 180, 230, 0.2);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.25), 0 4px 16px rgba(11, 59, 96, 0.08);
+}
+
+.svc-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.service-3d-card:hover .svc-card-img {
+  transform: scale(1.05);
+}
+
 .svc-abstract-graphic {
   position: relative;
   width: 100%;
@@ -706,7 +733,8 @@
     padding: 18px;
   }
 
-  .svc-abstract-graphic {
+  .svc-abstract-graphic,
+  .svc-card-visual-wrap {
     height: 135px;
   }
 
@@ -754,7 +782,8 @@
     border-radius: 18px;
   }
 
-  .svc-abstract-graphic {
+  .svc-abstract-graphic,
+  .svc-card-visual-wrap {
     height: 125px;
   }
 
@@ -792,7 +821,8 @@
     border-radius: 16px;
   }
 
-  .svc-abstract-graphic {
+  .svc-abstract-graphic,
+  .svc-card-visual-wrap {
     height: 110px;
   }
 

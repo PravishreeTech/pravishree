@@ -38,7 +38,8 @@ export default function ServicesPage({ onNavigateHome, onOpenContact }) {
       tags: ['Custom Software', 'Enterprise Applications', 'API Integration', 'Cloud Architecture', 'Database Systems', 'Software Support'],
       accentColor: '#00D9FF',
       gradient: 'linear-gradient(135deg, #00D9FF 0%, #0077B6 100%)',
-      visualStyle: 'art-software'
+      image: '/assets/services/service-01-software.jpg',
+      alt: 'Pravishree Custom Software Development Solutions'
     },
     {
       id: 'website',
@@ -51,7 +52,8 @@ export default function ServicesPage({ onNavigateHome, onOpenContact }) {
       tags: ['Corporate Websites', 'Business Websites', 'Web Portals', 'Responsive Layouts', 'UI/UX Implementation', 'Website Maintenance'],
       accentColor: '#19E6D0',
       gradient: 'linear-gradient(135deg, #19E6D0 0%, #0077B6 100%)',
-      visualStyle: 'art-web'
+      image: '/assets/services/service-02-website.jpg',
+      alt: 'Pravishree Modern Responsive Web Development'
     },
     {
       id: 'app',
@@ -64,7 +66,8 @@ export default function ServicesPage({ onNavigateHome, onOpenContact }) {
       tags: ['Android Applications', 'iOS Applications', 'Cross-Platform Apps', 'Mobile UI/UX', 'Real-Time Sync', 'App Store Maintenance'],
       accentColor: '#1677FF',
       gradient: 'linear-gradient(135deg, #1677FF 0%, #00D9FF 100%)',
-      visualStyle: 'art-mobile'
+      image: '/assets/services/service-03-app.jpg',
+      alt: 'Pravishree Mobile App Development for iOS and Android'
     },
     {
       id: 'marketing',
@@ -77,7 +80,8 @@ export default function ServicesPage({ onNavigateHome, onOpenContact }) {
       tags: ['Organic & Technical SEO', 'Performance Ad Campaigns', 'Social Media Marketing', 'Content Strategy', 'Brand Promotion', 'Conversion Optimization'],
       accentColor: '#19E6D0',
       gradient: 'linear-gradient(135deg, #19E6D0 0%, #061329 100%)',
-      visualStyle: 'art-marketing'
+      image: '/assets/services/service-04-marketing.jpg',
+      alt: 'Pravishree Growth-Driven Digital Marketing'
     },
     {
       id: 'bpo',
@@ -91,7 +95,8 @@ export default function ServicesPage({ onNavigateHome, onOpenContact }) {
       tools: ['Zendesk', 'Salesforce', 'Slack', 'Zoom'],
       accentColor: '#1677FF',
       gradient: 'linear-gradient(135deg, #1677FF 0%, #19E6D0 100%)',
-      visualStyle: 'art-bpo'
+      image: '/assets/services/service-05-bpo.jpg',
+      alt: 'Pravishree 24/7 BPO & Operations Services'
     },
     {
       id: 'video',
@@ -104,7 +109,8 @@ export default function ServicesPage({ onNavigateHome, onOpenContact }) {
       tags: ['High-Fidelity Editing', '2D & 3D Motion Graphics', 'Visual Effects (VFX)', 'Color Grading', 'Social Reels & Shorts', 'Corporate Promos'],
       accentColor: '#10B981',
       gradient: 'linear-gradient(135deg, #10B981 0%, #00D9FF 100%)',
-      visualStyle: 'art-video'
+      image: '/assets/services/service-06-video.jpg',
+      alt: 'Pravishree Creative Video Editing & Motion Graphics'
     }
   ];
 
@@ -372,7 +378,7 @@ export default function ServicesPage({ onNavigateHome, onOpenContact }) {
           
           <div className="cinematic-editorial-grid">
             
-            {/* LEFT COLUMN: 7 Core Services */}
+            {/* LEFT COLUMN: 6 Core Services */}
             <div className="editorial-services-left">
               {servicesData.map((service, index) => {
                 const isActive = activeServiceIndex === index;
@@ -381,7 +387,7 @@ export default function ServicesPage({ onNavigateHome, onOpenContact }) {
                   <article 
                     key={service.id}
                     className={`editorial-service-item ${isActive ? 'is-active' : 'is-inactive'}`}
-                    onClick={() => setActiveServiceIndex(activeServiceIndex === index ? null : index)}
+                    onClick={() => setActiveServiceIndex(prev => prev === index ? null : index)}
                   >
                     <div className="editorial-service-header">
                       <span className="editorial-service-top-num">{service.number}</span>
@@ -439,7 +445,7 @@ export default function ServicesPage({ onNavigateHome, onOpenContact }) {
               })}
             </div>
 
-            {/* RIGHT COLUMN: 3D Visual Art Canvas */}
+            {/* RIGHT COLUMN: Service Image Visual Stage */}
             <div className="editorial-services-right">
               <div 
                 className="sticky-art-canvas-container" 
@@ -448,42 +454,56 @@ export default function ServicesPage({ onNavigateHome, onOpenContact }) {
               >
                 <div className="art-glass-panel">
                   
-                  {/* DEFAULT NEUTRAL 3D VISUAL (WHEN NO SERVICE IS ACTIVE) */}
-                  <div className={`art-visual-item art-default-neutral ${activeServiceIndex === null ? 'is-active' : ''}`}>
+                  {/* DEFAULT STATE WHEN NO SERVICE IS EXPANDED */}
+                  <div 
+                    className={`art-visual-item service-image-visual-item ${activeServiceIndex === null ? 'is-active' : ''}`}
+                    aria-hidden={activeServiceIndex !== null}
+                  >
                     <div 
                       className="art-ambient-glow" 
                       style={{ background: 'linear-gradient(135deg, #00D9FF 0%, #0077B6 60%, #061329 100%)' }}
                     ></div>
 
                     <div 
-                      className="art-3d-geometry-wrap"
+                      className="service-image-frame default-welcome-frame"
                       style={{
-                        transform: `translate3d(${mousePos.x}px, ${mousePos.y}px, 0)`
+                        transform: `translate3d(${mousePos.x * 0.4}px, ${mousePos.y * 0.4}px, 0)`
                       }}
                     >
-                      <div className="art-neutral-structure">
-                        <div className="neutral-sphere-ring ring-n1"></div>
-                        <div className="neutral-sphere-ring ring-n2"></div>
-                        <div className="neutral-sphere-ring ring-n3"></div>
-                        <div className="matrix-icon-center">
-                          <Sparkles size={84} style={{ color: '#00D9FF' }} />
+                      <div className="default-welcome-content">
+                        <div className="welcome-glow-icon">
+                          <Sparkles size={46} className="text-cyan-glow" />
+                        </div>
+                        <h3 className="welcome-frame-title">Explore Our Capabilities</h3>
+                        <p className="welcome-frame-subtitle">
+                          Tap any service on the left to view detailed solutions, workflows, and technology stacks.
+                        </p>
+                        <div className="welcome-pills-row">
+                          <span className="welcome-chip">Software</span>
+                          <span className="welcome-chip">Web</span>
+                          <span className="welcome-chip">Mobile</span>
+                          <span className="welcome-chip">Marketing</span>
+                          <span className="welcome-chip">BPO</span>
+                          <span className="welcome-chip">Video</span>
                         </div>
                       </div>
+                      <div className="service-image-glass-overlay"></div>
                     </div>
 
                     <div className="art-caption-overlay">
-                      <span className="art-num-tag">00</span>
+                      <span className="art-num-tag">✦</span>
                       <span className="art-title-tag">EXPLORE CAPABILITIES</span>
                     </div>
                   </div>
-                  
+
                   {servicesData.map((service, index) => {
                     const isActive = activeServiceIndex === index;
 
                     return (
                       <div 
                         key={service.id}
-                        className={`art-visual-item ${service.visualStyle} ${isActive ? 'is-active' : ''}`}
+                        className={`art-visual-item service-image-visual-item ${isActive ? 'is-active' : ''}`}
+                        aria-hidden={!isActive}
                       >
                         <div 
                           className="art-ambient-glow" 
@@ -491,82 +511,18 @@ export default function ServicesPage({ onNavigateHome, onOpenContact }) {
                         ></div>
 
                         <div 
-                          className="art-3d-geometry-wrap"
+                          className="service-image-frame"
                           style={{
-                            transform: `translate3d(${mousePos.x}px, ${mousePos.y}px, 0)`
+                            transform: `translate3d(${mousePos.x * 0.4}px, ${mousePos.y * 0.4}px, 0)`
                           }}
                         >
-                          {/* 01: Software Development */}
-                          {service.id === 'software' && (
-                            <div className="art-software-matrix">
-                              <div className="matrix-cube cube-outer"></div>
-                              <div className="matrix-cube cube-middle"></div>
-                              <div className="matrix-cube cube-inner"></div>
-                              <div className="matrix-icon-center">
-                                <Code2 size={80} style={{ color: service.accentColor }} />
-                              </div>
-                            </div>
-                          )}
-
-                          {/* 02: Website Development */}
-                          {service.id === 'website' && (
-                            <div className="art-web-structure">
-                              <div className="web-grid-frame"></div>
-                              <div className="web-glass-layer layer-a"></div>
-                              <div className="web-glass-layer layer-b"></div>
-                              <div className="matrix-icon-center">
-                                <Globe size={80} style={{ color: service.accentColor }} />
-                              </div>
-                            </div>
-                          )}
-
-                          {/* 03: App Development */}
-                          {service.id === 'app' && (
-                            <div className="art-mobile-chassis">
-                              <div className="device-frame"></div>
-                              <div className="device-layer layer-1"></div>
-                              <div className="device-layer layer-2"></div>
-                              <div className="matrix-icon-center">
-                                <Smartphone size={80} style={{ color: service.accentColor }} />
-                              </div>
-                            </div>
-                          )}
-
-                          {/* 04: Digital Marketing */}
-                          {service.id === 'marketing' && (
-                            <div className="art-marketing-growth">
-                              <div className="growth-chart-ring r1"></div>
-                              <div className="growth-chart-ring r2"></div>
-                              <div className="matrix-icon-center">
-                                <TrendingUp size={80} style={{ color: service.accentColor }} />
-                              </div>
-                            </div>
-                          )}
-
-                          {/* 05: BPO Services */}
-                          {service.id === 'bpo' && (
-                            <div className="art-bpo-network">
-                              <div className="network-node n1"></div>
-                              <div className="network-node n2"></div>
-                              <div className="network-node n3"></div>
-                              <div className="network-line l1"></div>
-                              <div className="network-line l2"></div>
-                              <div className="matrix-icon-center">
-                                <Headphones size={80} style={{ color: service.accentColor }} />
-                              </div>
-                            </div>
-                          )}
-
-                          {/* 06: Video Editing */}
-                          {service.id === 'video' && (
-                            <div className="art-bpo-network">
-                              <div className="network-node n1"></div>
-                              <div className="network-node n2"></div>
-                              <div className="matrix-icon-center">
-                                <Film size={80} style={{ color: service.accentColor }} />
-                              </div>
-                            </div>
-                          )}
+                          <img 
+                            src={service.image} 
+                            alt={service.alt || service.title}
+                            className="service-visual-image"
+                            loading={index === 0 ? "eager" : "lazy"}
+                          />
+                          <div className="service-image-glass-overlay"></div>
                         </div>
 
                         <div className="art-caption-overlay">
