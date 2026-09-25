@@ -456,19 +456,14 @@ export default function AboutPage({ onNavigateHome, onOpenContact }) {
               </p>
             </div>
 
-            {/* ABSTRACT CSS TECHNOLOGY VISUAL PANEL */}
-            <div className="abstract-tech-visual-panel">
-              <div className="panel-gradient-mesh"></div>
-              <div className="panel-digital-grid"></div>
-              <div className="panel-glowing-nodes">
-                <span className="p-node node-a"></span>
-                <span className="p-node node-b"></span>
-                <span className="p-node node-c"></span>
-              </div>
-              <div className="panel-badge-glass">
-                <Zap size={14} className="panel-icon-cyan" />
-                <span>Technology + Creativity + Business</span>
-              </div>
+            {/* 2ND ABOUT VISUAL: DIGITAL ECOSYSTEM (TECHNOLOGY + CREATIVITY + BUSINESS) */}
+            <div className="about-tech-visual-stage">
+              <img 
+                src="/assets/about-digital-ecosystem.jpg" 
+                alt="Pravishree Digital Ecosystem — Technology, Creativity, and Business" 
+                className="about-tech-visual-img"
+                loading="lazy"
+              />
             </div>
           </div>
 

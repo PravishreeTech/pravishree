@@ -679,9 +679,9 @@
   aspect-ratio: 4 / 5;
   height: auto;
   border-radius: 28px;
-  background: transparent;
-  border: 1.5px solid rgba(0, 217, 255, 0.3);
-  box-shadow: 0 30px 65px -15px rgba(6, 19, 41, 0.45), 0 0 45px rgba(0, 217, 255, 0.18);
+  background: #FFFFFF;
+  border: 1.5px solid rgba(0, 180, 230, 0.25);
+  box-shadow: 0 20px 50px rgba(11, 59, 96, 0.1), 0 0 35px rgba(0, 217, 255, 0.12);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -760,7 +760,7 @@
   justify-content: center;
   border-radius: 28px;
   overflow: hidden;
-  background: transparent;
+  background: #FFFFFF;
   border: none;
   box-shadow: none;
   transition: transform 0.3s ease-out;
@@ -768,9 +768,9 @@
 
 /* Default Welcome Frame Styling */
 .default-welcome-frame {
-  background: radial-gradient(circle at 50% 40%, rgba(0, 119, 182, 0.25) 0%, rgba(6, 19, 41, 0.95) 80%);
-  border: 1.5px dashed rgba(0, 217, 255, 0.4);
-  padding: 2.5rem 2rem;
+  background: #FFFFFF;
+  border: none;
+  padding: 0;
   text-align: center;
 }
 
@@ -810,7 +810,7 @@
 .welcome-frame-title {
   font-size: clamp(1.5rem, 2vw, 1.85rem);
   font-weight: 800;
-  color: #FFFFFF;
+  color: #061329;
   letter-spacing: -0.02em;
   margin: 0;
 }
@@ -818,7 +818,7 @@
 .welcome-frame-subtitle {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #94A3B8;
+  color: #64748B;
   margin: 0;
 }
 
@@ -833,7 +833,7 @@
 .welcome-chip {
   font-size: 0.75rem;
   font-weight: 700;
-  color: #00D9FF;
+  color: #0077B6;
   padding: 0.35rem 0.85rem;
   border-radius: 9999px;
   background: rgba(0, 217, 255, 0.08);
@@ -864,33 +864,33 @@
 
 .art-caption-overlay {
   position: absolute;
-  bottom: 28px;
-  left: 36px;
+  bottom: 24px;
+  left: 28px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   z-index: 10;
-  background: rgba(6, 19, 41, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 8px 18px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 7px 16px;
   border-radius: 9999px;
-  border: 1px solid rgba(0, 217, 255, 0.35);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 180, 230, 0.3);
+  box-shadow: 0 4px 18px rgba(11, 59, 96, 0.12);
 }
 
 .art-num-tag {
-  font-size: 14px;
+  font-size: 13px;
   font-family: monospace;
   font-weight: 800;
-  color: #00D9FF;
+  color: #0077B6;
   letter-spacing: 0.08em;
 }
 
 .art-title-tag {
-  font-size: 14px;
-  font-weight: 700;
-  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 750;
+  color: #061329;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }

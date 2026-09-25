@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" fill="none">
+  <defs>
+    <linearGradient id="bgGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F4FAFD"/>
+      <stop offset="60%" stop-color="#E8F4FA"/>
+      <stop offset="100%" stop-color="#D7EEFA"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0077B6"/>
+      <stop offset="100%" stop-color="#00D9FF"/>
+    </linearGradient>
+    <linearGradient id="hubGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B3B60"/>
+      <stop offset="100%" stop-color="#0077B6"/>
+    </linearGradient>
+    <filter id="shadow1" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#005B8E" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="600" fill="url(#bgGrad1)" rx="24"/>
+  <circle cx="1060" cy="140" r="320" fill="#0096C7" opacity="0.07"/>
+  <circle cx="160" cy="540" r="240" fill="#0077B6" opacity="0.05"/>
+
+  <!-- Top Logo Banner -->
+  <g transform="translate(60, 45)">
+    <text font-family="'Plus Jakarta Sans', sans-serif" font-size="22" font-weight="700" fill="#0B3B60">Pravishree Design Co.</text>
+    <text x="0" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#0096C7" letter-spacing="1.5">A TECH SOLUTION FIRM</text>
+    <line x1="0" y1="10" x2="210" y2="10" stroke="#0096C7" stroke-width="1.5" opacity="0.4"/>
+  </g>
+
+  <!-- Left Content -->
+  <g transform="translate(60, 160)">
+    <rect width="210" height="28" rx="14" fill="#E0F2FE"/>
+    <text x="14" y="19" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0284C7" letter-spacing="1">END-TO-END • INNOVATE • SCALE</text>
+    
+    <text y="75" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="800" fill="#0B3B60" line-height="1.2">
+      <tspan x="0" dy="0">End-to-End Solutions to</tspan>
+      <tspan x="0" dy="54" fill="#0077B6">Empower Your Business</tspan>
+    </text>
+
+    <text y="190" font-family="'Plus Jakarta Sans', sans-serif" font-size="17" font-weight="400" fill="#475569">
+      <tspan x="0" dy="0">We deliver innovative, reliable, and result-driven solutions tailored</tspan>
+      <tspan x="0" dy="26">to help your business grow, scale, and succeed in a digital world.</tspan>
+    </text>
+
+    <!-- Key Metric Pills -->
+    <g transform="translate(0, 270)">
+      <rect width="160" height="50" rx="12" fill="#FFFFFF" filter="url(#shadow1)"/>
+      <text x="18" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#64748B">HAPPY CLIENTS</text>
+      <text x="18" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="800" fill="#0077B6">500+ Global</text>
+
+      <rect x="180" width="160" height="50" rx="12" fill="#FFFFFF" filter="url(#shadow1)"/>
+      <text x="198" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#64748B">PROJECTS DONE</text>
+      <text x="198" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="800" fill="#0284C7">100+ Delivered</text>
+
+      <rect x="360" width="160" height="50" rx="12" fill="#FFFFFF" filter="url(#shadow1)"/>
+      <text x="378" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#64748B">CLIENT RATING</text>
+      <text x="378" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="800" fill="#0F766E">98% Satisfaction</text>
+    </g>
+  </g>
+
+  <!-- Right Visual Graphics: Enterprise Ecosystem Diagram -->
+  <g transform="translate(680, 95)" filter="url(#shadow1)">
+    <!-- Dashboard Card -->
+    <rect width="450" height="430" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+    
+    <!-- Top Bar -->
+    <g transform="translate(30, 25)">
+      <rect width="36" height="36" rx="10" fill="#E0F2FE"/>
+      <path d="M 12,18 L 18,12 L 24,18 M 18,12 L 18,24" stroke="#0077B6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="48" y="16" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" fill="#0B3B60">Integrated Technology Ecosystem</text>
+      <text x="48" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="500" fill="#10B981">● Full-Stack Solutions • Active Delivery</text>
+    </g>
+
+    <!-- Central Architecture Hub Stage -->
+    <g transform="translate(30, 80)">
+      
+      <!-- Central Hub -->
+      <rect x="135" y="10" width="120" height="55" rx="12" fill="url(#hubGrad1)"/>
+      <text x="150" y="34" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">Pravishree Core</text>
+      <text x="150" y="50" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" fill="#00D9FF">Digital Solutions</text>
+
+      <!-- Connecting Lines -->
+      <line x1="195" y1="65" x2="95" y2="105" stroke="#0096C7" stroke-width="2" stroke-dasharray="3 3"/>
+      <line x1="195" y1="65" x2="295" y2="105" stroke="#0096C7" stroke-width="2" stroke-dasharray="3 3"/>
+      <line x1="95" y1="170" x2="95" y2="205" stroke="#0096C7" stroke-width="2" stroke-dasharray="3 3"/>
+      <line x1="295" y1="170" x2="295" y2="205" stroke="#0096C7" stroke-width="2" stroke-dasharray="3 3"/>
+
+      <!-- Top Left Node: Software Development -->
+      <g transform="translate(0, 105)">
+        <rect width="185" height="65" rx="10" fill="#F8FAFC" stroke="#0096C7" stroke-width="1.5"/>
+        <rect x="12" y="12" width="28" height="28" rx="8" fill="#E0F2FE"/>
+        <text x="20" y="30" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0077B6">&lt;/&gt;</text>
+        <text x="48" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0B3B60">Custom Software</text>
+        <text x="48" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" fill="#64748B">Enterprise Portals &amp; APIs</text>
+      </g>
+
+      <!-- Top Right Node: Web & Mobile App -->
+      <g transform="translate(205, 105)">
+        <rect width="185" height="65" rx="10" fill="#F8FAFC" stroke="#0096C7" stroke-width="1.5"/>
+        <rect x="12" y="12" width="28" height="28" rx="8" fill="#E0F2FE"/>
+        <text x="20" y="30" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0077B6">📱</text>
+        <text x="48" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0B3B60">Web &amp; Mobile Apps</text>
+        <text x="48" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" fill="#64748B">High-Speed UI/UX Flow</text>
+      </g>
+
+      <!-- Bottom Left Node: Digital Marketing -->
+      <g transform="translate(0, 205)">
+        <rect width="185" height="65" rx="10" fill="#F8FAFC" stroke="#0096C7" stroke-width="1.5"/>
+        <rect x="12" y="12" width="28" height="28" rx="8" fill="#E0F2FE"/>
+        <text x="20" y="30" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0284C7">📈</text>
+        <text x="48" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0B3B60">Digital Marketing</text>
+        <text x="48" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" fill="#64748B">SEO &amp; Growth Funnels</text>
+      </g>
+
+      <!-- Bottom Right Node: BPO Operations -->
+      <g transform="translate(205, 205)">
+        <rect width="185" height="65" rx="10" fill="#F8FAFC" stroke="#0096C7" stroke-width="1.5"/>
+        <rect x="12" y="12" width="28" height="28" rx="8" fill="#E0F2FE"/>
+        <text x="20" y="30" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0F766E">🎧</text>
+        <text x="48" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0B3B60">BPO &amp; Operations</text>
+        <text x="48" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" fill="#64748B">24/7 Global Voice Desk</text>
+      </g>
+
+      <!-- Infrastructure Metrics Box -->
+      <g transform="translate(0, 285)">
+        <rect width="390" height="48" rx="10" fill="#F0F9FF" stroke="#BAE6FD"/>
+        <text x="16" y="22" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#0369A1">Verified SLA • ISO &amp; SOC2 Certified</text>
+        <text x="16" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" fill="#64748B">Rapid deployment, dedicated account managers, 99.9% reliability guarantee.</text>
+      </g>
+    </g>
+  </g>
+</svg>

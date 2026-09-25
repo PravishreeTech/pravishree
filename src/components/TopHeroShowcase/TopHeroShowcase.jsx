@@ -5,14 +5,14 @@ import './TopHeroShowcase.css';
 const bannerImages = [
   { 
     id: '01', 
-    image: '/assets/slide-1.png', 
+    image: '/assets/slide-1.svg', 
     tag: 'End-to-End Solutions',
     title: 'Your Trusted Partner For All Your Digital & Business Solutions',
     alt: 'Pravishree - End-to-End Solutions to Empower Your Business' 
   },
   { 
     id: '02', 
-    image: '/assets/slide-2.jpg', 
+    image: '/assets/slide-2.svg', 
     tag: 'Creative Design & Visuals',
     title: 'Creative Designs. Stunning Visuals. Powerful Impact.',
     alt: 'Pravishree - Creative Designs, Video Editing & Visual Identity' 
@@ -20,20 +20,20 @@ const bannerImages = [
   { 
     id: '03', 
     image: '/assets/slide-3.svg', 
-    tag: 'Web & Application Development',
-    title: 'Modern, responsive and high-performance digital experiences.',
-    alt: 'Pravishree Fullscreen Banner 3 - Web & App Development' 
+    tag: 'Digital Marketing & Growth',
+    title: 'Digital Marketing & Brand Acceleration',
+    alt: 'Pravishree Fullscreen Banner 3 - Digital Marketing' 
   },
   { 
     id: '04', 
     image: '/assets/slide-4.svg', 
-    tag: 'Creative Design',
-    title: 'Turning brands and ideas into memorable visual experiences.',
-    alt: 'Pravishree Fullscreen Banner 4 - Creative Design' 
+    tag: 'Cloud & Enterprise Architecture',
+    title: 'Scalable Cloud & Enterprise Architecture',
+    alt: 'Pravishree Fullscreen Banner 4 - Cloud & Enterprise Architecture' 
   },
   { 
     id: '05', 
-    image: '/assets/slide-5.jpg', 
+    image: '/assets/slide-5.svg', 
     tag: 'Web & App Development',
     title: 'Web & App Development and Custom Software Design',
     alt: 'Pravishree - Web & App Development and Custom Software Design' 
@@ -41,9 +41,9 @@ const bannerImages = [
   { 
     id: '06', 
     image: '/assets/slide-6.svg', 
-    tag: 'Business Solutions',
-    title: 'Technology and support solutions built for real-world business needs.',
-    alt: 'Pravishree Fullscreen Banner 6 - Business Solutions' 
+    tag: 'Business Solutions & BPO',
+    title: 'High-Precision BPO & Operational Excellence',
+    alt: 'Pravishree Fullscreen Banner 6 - High-Precision BPO & Operations' 
   },
 ];
 

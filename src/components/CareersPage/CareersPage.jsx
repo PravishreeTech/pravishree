@@ -18,6 +18,7 @@ import {
   Layers
 } from 'lucide-react';
 import { careersData } from '../../data/careersData';
+import DevNoOpeningsModal from './DevNoOpeningsModal';
 import './CareersPage.css';
 
 // 6 Feature cards for Why Pravishree 2x3 grid
@@ -102,6 +103,7 @@ export default function CareersPage({ onNavigateHome }) {
   const [selectedJobId, setSelectedJobId] = useState(careersData[0]?.id || 'data-annotators');
   const [selectedOptionId, setSelectedOptionId] = useState('dev');
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isDevModalOpen, setIsDevModalOpen] = useState(false);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -124,6 +126,11 @@ export default function CareersPage({ onNavigateHome }) {
   };
 
   const handleOptionClick = (opt) => {
+    if (opt.id === 'dev') {
+      setIsDevModalOpen(true);
+      return;
+    }
+
     setSelectedOptionId(opt.id);
     handleSelectJob(opt.jobId);
     
@@ -350,6 +357,12 @@ export default function CareersPage({ onNavigateHome }) {
 
         </div>
       </section>
+
+      {/* Development Role No Current Openings Modal */}
+      <DevNoOpeningsModal 
+        isOpen={isDevModalOpen} 
+        onClose={() => setIsDevModalOpen(false)} 
+      />
 
     </div>
   );

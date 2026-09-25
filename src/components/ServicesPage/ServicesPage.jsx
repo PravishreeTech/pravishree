@@ -461,33 +461,21 @@ export default function ServicesPage({ onNavigateHome, onOpenContact }) {
                   >
                     <div 
                       className="art-ambient-glow" 
-                      style={{ background: 'linear-gradient(135deg, #00D9FF 0%, #0077B6 60%, #061329 100%)' }}
+                      style={{ background: 'linear-gradient(135deg, #00D9FF 0%, #0077B6 60%, rgba(255,255,255,0.8) 100%)' }}
                     ></div>
 
                     <div 
-                      className="service-image-frame default-welcome-frame"
+                      className="service-image-frame"
                       style={{
                         transform: `translate3d(${mousePos.x * 0.4}px, ${mousePos.y * 0.4}px, 0)`
                       }}
                     >
-                      <div className="default-welcome-content">
-                        <div className="welcome-glow-icon">
-                          <Sparkles size={46} className="text-cyan-glow" />
-                        </div>
-                        <h3 className="welcome-frame-title">Explore Our Capabilities</h3>
-                        <p className="welcome-frame-subtitle">
-                          Tap any service on the left to view detailed solutions, workflows, and technology stacks.
-                        </p>
-                        <div className="welcome-pills-row">
-                          <span className="welcome-chip">Software</span>
-                          <span className="welcome-chip">Web</span>
-                          <span className="welcome-chip">Mobile</span>
-                          <span className="welcome-chip">Marketing</span>
-                          <span className="welcome-chip">BPO</span>
-                          <span className="welcome-chip">Video</span>
-                        </div>
-                      </div>
-                      <div className="service-image-glass-overlay"></div>
+                      <img 
+                        src="/assets/services/services-overview.jpg" 
+                        alt="Pravishree Services - Explore Our Capabilities"
+                        className="service-visual-image"
+                        loading="eager"
+                      />
                     </div>
 
                     <div className="art-caption-overlay">

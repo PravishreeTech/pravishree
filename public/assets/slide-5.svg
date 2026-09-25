@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" fill="none">
+  <defs>
+    <linearGradient id="bgGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F4FAFD"/>
+      <stop offset="60%" stop-color="#E8F4FA"/>
+      <stop offset="100%" stop-color="#D7EEFA"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0077B6"/>
+      <stop offset="100%" stop-color="#00D9FF"/>
+    </linearGradient>
+    <linearGradient id="ideGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#061329"/>
+      <stop offset="100%" stop-color="#0B3B60"/>
+    </linearGradient>
+    <filter id="shadow5" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#005B8E" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="600" fill="url(#bgGrad5)" rx="24"/>
+  <circle cx="1060" cy="140" r="320" fill="#0096C7" opacity="0.07"/>
+  <circle cx="160" cy="540" r="240" fill="#0077B6" opacity="0.05"/>
+
+  <!-- Top Logo Banner -->
+  <g transform="translate(60, 45)">
+    <text font-family="'Plus Jakarta Sans', sans-serif" font-size="22" font-weight="700" fill="#0B3B60">Pravishree Design Co.</text>
+    <text x="0" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#0096C7" letter-spacing="1.5">A TECH SOLUTION FIRM</text>
+    <line x1="0" y1="10" x2="210" y2="10" stroke="#0096C7" stroke-width="1.5" opacity="0.4"/>
+  </g>
+
+  <!-- Left Content -->
+  <g transform="translate(60, 160)">
+    <rect width="250" height="28" rx="14" fill="#E0F2FE"/>
+    <text x="14" y="19" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0284C7" letter-spacing="1">WEB • MOBILE • CUSTOM SOFTWARE</text>
+    
+    <text y="75" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="800" fill="#0B3B60" line-height="1.2">
+      <tspan x="0" dy="0">Web &amp; App Development &amp;</tspan>
+      <tspan x="0" dy="54" fill="#0077B6">Custom Software Systems</tspan>
+    </text>
+
+    <text y="190" font-family="'Plus Jakarta Sans', sans-serif" font-size="17" font-weight="400" fill="#475569">
+      <tspan x="0" dy="0">Transform your ideas into powerful digital experiences with scalable</tspan>
+      <tspan x="0" dy="26">architectures, modern frontend frameworks, and robust backends.</tspan>
+    </text>
+
+    <!-- Key Metric Pills -->
+    <g transform="translate(0, 270)">
+      <rect width="160" height="50" rx="12" fill="#FFFFFF" filter="url(#shadow5)"/>
+      <text x="18" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#64748B">CODE QUALITY</text>
+      <text x="18" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="800" fill="#0077B6">Clean &amp; Modular</text>
+
+      <rect x="180" width="160" height="50" rx="12" fill="#FFFFFF" filter="url(#shadow5)"/>
+      <text x="198" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#64748B">LOAD VELOCITY</text>
+      <text x="198" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="800" fill="#0284C7">&lt; 0.8s Fast</text>
+
+      <rect x="360" width="160" height="50" rx="12" fill="#FFFFFF" filter="url(#shadow5)"/>
+      <text x="378" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#64748B">PLATFORMS</text>
+      <text x="378" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="800" fill="#0F766E">iOS, Android, Web</text>
+    </g>
+  </g>
+
+  <!-- Right Visual Graphics: Software Engineering Hub -->
+  <g transform="translate(680, 95)" filter="url(#shadow5)">
+    <!-- Dashboard Card -->
+    <rect width="450" height="430" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+    
+    <!-- Top Bar -->
+    <g transform="translate(30, 25)">
+      <rect width="36" height="36" rx="10" fill="#E0F2FE"/>
+      <path d="M 14,14 L 10,18 L 14,22 M 22,14 L 26,18 L 22,22 M 20,12 L 16,24" stroke="#0077B6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="48" y="16" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" fill="#0B3B60">Software Architecture &amp; App Hub</text>
+      <text x="48" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="500" fill="#10B981">● CI/CD Active • Production Ready</text>
+    </g>
+
+    <!-- Visual Code Window & Architecture -->
+    <g transform="translate(30, 75)">
+      
+      <!-- Code IDE Banner -->
+      <rect width="390" height="105" rx="12" fill="url(#ideGrad5)"/>
+      <g transform="translate(15, 12)">
+        <circle cx="0" cy="4" r="4" fill="#EF4444" opacity="0.8"/>
+        <circle cx="12" cy="4" r="4" fill="#F59E0B" opacity="0.8"/>
+        <circle cx="24" cy="4" r="4" fill="#10B981" opacity="0.8"/>
+        <text x="40" y="8" font-family="monospace" font-size="10" fill="#94A3B8">src/services/apiCluster.ts</text>
+        
+        <text x="0" y="32" font-family="monospace" font-size="11" fill="#00D9FF">import { initializeCore } from '@pravishree/engine';</text>
+        <text x="0" y="50" font-family="monospace" font-size="11" fill="#E2E8F0">export const <tspan fill="#19E6D0">AppEngine</tspan> = initializeCore({</text>
+        <text x="14" y="68" font-family="monospace" font-size="11" fill="#94A3B8">speed: <tspan fill="#00D9FF">'ultra_fast'</tspan>, scale: <tspan fill="#00D9FF">'auto_cloud'</tspan>, status: <tspan fill="#10B981">200</tspan></text>
+        <text x="0" y="84" font-family="monospace" font-size="11" fill="#E2E8F0">});</text>
+      </g>
+
+      <!-- 4 Core Engineering Modules -->
+      <g transform="translate(0, 120)">
+        <!-- Box 1 -->
+        <rect width="185" height="75" rx="10" fill="#F8FAFC" stroke="#0096C7" stroke-width="1.2"/>
+        <rect x="10" y="12" width="28" height="28" rx="8" fill="#E0F2FE"/>
+        <text x="18" y="30" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0077B6">💻</text>
+        <text x="46" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0B3B60">Web Applications</text>
+        <text x="46" y="40" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" fill="#64748B">Next.js, React, Tailwind</text>
+        <text x="12" y="62" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="700" fill="#0284C7">Responsive &amp; SEO-First</text>
+
+        <!-- Box 2 -->
+        <rect x="205" width="185" height="75" rx="10" fill="#F8FAFC" stroke="#0096C7" stroke-width="1.2"/>
+        <rect x="215" y="12" width="28" height="28" rx="8" fill="#E0F2FE"/>
+        <text x="223" y="30" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0077B6">📱</text>
+        <text x="251" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0B3B60">Mobile Apps</text>
+        <text x="251" y="40" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" fill="#64748B">Flutter, React Native</text>
+        <text x="217" y="62" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="700" fill="#0077B6">iOS &amp; Android Native</text>
+
+        <!-- Box 3 -->
+        <rect y="88" width="185" height="75" rx="10" fill="#F8FAFC" stroke="#0096C7" stroke-width="1.2"/>
+        <rect x="10" y="100" width="28" height="28" rx="8" fill="#E0F2FE"/>
+        <text x="18" y="118" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0284C7">⚙️</text>
+        <text x="46" y="112" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0B3B60">Enterprise Backend</text>
+        <text x="46" y="128" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" fill="#64748B">Node.js, Python, APIs</text>
+        <text x="12" y="150" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="700" fill="#0F766E">Microservices &amp; REST</text>
+
+        <!-- Box 4 -->
+        <rect x="205" y="88" width="185" height="75" rx="10" fill="#F8FAFC" stroke="#0096C7" stroke-width="1.2"/>
+        <rect x="215" y="100" width="28" height="28" rx="8" fill="#E0F2FE"/>
+        <text x="223" y="118" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0F766E">🗄️</text>
+        <text x="251" y="112" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0B3B60">Database Systems</text>
+        <text x="251" y="128" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" fill="#64748B">PostgreSQL, Redis</text>
+        <text x="217" y="150" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="700" fill="#0284C7">High Concurrency &amp; Sync</text>
+      </g>
+
+      <!-- Bottom Platform Strip -->
+      <g transform="translate(0, 290)">
+        <rect width="390" height="42" rx="10" fill="#F0F9FF" stroke="#BAE6FD"/>
+        <text x="14" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#0369A1">TECH STACK:</text>
+        <rect x="95" y="10" width="55" height="22" rx="6" fill="#0077B6"/>
+        <text x="106" y="25" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">React</text>
+        <rect x="156" y="10" width="55" height="22" rx="6" fill="#0096C7"/>
+        <text x="165" y="25" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">Flutter</text>
+        <rect x="217" y="10" width="55" height="22" rx="6" fill="#0284C7"/>
+        <text x="228" y="25" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">Node</text>
+        <rect x="278" y="10" width="55" height="22" rx="6" fill="#0F766E"/>
+        <text x="286" y="25" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">Python</text>
+        <rect x="339" y="10" width="45" height="22" rx="6" fill="#475569"/>
+        <text x="348" y="25" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">SQL</text>
+      </g>
+    </g>
+  </g>
+</svg>

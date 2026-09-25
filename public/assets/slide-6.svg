@@ -1,24 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" fill="none">
   <defs>
     <linearGradient id="bgGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#F4FBFA"/>
-      <stop offset="60%" stop-color="#E8F7F5"/>
-      <stop offset="100%" stop-color="#D7F0EE"/>
+      <stop offset="0%" stop-color="#F4FAFD"/>
+      <stop offset="60%" stop-color="#E8F4FA"/>
+      <stop offset="100%" stop-color="#D7EEFA"/>
     </linearGradient>
-    <linearGradient id="bpoGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0096C7"/>
-      <stop offset="100%" stop-color="#0F766E"/>
+    <linearGradient id="cyanGrad6" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0077B6"/>
+      <stop offset="100%" stop-color="#00D9FF"/>
     </linearGradient>
     <filter id="shadow6" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#0F766E" flood-opacity="0.12"/>
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#005B8E" flood-opacity="0.12"/>
     </filter>
   </defs>
 
+  <!-- Background -->
   <rect width="1200" height="600" fill="url(#bgGrad6)" rx="24"/>
-  <circle cx="1080" cy="120" r="300" fill="#0D9488" opacity="0.06"/>
-  <circle cx="120" cy="520" r="220" fill="#0096C7" opacity="0.05"/>
+  <circle cx="1060" cy="140" r="320" fill="#0096C7" opacity="0.07"/>
+  <circle cx="160" cy="540" r="240" fill="#0077B6" opacity="0.05"/>
 
-  <!-- Brand Header -->
+  <!-- Top Logo Banner -->
   <g transform="translate(60, 45)">
     <text font-family="'Plus Jakarta Sans', sans-serif" font-size="22" font-weight="700" fill="#0B3B60">Pravishree Design Co.</text>
     <text x="0" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#0096C7" letter-spacing="1.5">A TECH SOLUTION FIRM</text>
@@ -27,12 +28,12 @@
 
   <!-- Left Content -->
   <g transform="translate(60, 160)">
-    <rect width="180" height="28" rx="14" fill="#CCFBF1"/>
-    <text x="14" y="19" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0F766E" letter-spacing="1">DOMESTIC &amp; INTERNATIONAL</text>
+    <rect width="240" height="28" rx="14" fill="#E0F2FE"/>
+    <text x="14" y="19" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0284C7" letter-spacing="1">DOMESTIC &amp; INTERNATIONAL BPO</text>
     
-    <text y="75" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="800" fill="#0B3B60">
+    <text y="75" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="800" fill="#0B3B60" line-height="1.2">
       <tspan x="0" dy="0">High-Precision BPO &amp;</tspan>
-      <tspan x="0" dy="54" fill="#0D9488">Operational Excellence</tspan>
+      <tspan x="0" dy="54" fill="#0077B6">Operational Excellence</tspan>
     </text>
 
     <text y="190" font-family="'Plus Jakarta Sans', sans-serif" font-size="17" font-weight="400" fill="#475569">
@@ -40,14 +41,15 @@
       <tspan x="0" dy="26">medical billing accuracy, and AI training data annotation.</tspan>
     </text>
 
+    <!-- Key Metric Pills -->
     <g transform="translate(0, 270)">
       <rect width="160" height="50" rx="12" fill="#FFFFFF" filter="url(#shadow6)"/>
       <text x="18" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#64748B">SLA ACCURACY</text>
-      <text x="18" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="800" fill="#0D9488">99.8% Precision</text>
+      <text x="18" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="800" fill="#0077B6">99.8% Precision</text>
 
       <rect x="180" width="160" height="50" rx="12" fill="#FFFFFF" filter="url(#shadow6)"/>
       <text x="198" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#64748B">AVAILABILITY</text>
-      <text x="198" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="800" fill="#0077B6">24/7/365</text>
+      <text x="198" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="800" fill="#0284C7">24/7/365 Desks</text>
 
       <rect x="360" width="160" height="50" rx="12" fill="#FFFFFF" filter="url(#shadow6)"/>
       <text x="378" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#64748B">COST EFFICIENCY</text>
@@ -57,58 +59,68 @@
 
   <!-- Right Visual Graphics: Global Operations Dashboard -->
   <g transform="translate(680, 95)" filter="url(#shadow6)">
+    <!-- Dashboard Card -->
     <rect width="450" height="430" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
     
+    <!-- Top Bar -->
     <g transform="translate(30, 25)">
-      <rect width="36" height="36" rx="10" fill="#CCFBF1"/>
-      <circle cx="18" cy="18" r="8" fill="#0D9488"/>
-      <text x="48" y="16" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" fill="#0B3B60">Global BPO Operations Hub</text>
-      <text x="48" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="500" fill="#0D9488">● Multi-Language • Domestic &amp; Global Desks</text>
+      <rect width="36" height="36" rx="10" fill="#E0F2FE"/>
+      <path d="M 12,18 C 12,14 15,11 19,11 C 23,11 26,14 26,18 M 10,21 C 10,19 12,18 14,18 L 14,24 L 12,24 C 11,24 10,23 10,21 Z M 28,21 C 28,19 26,18 24,18 L 24,24 L 26,24 C 27,24 28,23 28,21 Z" stroke="#0077B6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <text x="48" y="16" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" fill="#0B3B60">Global Operations &amp; BPO Suite</text>
+      <text x="48" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="500" fill="#10B981">● Multi-Language • Domestic &amp; Global Desks</text>
     </g>
 
     <!-- Services Grid -->
-    <g transform="translate(30, 80)">
-      <!-- Box 1 -->
-      <rect width="185" height="110" rx="12" fill="#F0FDFA" stroke="#99F6E4"/>
-      <circle cx="28" cy="28" r="12" fill="#0D9488"/>
-      <text x="24" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">📞</text>
-      <text x="50" y="30" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#0B3B60">Voice Support</text>
-      <text x="16" y="58" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="500" fill="#475569">Inbound &amp; Outbound</text>
-      <text x="16" y="74" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="500" fill="#475569">Domestic &amp; US/UK shifts</text>
-      <text x="16" y="96" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#0D9488">&lt; 15s Response Rate</text>
+    <g transform="translate(30, 75)">
+      <!-- Box 1: Voice Support -->
+      <g transform="translate(0, 0)">
+        <rect width="185" height="100" rx="12" fill="#F8FAFC" stroke="#BAE6FD" stroke-width="1.2"/>
+        <rect x="10" y="12" width="28" height="28" rx="8" fill="#E0F2FE"/>
+        <text x="18" y="30" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0077B6">📞</text>
+        <text x="46" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0B3B60">Voice Support</text>
+        <text x="12" y="52" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" fill="#64748B">Inbound &amp; Outbound</text>
+        <text x="12" y="66" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" fill="#64748B">Domestic &amp; US/UK shifts</text>
+        <text x="12" y="86" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#0077B6">&lt; 15s Response Rate</text>
+      </g>
 
-      <!-- Box 2 -->
-      <rect x="205" width="185" height="110" rx="12" fill="#F0F9FF" stroke="#BAE6FD"/>
-      <circle cx="233" cy="28" r="12" fill="#0284C7"/>
-      <text x="229" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">🏥</text>
-      <text x="255" y="30" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#0B3B60">Medical Billing</text>
-      <text x="221" y="58" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="500" fill="#475569">HIPAA Compliant</text>
-      <text x="221" y="74" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="500" fill="#475569">Claims &amp; RCM Workflow</text>
-      <text x="221" y="96" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#0284C7">99.4% Clean Claims</text>
+      <!-- Box 2: Medical Billing -->
+      <g transform="translate(205, 0)">
+        <rect width="185" height="100" rx="12" fill="#F8FAFC" stroke="#BAE6FD" stroke-width="1.2"/>
+        <rect x="10" y="12" width="28" height="28" rx="8" fill="#E0F2FE"/>
+        <text x="18" y="30" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0096C7">🏥</text>
+        <text x="46" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0B3B60">Medical Billing</text>
+        <text x="12" y="52" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" fill="#64748B">HIPAA Compliant</text>
+        <text x="12" y="66" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" fill="#64748B">Claims &amp; RCM Workflow</text>
+        <text x="12" y="86" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#0096C7">99.4% Clean Claims</text>
+      </g>
 
-      <!-- Box 3 -->
-      <rect y="125" width="185" height="110" rx="12" fill="#FAF5FF" stroke="#E9D5FF"/>
-      <circle cx="28" cy="153" r="12" fill="#9333EA"/>
-      <text x="24" y="157" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">🏷️</text>
-      <text x="50" y="155" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#0B3B60">Data Annotation</text>
-      <text x="16" y="183" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="500" fill="#475569">Image, Video &amp; Text</text>
-      <text x="16" y="199" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="500" fill="#475569">AI / LLM Training Sets</text>
-      <text x="16" y="221" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#9333EA">5M+ Labeled Items</text>
+      <!-- Box 3: Data Annotation -->
+      <g transform="translate(0, 112)">
+        <rect width="185" height="100" rx="12" fill="#F8FAFC" stroke="#BAE6FD" stroke-width="1.2"/>
+        <rect x="10" y="12" width="28" height="28" rx="8" fill="#E0F2FE"/>
+        <text x="18" y="30" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0284C7">🏷️</text>
+        <text x="46" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0B3B60">Data Annotation</text>
+        <text x="12" y="52" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" fill="#64748B">Image, Video &amp; Text</text>
+        <text x="12" y="66" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" fill="#64748B">AI / LLM Training Sets</text>
+        <text x="12" y="86" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#0284C7">5M+ Labeled Items</text>
+      </g>
 
-      <!-- Box 4 -->
-      <rect x="205" y="125" width="185" height="110" rx="12" fill="#FFFBEB" stroke="#FDE68A"/>
-      <circle cx="233" cy="153" r="12" fill="#D97706"/>
-      <text x="229" y="157" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">⚡</text>
-      <text x="255" y="155" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#0B3B60">Back Office &amp; Chat</text>
-      <text x="221" y="183" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="500" fill="#475569">Email &amp; Live Chat</text>
-      <text x="221" y="199" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="500" fill="#475569">Order Processing</text>
-      <text x="221" y="221" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#D97706">98.5% CSAT Score</text>
+      <!-- Box 4: Back Office & Chat -->
+      <g transform="translate(205, 112)">
+        <rect width="185" height="100" rx="12" fill="#F8FAFC" stroke="#BAE6FD" stroke-width="1.2"/>
+        <rect x="10" y="12" width="28" height="28" rx="8" fill="#E0F2FE"/>
+        <text x="18" y="30" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0F766E">⚡</text>
+        <text x="46" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#0B3B60">Back Office &amp; Chat</text>
+        <text x="12" y="52" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" fill="#64748B">Email &amp; Live Chat Desks</text>
+        <text x="12" y="66" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" fill="#64748B">Order &amp; Data Processing</text>
+        <text x="12" y="86" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#0F766E">98.5% CSAT Score</text>
+      </g>
 
       <!-- Bottom Security Tag -->
-      <g transform="translate(0, 250)">
-        <rect width="390" height="60" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
-        <text x="16" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#0B3B60">ISO 27001 &amp; SOC2 Type II Certified Facilities</text>
-        <text x="16" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" fill="#64748B">Biometric access controls, zero-data leak protocols, dedicated redundant lease lines.</text>
+      <g transform="translate(0, 226)">
+        <rect width="390" height="52" rx="10" fill="#F0F9FF" stroke="#BAE6FD"/>
+        <text x="16" y="22" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#0369A1">ISO 27001 &amp; SOC2 Type II Certified Facilities</text>
+        <text x="16" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" fill="#64748B">Biometric access controls, zero-data leak protocols, dedicated redundant lease lines.</text>
       </g>
     </g>
   </g>
