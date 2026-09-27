@@ -76,8 +76,24 @@ export default function TeamSection({ onNavigateToTeam }) {
     setMouseOffset({ x: 0, y: 0 });
   };
 
-  const handleMemberClick = (index, memberId) => {
+  const handleMemberClick = (index, memberId, e) => {
     setActiveMemberIndex(index);
+
+    // Detect mobile viewport (<= 768px or touch screen)
+    const isMobile = typeof window !== 'undefined' && (
+      window.innerWidth <= 768 || 
+      window.matchMedia('(max-width: 768px)').matches
+    );
+
+    // On mobile view: stay on Home page, activate the selected member and show their image/details
+    if (isMobile) {
+      if (e && e.preventDefault) {
+        e.preventDefault();
+      }
+      return;
+    }
+
+    // On desktop view: preserve existing navigation behavior
     if (onNavigateToTeam) {
       onNavigateToTeam(memberId);
     }
@@ -127,7 +143,7 @@ export default function TeamSection({ onNavigateToTeam }) {
                   key={member.id}
                   className={`home-team-row ${isActive ? 'is-active' : ''}`}
                   onMouseEnter={() => setActiveMemberIndex(index)}
-                  onClick={() => handleMemberClick(index, member.id)}
+                  onClick={(e) => handleMemberClick(index, member.id, e)}
                 >
                   <span className="row-num">{member.number}</span>
                   <div className="row-info-wrap">
@@ -186,7 +202,11 @@ export default function TeamSection({ onNavigateToTeam }) {
 
                         <button 
                           className="home-card-explore-btn"
-                          onClick={() => handleMemberClick(index, member.id)}
+                          onClick={() => {
+                            if (onNavigateToTeam) {
+                              onNavigateToTeam(member.id);
+                            }
+                          }}
                         >
                           <span>View Full Profile</span>
                           <ArrowRight size={14} />
