@@ -306,7 +306,32 @@
 
 @media (max-width: 768px) {
   .team-section-home {
-    padding: 40px 0;
+    padding: 65px 0 40px 0;
+    overflow: visible;
+  }
+
+  .team-section-home .ambient-watermark-wrap {
+    overflow: visible;
+    z-index: 0;
+  }
+
+  .team-section-home .ambient-watermark-text {
+    top: -18px;
+    font-size: clamp(2.5rem, 11vw, 4.5rem);
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .team-section-home .container.relative-z {
+    position: relative;
+    z-index: 1;
+  }
+
+  .team-section-home .section-header {
+    position: relative;
+    z-index: 2;
+    margin-top: 10px;
+    margin-bottom: 2rem;
   }
 
   .home-team-grid {
@@ -398,6 +423,20 @@
 }
 
 @media (max-width: 480px) {
+  .team-section-home {
+    padding: 58px 0 35px 0;
+  }
+
+  .team-section-home .ambient-watermark-text {
+    top: -14px;
+    font-size: clamp(2.3rem, 11.5vw, 3.8rem);
+  }
+
+  .team-section-home .section-header {
+    margin-top: 8px;
+    margin-bottom: 1.75rem;
+  }
+
   .home-team-row {
     padding: 12px 14px;
     gap: 10px;
@@ -433,6 +472,19 @@
 }
 
 @media (max-width: 375px) {
+  .team-section-home {
+    padding: 52px 0 30px 0;
+  }
+
+  .team-section-home .ambient-watermark-text {
+    top: -10px;
+    font-size: clamp(2.1rem, 12vw, 3.2rem);
+  }
+
+  .team-section-home .section-header {
+    margin-top: 6px;
+  }
+
   .home-team-row {
     padding: 10px 12px;
     gap: 8px;
