@@ -1142,7 +1142,28 @@
 }
 
 @media (max-width: 640px) {
-  .editorial-service-title { font-size: clamp(32px, 6vw, 42px); }
+  .editorial-service-title { font-size: clamp(24px, 5.5vw, 34px); }
+
+  .editorial-service-item {
+    padding: 16px 14px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+  }
+
+  .editorial-service-header {
+    gap: 10px;
+  }
+
+  .editorial-active-bar {
+    margin-left: 0;
+    margin-top: 8px;
+    margin-bottom: 12px;
+  }
+
+  .editorial-service-details {
+    margin-left: 0;
+    max-width: 100%;
+  }
 
   .services-hero-section,
   .services-editorial-section,

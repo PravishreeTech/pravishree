@@ -718,68 +718,103 @@
 
 @media (max-width: 640px) {
   .services-section {
-    padding: 80px 0 60px;
+    padding: 70px 0 50px;
   }
 
   .services-3d-stage-wrap {
-    height: 440px;
+    height: 470px;
   }
 
   .service-3d-card {
-    width: 310px;
-    height: 430px;
-    margin-top: -215px;
-    margin-left: -155px;
-    padding: 18px;
+    width: min(340px, calc(100vw - 32px));
+    height: 460px;
+    margin-top: -230px;
+    margin-left: calc(min(340px, calc(100vw - 32px)) / -2);
+    padding: 20px;
+    border-radius: 22px;
   }
 
   .svc-abstract-graphic,
   .svc-card-visual-wrap {
-    height: 135px;
+    height: 155px;
+    border-radius: 14px;
   }
 
   .card-3d-title {
-    font-size: 19px;
+    font-size: 20px;
+    margin-bottom: 6px;
   }
 
   .card-3d-desc {
-    font-size: 13px;
-    line-height: 1.45;
-    margin-bottom: 10px;
+    font-size: 13.5px;
+    line-height: 1.5;
+    margin-bottom: 12px;
   }
 
-  .service-3d-card.card-next-1 {
-    transform: translate3d(65px, 8px, -40px) rotateY(-10deg) scale(0.84);
-    opacity: 0.55;
-  }
-
-  .service-3d-card.card-prev-1 {
-    transform: translate3d(-65px, 8px, -40px) rotateY(10deg) scale(0.84);
-    opacity: 0.55;
-  }
-
+  /* Hide background clutter side cards on mobile to eliminate overlap */
+  .service-3d-card.card-next-1,
+  .service-3d-card.card-prev-1,
   .service-3d-card.card-next-2,
-  .service-3d-card.card-prev-2 {
-    opacity: 0;
+  .service-3d-card.card-prev-2,
+  .service-3d-card.card-hidden {
+    display: none !important;
+  }
+
+  .service-3d-card.card-active {
+    transform: translate3d(0, 0, 0) scale(1) !important;
   }
 }
 
 @media (max-width: 480px) {
   .services-section {
-    padding: 60px 0 50px;
+    padding: 55px 0 40px;
   }
 
+  .services-3d-stage-wrap {
+    height: 450px;
+  }
+
+  .service-3d-card {
+    width: min(310px, calc(100vw - 28px));
+    height: 440px;
+    margin-top: -220px;
+    margin-left: calc(min(310px, calc(100vw - 28px)) / -2);
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .svc-abstract-graphic,
+  .svc-card-visual-wrap {
+    height: 140px;
+  }
+
+  .card-3d-title {
+    font-size: 18.5px;
+  }
+
+  .card-3d-desc {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .pill-tag {
+    font-size: 10.5px;
+    padding: 2px 8px;
+  }
+}
+
+@media (max-width: 360px) {
   .services-3d-stage-wrap {
     height: 420px;
   }
 
   .service-3d-card {
-    width: min(280px, calc(100vw - 32px));
+    width: min(280px, calc(100vw - 20px));
     height: 410px;
     margin-top: -205px;
-    margin-left: calc(min(280px, calc(100vw - 32px)) / -2);
-    padding: 16px;
-    border-radius: 18px;
+    margin-left: calc(min(280px, calc(100vw - 20px)) / -2);
+    padding: 14px;
+    border-radius: 16px;
   }
 
   .svc-abstract-graphic,
@@ -788,56 +823,7 @@
   }
 
   .card-3d-title {
-    font-size: 18px;
-  }
-
-  .card-3d-desc {
-    font-size: 12.5px;
-    line-height: 1.4;
-  }
-
-  .service-3d-card.card-next-1 {
-    transform: translate3d(36px, 6px, -30px) rotateY(-8deg) scale(0.85);
-    opacity: 0.45;
-  }
-
-  .service-3d-card.card-prev-1 {
-    transform: translate3d(-36px, 6px, -30px) rotateY(8deg) scale(0.85);
-    opacity: 0.45;
-  }
-}
-
-@media (max-width: 360px) {
-  .services-3d-stage-wrap {
-    height: 390px;
-  }
-
-  .service-3d-card {
-    width: min(260px, calc(100vw - 24px));
-    height: 380px;
-    margin-top: -190px;
-    margin-left: calc(min(260px, calc(100vw - 24px)) / -2);
-    padding: 14px;
-    border-radius: 16px;
-  }
-
-  .svc-abstract-graphic,
-  .svc-card-visual-wrap {
-    height: 110px;
-  }
-
-  .card-3d-title {
-    font-size: 16.5px;
-  }
-
-  .service-3d-card.card-next-1 {
-    transform: translate3d(24px, 4px, -25px) rotateY(-6deg) scale(0.86);
-    opacity: 0.35;
-  }
-
-  .service-3d-card.card-prev-1 {
-    transform: translate3d(-24px, 4px, -25px) rotateY(6deg) scale(0.86);
-    opacity: 0.35;
+    font-size: 17px;
   }
 }
 
