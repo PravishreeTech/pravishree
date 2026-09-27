@@ -5,42 +5,42 @@ import './TopHeroShowcase.css';
 const bannerImages = [
   { 
     id: '01', 
-    image: '/assets/slide-1.svg', 
+    image: '/assets/slide-1.png', 
     tag: 'End-to-End Solutions',
     title: 'Your Trusted Partner For All Your Digital & Business Solutions',
     alt: 'Pravishree - End-to-End Solutions to Empower Your Business' 
   },
   { 
     id: '02', 
-    image: '/assets/slide-2.svg', 
+    image: '/assets/slide-2.png', 
     tag: 'Creative Design & Visuals',
     title: 'Creative Designs. Stunning Visuals. Powerful Impact.',
     alt: 'Pravishree - Creative Designs, Video Editing & Visual Identity' 
   },
   { 
     id: '03', 
-    image: '/assets/slide-3.svg', 
+    image: '/assets/slide-3.png', 
     tag: 'Digital Marketing & Growth',
     title: 'Digital Marketing & Brand Acceleration',
     alt: 'Pravishree Fullscreen Banner 3 - Digital Marketing' 
   },
   { 
     id: '04', 
-    image: '/assets/slide-4.svg', 
+    image: '/assets/slide-4.png', 
     tag: 'Cloud & Enterprise Architecture',
     title: 'Scalable Cloud & Enterprise Architecture',
     alt: 'Pravishree Fullscreen Banner 4 - Cloud & Enterprise Architecture' 
   },
   { 
     id: '05', 
-    image: '/assets/slide-5.svg', 
+    image: '/assets/slide-5.png', 
     tag: 'Web & App Development',
     title: 'Web & App Development and Custom Software Design',
     alt: 'Pravishree - Web & App Development and Custom Software Design' 
   },
   { 
     id: '06', 
-    image: '/assets/slide-6.svg', 
+    image: '/assets/slide-6.jpg', 
     tag: 'Business Solutions & BPO',
     title: 'High-Precision BPO & Operational Excellence',
     alt: 'Pravishree Fullscreen Banner 6 - High-Precision BPO & Operations' 
@@ -125,8 +125,11 @@ export default function TopHeroShowcase() {
               <img 
                 src={banner.image} 
                 alt={banner.alt} 
-                className="fullscreen-banner-img"
-                loading={idx === 0 ? "eager" : "lazy"}
+                className="fullscreen-banner-img hero-slide-image"
+                loading="eager"
+                decoding="async"
+                fetchPriority={idx === 0 ? "high" : "auto"}
+                draggable="false"
               />
             </div>
           ))}

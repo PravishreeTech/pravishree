@@ -57,6 +57,36 @@
   text-align: left;
 }
 
+/* Subtle Blurred Glass Background Panel Behind Portfolio Hero Content */
+.portfolio-hero-glass-panel {
+  position: relative;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border: 1px solid rgba(120, 210, 240, 0.22);
+  border-radius: 24px;
+  padding: 2.25rem 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 
+    0 12px 40px rgba(0, 120, 180, 0.06),
+    0 0 25px rgba(0, 217, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 0 20px rgba(255, 255, 255, 0.3);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-hero-glass-panel:hover {
+  border-color: rgba(0, 217, 255, 0.35);
+  box-shadow: 
+    0 16px 44px rgba(0, 120, 180, 0.08),
+    0 0 30px rgba(0, 217, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.portfolio-hero-glass-panel .portfolio-main-subtitle {
+  margin-bottom: 0;
+}
+
 .portfolio-breadcrumb {
   display: flex;
   align-items: center;
@@ -824,6 +854,12 @@
     padding: 4.5rem 0 3rem 0;
   }
 
+  .portfolio-hero-glass-panel {
+    padding: 1.75rem 1.4rem;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+  }
+
   .portfolio-details-wrapper {
     margin-bottom: 3rem;
   }
@@ -868,6 +904,11 @@
 @media (max-width: 480px) {
   .portfolio-page-container {
     padding: 0 0.85rem;
+  }
+
+  .portfolio-hero-glass-panel {
+    padding: 1.35rem 1.1rem;
+    border-radius: 16px;
   }
 
   .slanted-project-block {

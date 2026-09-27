@@ -45,18 +45,6 @@ export default function AboutPage({ onNavigateHome, onOpenContact }) {
     { num: '08', title: 'Customer & Technical Support', category: 'Support SLA', desc: 'Dedicated 24/7 technical helpdesk, customer care, and multi-channel SLA support.', icon: Headphones }
   ];
 
-  const whyUsLeft = [
-    { num: '01', title: 'End-to-End Solutions', desc: 'Technology, design, marketing and business services under one roof.' },
-    { num: '02', title: 'Customized Approach', desc: 'Solutions shaped around individual business requirements.' },
-    { num: '03', title: 'Technology + Creativity', desc: 'Technical expertise combined with creative capabilities.' }
-  ];
-
-  const whyUsRight = [
-    { num: '04', title: 'Business-Focused Technology', desc: 'Technology designed to solve real business problems.' },
-    { num: '05', title: 'Domestic & International Support', desc: 'Business support for domestic and international operations.' },
-    { num: '06', title: 'Scalable Solutions', desc: 'Solutions adaptable to different business requirements.' }
-  ];
-
   const journeyTimeline = [
     {
       badge: '2019',
@@ -254,24 +242,7 @@ export default function AboutPage({ onNavigateHome, onOpenContact }) {
         }
       );
 
-      // 5. Why Pravishree Asymmetric Grid
-      gsap.fromTo(
-        '.why-editorial-card',
-        { y: 35, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          stagger: 0.1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.why-editorial-container',
-            start: 'top 80%'
-          }
-        }
-      );
-
-      // 6. Journey Timeline Line Draw & Step Reveal
+      // 5. Journey Timeline Line Draw & Step Reveal
       if (timelineLineRef.current && timelineTrackRef.current) {
         gsap.fromTo(
           timelineLineRef.current,
@@ -456,12 +427,12 @@ export default function AboutPage({ onNavigateHome, onOpenContact }) {
               </p>
             </div>
 
-            {/* 2ND ABOUT VISUAL: DIGITAL ECOSYSTEM (TECHNOLOGY + CREATIVITY + BUSINESS) */}
-            <div className="about-tech-visual-stage">
+            {/* WHAT WE DO SECTION VISUAL IMAGE */}
+            <div className="services-editorial-visual-panel">
               <img 
-                src="/assets/about-digital-ecosystem.jpg" 
-                alt="Pravishree Digital Ecosystem — Technology, Creativity, and Business" 
-                className="about-tech-visual-img"
+                src="/assets/about-tech-creativity-business.jpg" 
+                alt="End-to-End Digital Solutions — Technology, Creativity, and Business" 
+                className="services-editorial-visual-img"
                 loading="lazy"
               />
             </div>
@@ -577,82 +548,7 @@ export default function AboutPage({ onNavigateHome, onOpenContact }) {
 
 
       {/* =========================================================
-          SECTION 5: WHY PRAVISHREE? (ASYMMETRIC GRID WITH CENTRAL SPHERE VISUAL)
-         ========================================================= */}
-      <section className="about-editorial-why-section">
-        <div className="about-editorial-container">
-          
-          <div className="why-editorial-header text-center">
-            <span className="editorial-eyebrow">KEY ADVANTAGES</span>
-            <h2 className="editorial-section-title">Why Pravishree?</h2>
-            <p className="why-editorial-statement">
-              "Technology should solve business problems — not create new ones."
-            </p>
-          </div>
-
-          <div className="why-editorial-container">
-            
-            {/* Left 3 Cards */}
-            <div className="why-column why-column-left">
-              {whyUsLeft.map((point) => (
-                <div key={point.num} className="why-editorial-card glass-card-hover">
-                  <div className="why-card-top">
-                    <span className="why-num-tag">{point.num}</span>
-                    <div className="why-check-dot">
-                      <CheckCircle2 size={16} />
-                    </div>
-                  </div>
-                  <h3 className="why-card-title">{point.title}</h3>
-                  <p className="why-card-desc">{point.desc}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* Central Abstract Technology Sphere Visual */}
-            <div className="why-central-visual-wrap">
-              <div className="why-glass-sphere">
-                <div className="sphere-inner-core"></div>
-                <div className="sphere-ring-a"></div>
-                <div className="sphere-ring-b"></div>
-                <svg className="sphere-svg-grid" viewBox="0 0 200 200" fill="none">
-                  <circle cx="100" cy="100" r="70" stroke="rgba(0,217,255,0.3)" strokeDasharray="3 5" />
-                  <line x1="100" y1="30" x2="100" y2="170" stroke="rgba(0,217,255,0.25)" strokeDasharray="4 4" />
-                  <line x1="30" y1="100" x2="170" y2="100" stroke="rgba(0,217,255,0.25)" strokeDasharray="4 4" />
-                  <circle cx="100" cy="30" r="3" fill="#00D9FF" />
-                  <circle cx="170" cy="100" r="3" fill="#19E6D0" />
-                  <circle cx="100" cy="170" r="3" fill="#0077B6" />
-                </svg>
-                <div className="sphere-floating-label">
-                  <Sparkles size={12} className="label-icon-cyan" />
-                  <span>Scalable Architecture</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right 3 Cards */}
-            <div className="why-column why-column-right">
-              {whyUsRight.map((point) => (
-                <div key={point.num} className="why-editorial-card glass-card-hover">
-                  <div className="why-card-top">
-                    <span className="why-num-tag">{point.num}</span>
-                    <div className="why-check-dot">
-                      <CheckCircle2 size={16} />
-                    </div>
-                  </div>
-                  <h3 className="why-card-title">{point.title}</h3>
-                  <p className="why-card-desc">{point.desc}</p>
-                </div>
-              ))}
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-
-      {/* =========================================================
-          SECTION 6: OUR JOURNEY (EDITORIAL HORIZONTAL TIMELINE)
+          SECTION 5: OUR JOURNEY (EDITORIAL HORIZONTAL TIMELINE)
          ========================================================= */}
       <section className="about-editorial-timeline-section">
         <div className="about-editorial-container">

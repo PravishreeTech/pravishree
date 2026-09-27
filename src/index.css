@@ -84,16 +84,27 @@ body {
   background-color: #F8FAFD;
   color: var(--text-main);
   line-height: 1.6;
+  width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
   position: relative;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /* App Root & Main Layout alongside Left Sidebar */
 .app-root {
   display: flex;
+  width: 100%;
+  max-width: 100%;
   min-height: 100vh;
   position: relative;
   background: transparent;
+  overflow-x: hidden;
 }
 
 .main-content-layout {

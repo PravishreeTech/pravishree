@@ -105,19 +105,21 @@ export default function PortfolioPage({ onNavigateHome, onOpenProjectModal, onOp
             <span className="breadcrumb-current">Portfolio</span>
           </nav>
           
-          <div className="portfolio-header-badge">
-            <Sparkles size={14} />
-            <span>SELECTED WORKS &amp; CASE STUDIES</span>
-          </div>
+          <div className="portfolio-hero-glass-panel">
+            <div className="portfolio-header-badge">
+              <Sparkles size={14} />
+              <span>SELECTED WORKS &amp; CASE STUDIES</span>
+            </div>
 
-          <h1 className="portfolio-main-heading">
-            <span className="showcase-title">FEATURED</span>
-            <span className="showcase-title">SHOWCASE</span>
-          </h1>
-          
-          <p className="portfolio-main-subtitle">
-            Explore 10 curated digital systems, platforms, and interactive experiences crafted by Pravishree Design Co. Scroll vertically to navigate the interactive showcase row or select any project to explore detailed specifications below.
-          </p>
+            <h1 className="portfolio-main-heading">
+              <span className="showcase-title">FEATURED</span>
+              <span className="showcase-title">SHOWCASE</span>
+            </h1>
+            
+            <p className="portfolio-main-subtitle">
+              Explore 10 curated digital systems, platforms, and interactive experiences crafted by Pravishree Design Co. Scroll vertically to navigate the interactive showcase row or select any project to explore detailed specifications below.
+            </p>
+          </div>
 
           {/* Interactive Navigation Control Bar */}
           <div className="portfolio-nav-summary">
