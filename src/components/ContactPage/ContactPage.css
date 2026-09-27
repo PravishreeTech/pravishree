@@ -679,6 +679,12 @@
   font-weight: 600;
   line-height: 1.4;
   letter-spacing: 0.01em;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.info-card-subval.link:hover {
+  color: #00D9FF;
 }
 
 .card-address-card {

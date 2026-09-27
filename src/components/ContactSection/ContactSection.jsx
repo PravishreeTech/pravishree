@@ -124,11 +124,11 @@ export default function ContactSection({ selectedService, onFormSuccess }) {
                 </div>
                 <div className="channel-text">
                   <span className="channel-label">Email Us Directly</span>
-                  <a href="mailto:info@pravishreedesign.com" className="channel-value">
-                    info@pravishreedesign.com
+                  <a href="mailto:hr@pravishree.com" className="channel-value">
+                    hr@pravishree.com
                   </a>
-                  <a href="mailto:business@pravishreedesign.com" className="channel-sub-value">
-                    business@pravishreedesign.com
+                  <a href="mailto:contact@pravishree.com" className="channel-sub-value">
+                    contact@pravishree.com
                   </a>
                 </div>
               </div>
@@ -139,8 +139,8 @@ export default function ContactSection({ selectedService, onFormSuccess }) {
                 </div>
                 <div className="channel-text">
                   <span className="channel-label">Call &amp; WhatsApp Support</span>
-                  <a href="tel:+919876543210" className="channel-value">
-                    +91 (0) 98765 43210
+                  <a href="tel:+918331962896" className="channel-value">
+                    +91 83319 62896
                   </a>
                   <span className="channel-sub-value">Mon – Fri (9:00 AM – 7:00 PM IST)</span>
                 </div>

@@ -414,7 +414,7 @@ export default function ContactPage({ onNavigateHome, onFormSuccess }) {
               </a>
               <div className="info-card-timings">
                 <span className="info-card-subval">Mon – Sat (9:00 AM – 7:00 PM IST)</span>
-                <span className="info-card-subval">Mon – Fri (7:00 PM – 4:00 AM IST)</span>
+                <span className="info-card-subval">Mon – Fri (7:00 PM – 4:00 AM CST)</span>
               </div>
             </div>
 
@@ -424,10 +424,12 @@ export default function ContactPage({ onNavigateHome, onFormSuccess }) {
                 <Mail size={22} />
               </div>
               <span className="info-card-label">EMAIL</span>
-              <a href="mailto:pravishreedesignco@gmail.com" className="info-card-value link">
-                pravishreedesignco@gmail.com
+              <a href="mailto:hr@pravishree.com" className="info-card-value link">
+                hr@pravishree.com
               </a>
-              <span className="info-card-subval">info@pravishree.com</span>
+              <a href="mailto:contact@pravishree.com" className="info-card-subval link">
+                contact@pravishree.com
+              </a>
             </div>
 
             {/* CARD 3: ADDRESS */}
