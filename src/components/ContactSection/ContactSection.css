@@ -269,3 +269,55 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 4.5rem 0 3.5rem;
+  }
+
+  .contact-info-col,
+  .contact-form-col {
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+  }
+
+  .contact-info-header h3,
+  .form-heading {
+    font-size: 1.45rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 3.5rem 0 2.5rem;
+  }
+
+  .contact-info-col,
+  .contact-form-col {
+    padding: 1.5rem 1.15rem;
+    border-radius: 18px;
+  }
+
+  .contact-info-header h3,
+  .form-heading {
+    font-size: 1.3rem;
+  }
+
+  .channel-icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .channel-value {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .contact-info-col,
+  .contact-form-col {
+    padding: 1.25rem 0.85rem;
+    border-radius: 16px;
+  }
+}
