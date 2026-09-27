@@ -662,7 +662,7 @@
   }
 
   .about-editorial-title {
-    font-size: clamp(2.2rem, 7vw, 3.2rem);
+    font-size: clamp(2rem, 6.5vw, 3rem);
   }
 
   .story-block {
@@ -701,18 +701,28 @@
 
 @media (max-width: 640px) {
   .about-hero-meta-row {
-    flex-direction: column;
-    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
     gap: 0.65rem;
   }
 
   .about-vision-mission-triggers {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.65rem;
     width: 100%;
   }
 
   .vm-pill-btn {
-    width: 100%;
+    width: auto;
+    padding: 0.6rem 1.15rem;
+    font-size: 0.78rem;
   }
 
   .story-block {
@@ -757,12 +767,33 @@
   .about-editorial-hero {
     padding: 1.5rem 1.15rem;
     border-radius: 18px;
-    gap: 1.25rem;
+    gap: 1.15rem;
     margin-bottom: 2rem;
   }
 
   .about-editorial-title {
-    font-size: 2rem;
+    font-size: clamp(1.8rem, 6vw, 2.3rem);
+  }
+
+  .about-section-badge {
+    padding: 0.35rem 0.85rem;
+    font-size: 0.72rem;
+  }
+
+  .about-meta-tag {
+    padding: 0.35rem 0.8rem;
+    font-size: 0.7rem;
+  }
+
+  .about-lead-paragraph {
+    font-size: 0.96rem;
+    line-height: 1.6;
+  }
+
+  .vm-pill-btn {
+    padding: 0.55rem 1rem;
+    font-size: 0.74rem;
+    gap: 0.45rem;
   }
 
   .story-meta-header {
